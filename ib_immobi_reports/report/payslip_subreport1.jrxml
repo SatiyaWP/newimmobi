@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="payslip_subreport1" pageWidth="360" pageHeight="802" columnWidth="360" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4278f420-88e2-4dfa-897e-43bfe3f6a0da">
+	<property name="ireport.zoom" value="1.7715610000000022"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="slip_no" class="java.lang.String"/>
+	<parameter name="employee_id" class="java.lang.Integer"/>
+	<parameter name="contract_id" class="java.lang.Integer"/>
+	<parameter name="period_id" class="java.lang.Integer"/>
+	<parameter name="struct_id" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT d.name AS kategori, b.total AS subtotal
+
+FROM hr_payslip AS a
+    LEFT JOIN hr_payslip_line AS b ON (a.id=b.slip_id AND b.contract_id=$P{contract_id})
+	LEFT JOIN hr_salary_rule AS c ON b.salary_rule_id=c.id
+    LEFT JOIN hr_salary_rule_category AS d ON c.category_id=d.id
+
+WHERE a.employee_id=$P{employee_id} AND
+	a.number=$P{slip_no} AND a.contract_id=$P{contract_id} AND a.struct_id=$P{struct_id}
+    AND c.code NOT IN ('GP','GROSS','BASIC','PPh','POT','PPH-TA','NET')]]>
+	</queryString>
+	<field name="kategori" class="java.lang.String"/>
+	<field name="subtotal" class="java.math.BigDecimal"/>
+	<variable name="subtotal_1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{subtotal}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="e4775485-eb55-4a6c-8bc5-30b03ec2cf0b" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="168" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kategori}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0;(#,##0)" isBlankWhenNull="true">
+				<reportElement uuid="e653f0c2-5d9d-42e8-ad34-6464a838659f" positionType="Float" stretchType="RelativeToTallestObject" x="175" y="0" width="95" height="17"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<paragraph rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subtotal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="b9d3e56d-09d8-4c1c-8c03-98a2ce621ac1" positionType="Float" stretchType="RelativeToTallestObject" x="168" y="0" width="7" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<summary>
+		<band height="18" splitType="Stretch">
+			<textField isStretchWithOverflow="true" pattern="#,##0;(#,##0)" isBlankWhenNull="true">
+				<reportElement uuid="cac3bf28-9a88-448f-8489-eb67042d9121" positionType="Float" stretchType="RelativeToTallestObject" x="175" y="0" width="95" height="18"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<paragraph rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{subtotal_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="260f3fcd-bb82-4143-b6eb-1de5a9fddfc9" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="168" height="18"/>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="499f7bcb-1831-4403-a7f8-2e24cc4555af" positionType="Float" stretchType="RelativeToTallestObject" x="168" y="0" width="7" height="18"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

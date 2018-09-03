@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <menuitem id="menu_employee_edu_config" name="Employee Education" parent="hr.menu_hr_configuration"
+                  groups="base.group_hr_user,base.group_user" sequence="10"/>
+        <!-- Religious Employees -->
+        <record id="view_hr_emp_religion_form" model="ir.ui.view">
+            <field name="name">hr.religion.employee.form</field>
+            <field name="model">hr.religion.employee</field>
+            <field name="arch" type="xml">
+                <form string="Religious Employees">
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="hr_emp_religion_form_action" model="ir.actions.act_window">
+            <field name="name">Religious Employees</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.religion.employee</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new religion.
+              </p>
+            </field>
+        </record>
+        <menuitem action="hr_emp_religion_form_action" id="menu_hr_emp_religion_action"
+                  parent="hr.menu_hr_configuration" groups="base.group_hr_user,base.group_user"/>
+
+        <!-- Level of Education -->
+        <record id="view_hr_emp_level_edu_form" model="ir.ui.view">
+            <field name="name">hr.employee.edu.level.form</field>
+            <field name="model">hr.employee.edu.level</field>
+            <field name="arch" type="xml">
+                <form string="Level of Education">
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="hr_emp_level_edu_form_action" model="ir.actions.act_window">
+            <field name="name">Level of Education</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.employee.edu.level</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new level of education.
+              </p>
+            </field>
+        </record>
+        <menuitem action="hr_emp_level_edu_form_action" id="menu_hr_emp_level_edu_action"
+                  parent="menu_employee_edu_config" groups="base.group_hr_user,base.group_user"/>
+
+        <!-- Educational Institutions -->
+        <record id="view_hr_emp_edu_institution_form" model="ir.ui.view">
+            <field name="name">hr.employee.edu.institutions.form</field>
+            <field name="model">hr.employee.edu.institutions</field>
+            <field name="arch" type="xml">
+                <form string="Educational Institutions">
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="hr_emp_edu_institution_form_action" model="ir.actions.act_window">
+            <field name="name">Educational Institutions</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.employee.edu.institutions</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new institution or organization.
+              </p>
+            </field>
+        </record>
+        <menuitem action="hr_emp_edu_institution_form_action" id="menu_hr_emp_edu_institution_action"
+                  parent="menu_employee_edu_config" groups="base.group_hr_user,base.group_user"/>
+
+        <!-- Majors -->
+        <record id="view_hr_emp_edu_majors_form" model="ir.ui.view">
+            <field name="name">hr.employee.edu.majors.form</field>
+            <field name="model">hr.employee.edu.majors</field>
+            <field name="arch" type="xml">
+                <form string="Majors">
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="hr_emp_edu_majors_form_action" model="ir.actions.act_window">
+            <field name="name">Majors</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.employee.edu.majors</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new majors.
+              </p>
+            </field>
+        </record>
+        <menuitem action="hr_emp_edu_majors_form_action" id="menu_hr_emp_edu_majors_action"
+                  parent="menu_employee_edu_config" groups="base.group_hr_user,base.group_user"/>
+
+
+
+        <record id="inherit1_hr_employee_view_form" model="ir.ui.view">
+            <field name="name">inherit1.hr.employee.view.form.education</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//group[@string='Birth']" position="after">
+                        <group string="Religion">
+                            <field name="religion_id"/>
+                        </group>
+                    </xpath>
+                    <xpath expr="//field[@name='birthday']" position="after">
+                        <field name="age"/>
+                    </xpath>
+                    <xpath expr='//notebook' position="inside">
+                        <page string="Education History">
+                            <field name="education_line" nolabel="1">
+                                <tree string="Education History" editable="bottom">
+                                    <field name="edu_level_id"/>
+                                    <field name="institution_id"/>
+                                    <field name="majors_id"/>
+                                    <field name="gpa"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+
+        <!-- <record id="inherit1_ptkp_view_form" model="ir.ui.view">
+            <field name="name">inherit1.form l10n_id.ptkp</field>
+            <field name="model">l10n_id.ptkp</field>
+            <field name="inherit_id" ref="l10n_id_taxform_pph_21.ptkp_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='group_main_1']" position="replace">
+                    <group name="group_main_1" colspan="4" col="4">
+                        <field name="name"/>
+                        <field name="date_start"/>
+                        <field name="payroll_id"/>
+                        <field name="contract_id"/>
+                    </group>
+                </xpath>
+                <xpath expr="//group[@name='group_main_2']" position="after">
+                    <group class="oe_subtotal_footer oe_right">
+                        <field name="amount_total" class="oe_subtotal_footer_separator"/>
+                    </group>
+                </xpath>
+            </field>
+        </record> -->
+        <record id="inherit1_ptkp_view_tree" model="ir.ui.view">
+            <field name="name">inherit1.tree l10n_id.ptkp</field>
+            <field name="model">l10n_id.ptkp</field>
+            <field name="inherit_id" ref="l10n_id_taxform_pph_21.ptkp_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_start']" position="after">
+                    <field name="payroll_id"/>
+                    <field name="contract_id"/>
+                    <field name="amount_total" sum="Total Tarif PTKP"/>
+                </xpath>
+            </field>
+        </record>
+
+	</data>
+</openerp>

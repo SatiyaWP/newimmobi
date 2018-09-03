@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    <!-- report PO LOCAL-->
+         <report auto="False" id="report_purchase_order_local" model="contract.template" header="False"
+                name="contract.template" rml="ts_contract_template/report/order.rml"
+                usage="default" string="Kontrak Internal"/>  
+
+         <report auto="False" id="contract_internal" model="hr.contract" header="False"
+                name="contract.internal" rml="ts_contract_template/report/internal.rml"
+                usage="default" string="Contract Internal"/>  
+
+         <report auto="False" id="contract_tenaga_ahli" model="hr.contract" header="False"
+                name="tenaga.ahli" rml="ts_contract_template/report/tenaga_ahli.rml"
+                usage="default" string="Contract Tenaga Ahli"/>  
+
+
+
+    </data>
+</openerp>

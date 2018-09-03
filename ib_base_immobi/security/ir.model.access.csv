@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_edu_history_usr,hr.employee.edu.history user,model_hr_employee_edu_history,base.group_hr_user,1,1,1,1
+access_hr_edu_history_mgr,hr.employee.edu.history mgr,model_hr_employee_edu_history,base.group_hr_manager,1,1,1,1
+access_hr_edu_majors_usr,hr.employee.edu.majors user,model_hr_employee_edu_majors,base.group_hr_user,1,1,1,0
+access_hr_edu_majors_mgr,hr.employee.edu.majors mgr,model_hr_employee_edu_majors,base.group_hr_manager,1,1,1,1
+access_hr_edu_institutions_usr,hr.employee.edu.institutions user,model_hr_employee_edu_institutions,base.group_hr_user,1,1,1,0
+access_hr_edu_institutions_mgr,hr.employee.edu.institutions mgr,model_hr_employee_edu_institutions,base.group_hr_manager,1,1,1,1
+access_hr_edu_level_usr,hr.employee.edu.level user,model_hr_employee_edu_level,base.group_hr_user,1,1,1,0
+access_hr_edu_level_mgr,hr.employee.edu.level mgr,model_hr_employee_edu_level,base.group_hr_manager,1,1,1,1
+access_hr_emp_religion_usr,hr.employee.religion user,model_hr_religion_employee,base.group_hr_user,1,1,1,0
+access_hr_emp_religion_mgr,hr.employee.religion mgr,model_hr_religion_employee,base.group_hr_manager,1,1,1,1
+
+
+
+
+

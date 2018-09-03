@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="so_subreport2" pageWidth="516" pageHeight="802" columnWidth="516" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="34829e55-4d35-44cc-8024-d485126cded9">
+	<property name="ireport.zoom" value="1.0000000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="company_id" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select
+p.name as company_name, rpt.name as company_title, p.street, p.street2, p.city, p.zip, rcs.name as company_state, q.name as company_country, p.email, p.phone, p.website, p.fax
+
+from
+res_company as rc left join res_partner as p on p.id=rc.partner_id left join res_country as q on q.id=p.country_id left join res_country_state as rcs on rcs.id=p.state_id left join res_partner_title as rpt on rpt.id=p.title
+
+where rc.id=$P{company_id}]]>
+	</queryString>
+	<field name="company_name" class="java.lang.String"/>
+	<field name="company_title" class="java.lang.String"/>
+	<field name="street" class="java.lang.String">
+		<fieldDescription><![CDATA[Street]]></fieldDescription>
+	</field>
+	<field name="street2" class="java.lang.String">
+		<fieldDescription><![CDATA[Street2]]></fieldDescription>
+	</field>
+	<field name="city" class="java.lang.String">
+		<fieldDescription><![CDATA[City]]></fieldDescription>
+	</field>
+	<field name="zip" class="java.lang.String">
+		<fieldDescription><![CDATA[Zip]]></fieldDescription>
+	</field>
+	<field name="company_state" class="java.lang.String"/>
+	<field name="company_country" class="java.lang.String"/>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[Email]]></fieldDescription>
+	</field>
+	<field name="phone" class="java.lang.String">
+		<fieldDescription><![CDATA[Phone]]></fieldDescription>
+	</field>
+	<field name="website" class="java.lang.String"/>
+	<field name="fax" class="java.lang.String">
+		<fieldDescription><![CDATA[Fax]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<summary>
+		<band height="338" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="7850c24f-1996-404c-949c-7408309ec530" x="0" y="18" width="499" height="34"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{street2}.isEmpty() ?
+    $F{street} : $F{street}+" "+$F{street2}) +
+($F{city}.isEmpty() ? "" : ", "+$F{city}) +
+($F{company_state}.isEmpty() ? "" : ", "+$F{company_state}) +
+($F{company_country}.isEmpty() ? "" : ", "+$F{company_country}) +
+($F{zip}.isEmpty() ? "" : ", "+$F{zip}) +
+($F{phone}.isEmpty() ?
+    ($F{fax}.isEmpty() ? "" :" | Fax. "+$F{fax}) :
+    ($F{fax}.isEmpty() ? " | Telp. "+$F{phone} : " | Telp. "+$F{phone}+", Fax. "+$F{fax})) +
+($F{email}.isEmpty() ?
+    ($F{website}.isEmpty() ? "" :" | website "+$F{website}) :
+    ($F{website}.isEmpty() ? " | e-mail "+$F{email} : " | e-mail "+$F{email}+", website "+$F{website}))]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="3de3daac-74fc-4d8c-8e23-c97841bf0f66" x="0" y="0" width="494" height="18"/>
+				<textElement verticalAlignment="Top">
+					<font size="13" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA["PT. Immobi Solusi Prima"]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

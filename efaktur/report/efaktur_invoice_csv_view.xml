@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+
+    <record id="action_efaktur_account_invoice_csv" model="ir.actions.report.xml">
+      <field name="name">E-Faktur</field>
+      <field name="model">account.invoice</field>
+      <field name="type">ir.actions.report.xml</field>
+      <field name="report_name">efaktur.account.invoice.csv</field>
+      <field name="report_type">csv</field>
+      <field name="auto" eval="False"/>
+    </record>
+
+    <record model="ir.values" id="action_efaktur_account_invoice_csv_values">
+      <field name="name">E-Faktur</field>
+      <field name="key2">client_action_multi</field>
+      <field name="value" eval="'ir.actions.report.xml,' +str(ref('action_efaktur_account_invoice_csv'))" />
+      <field name="model">account.invoice</field>
+    </record>   
+    
+  </data>
+</openerp>

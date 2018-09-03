@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="invoice_supplier_form_inherit" model="ir.ui.view">
+			<field name="name">account.invoice.form</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="account.invoice_supplier_form" />
+			<field name="arch" type="xml">
+				<field name="invoice_line_tax_id" position="after">
+					<field name="wht_id" domain="[('type','=','purchase')]" />
+				</field>
+				<button string="Ask Refund" position="before">
+					<button name="button_wht" type="object" class="oe_highlight"
+						string="Generate Withholding Entry"
+						attrs="{'invisible': ['|', '|', ('state', 'in', ('draft', 'cancel')), ('wht_move_id', '!=', False), ('amount_wht', '=', 0)]}" />
+				</button>
+				<field name="amount_total" position="after">
+					<field name="amount_wht" widget="monetary"
+						options="{'currency_field': 'currency_id'}" attrs="{'invisible': [('amount_wht', '=', 0)]}" />
+					<field name="net_pay" class="oe_subtotal_footer_separator"
+						widget="monetary" options="{'currency_field': 'currency_id'}"
+						attrs="{'invisible': [('amount_wht', '=', 0)]}" />
+				</field>
+				<field name="move_id" position="after">
+					<field name="wht_move_id" invisible="True" />
+				</field>
+			</field>
+		</record>
+
+
+		<record id="invoice_form_inherit" model="ir.ui.view">
+			<field name="name">account.invoice.form</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="account.invoice_form" />
+			<field name="arch" type="xml">
+				<button string="Refund Invoice" position="before">
+					<button name="button_wht" type="object" class="oe_highlight"
+						string="Generate Withholding Entry"
+						attrs="{'invisible': ['|', '|', ('state', '=', 'draft'), ('wht_move_id', '!=', False), ('amount_wht', '=', 0)]}" />
+				</button>
+				<field name="invoice_line_tax_id" position="after">
+					<field name="wht_id" domain="[('type','=','sale')]" />
+				</field>
+				<field name="amount_total" position="after">
+					<field name="amount_wht" widget="monetary"
+						options="{'currency_field': 'currency_id'}" attrs="{'invisible': [('amount_wht', '=', 0)]}" />
+					<field name="net_pay" class="oe_subtotal_footer_separator"
+						widget="monetary" options="{'currency_field': 'currency_id'}"
+						attrs="{'invisible': [('amount_wht', '=', 0)]}" />
+				</field>
+				<field name="move_id" position="after">
+					<field name="wht_move_id" invisible="True" />
+				</field>
+			</field>
+		</record>
+
+		<record id="purchase_order_form_wht" model="ir.ui.view">
+			<field name="name">purchase.order.form</field>
+			<field name="model">purchase.order</field>
+			<field name="inherit_id" ref="purchase.purchase_order_form" />
+			<field name="arch" type="xml">
+				<field name="taxes_id" position="after">
+					<field name="wht_id" domain="[('type','=','purchase')]" />
+				</field>
+				<field name="amount_total" position="after">
+					<field name="amount_wht" widget="monetary"
+						options="{'currency_field': 'currency_id'}" attrs="{'invisible': [('amount_wht', '=', 0)]}" />
+					<field name="net_pay" class="oe_subtotal_footer_separator"
+						widget="monetary" options="{'currency_field': 'currency_id'}"
+						attrs="{'invisible': [('amount_wht', '=', 0)]}" />
+				</field>
+			</field>
+		</record>
+
+		<record id="view_account_withholding_tax_tree" model="ir.ui.view">
+			<field name="name">account.withholding.tax.tree</field>
+			<field name="model">account.withholding.tax</field>
+			<field name="arch" type="xml">
+				<tree string="Withholding Taxes">
+					<field name="code" />
+					<field name="name" />
+					<field name="type" />
+					<field name="percentage" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_account_withholding_tax_form" model="ir.ui.view">
+			<field name="name">account.withholding.tax.form</field>
+			<field name="model">account.withholding.tax</field>
+			<field name="arch" type="xml">
+				<form string="Withholding Taxes" version="7.0">
+					<sheet>
+						<group col="4" string="General">
+							<field name="name" />
+							<field name="code" />
+							<field name="type" />
+						</group>
+						<group col="4" string="Values">
+							<field name="percentage" on_change="onchange_amount(percentage)" />
+							<field name="account_id" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_account_withholding_tax_search" model="ir.ui.view">
+			<field name="name">account.withholding.tax.search</field>
+			<field name="model">account.withholding.tax</field>
+			<field name="arch" type="xml">
+				<search string="Search Withholding Tax">
+					<field name="name" filter_domain="[('name','ilike',self)]"
+						string="Name" />
+					<field name="code" filter_domain="[('code','ilike',self)]"
+						string="Code" />
+					<group expand="0" string="Group By...">
+						<filter string="Type" icon="terp-folder-orange" domain="[]"
+							context="{'group_by':'type'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record id="action_account_withholding_tax_tree" model="ir.actions.act_window">
+			<field name="name">Withholding Taxes</field>
+			<field name="res_model">account.withholding.tax</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="view_id" ref="view_account_withholding_tax_tree" />
+			<field name="search_view_id" ref="view_account_withholding_tax_search" />
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Click to record a new withholding tax
+				</p>
+			</field>
+		</record>
+
+		<menuitem action="action_account_withholding_tax_tree" id="menu_action_withholding_tax_tree"
+			parent="account.next_id_27" />
+
+
+		<record id="view_account_config_settings" model="ir.ui.view">
+			<field name="name">view_account_config_settings</field>
+			<field name="model">account.config.settings</field>
+			<field name="inherit_id" ref="account.view_account_config_settings" />
+			<field name="arch" type="xml">
+				<xpath expr="/form/group[6]" position="after">
+					<separator string="Withholding Tax" />
+					<group name="withholding_tax">
+						<label for="id" string="Configuration" />
+						<div>
+							<div>
+								<label for="withholding_journal_id" />
+								<field name="withholding_journal_id" class="oe_inline" />
+							</div>
+						</div>
+					</group>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

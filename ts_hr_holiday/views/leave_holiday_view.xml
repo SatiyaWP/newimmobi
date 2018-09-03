@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>    
+
+		<record id ="hr_public_holiday_ext_view" model="ir.ui.view">
+			<field name ="name">hr.public.holiday.ext.view</field>
+			<field name ="model">hr.public.holiday</field>
+			<field name ="inherit_id" ref ="hr_public_holidays.edit_public_holiday_new"/>
+			<field name ="arch" type ="xml">
+		        <field name="name" position = "after">
+		        	<field name="start_date" attrs="{'readonly':[('state','!=','draft')]}" />
+		        </field>
+		        <field name="date_from" position = "attributes">
+		         	    <attribute name = "required">0</attribute>		    
+		         	    <attribute name = "invisible">1</attribute>
+				</field>		
+		        <field name="date_to" position = "attributes">
+		         	    <attribute name = "required">0</attribute>		    
+		         	    <attribute name = "invisible">1</attribute>
+				</field>		
+			</field>
+		</record> 
+
+		<record id ="hr_public_holiday_tree_ext_view" model="ir.ui.view">
+			<field name ="name">hr.public.holiday.tree.ext.view</field>
+			<field name ="model">hr.public.holiday</field>
+			<field name ="inherit_id" ref ="hr_public_holidays.view_public_holiday"/>
+			<field name ="arch" type ="xml">
+		        <field name="date_from" position = "attributes">
+		         	    <attribute name = "invisible">1</attribute>
+				</field>		
+		        <field name="date_to" position = "attributes">
+		         	    <attribute name = "invisible">1</attribute>
+				</field>		
+
+			</field>
+		</record> 
+<!--
+		<record id ="hr_holiday_form_ext_view" model="ir.ui.view">
+			<field name ="name">hr.holiday.form.ext.view</field>
+			<field name ="model">hr.holidays</field>
+			<field name ="inherit_id" ref ="hr_holidays.edit_holiday_new"/>
+			<field name ="arch" type ="xml">
+ 	            <sheet position="inside">
+ 	            	<notebook >
+                    	<page string="Holiday Description">
+							<field name="holidays_date_ids" >
+								<tree string="Holiday Line">
+									<field name="holiday_date" />
+									<field name="description" />
+								</tree>
+							</field>		
+                    	</page>
+                	</notebook>
+                </sheet>  				
+			</field>
+		</record> 
+-->
+    </data>
+</openerp>
+
+
+

@@ -1,0 +1,1 @@
+import cfb_wizard

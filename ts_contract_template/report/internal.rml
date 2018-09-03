@@ -1,0 +1,877 @@
+<?xml version="1.0"?>
+<document filename="Purchase Order.pdf">
+  <template title="Purchase Order" author="OpenERP S.A.(sales@openerp.com)" allowSplitting="20">
+    <pageTemplate id="first">
+      <frame id="first" x1="18.0" y1="42.0" width="535" height="780"/>
+  <pageGraphics>
+	 				<setFont name="Helvetica" size="8"/>
+   <drawCentredString x="10.5cm" y="0.4cm">Page: <pageNumber/> of</drawCentredString>
+   <drawCentredString x="11.3cm" y="0.4cm"><pageCount/></drawCentredString>
+
+   </pageGraphics>      
+    </pageTemplate>
+  </template>
+  <stylesheet>
+    <blockTableStyle id="Standard_Outline">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Tableau1">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Tableau2">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Header_Order_Reference_Tbl">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#FFFFFF" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="3,-1" stop="3,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Content_Order_Reference_Table">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#FFFFFF" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="3,-1" stop="3,-1"/>
+
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="4,0" stop="4,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#FFFFFF" start="4,0" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="4,0" stop="4,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="4,-1" stop="4,-1"/>
+
+    </blockTableStyle>
+    <blockTableStyle id="Content_Order_Reference_Table_blok_line">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#FFFFFF" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="3,-1" stop="3,-1"/>
+
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="4,0" stop="4,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#FFFFFF" start="4,0" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="4,0" stop="4,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="4,-1" stop="4,-1"/>
+
+    </blockTableStyle>
+    <blockTableStyle id="Tableau4">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/> 
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/> 
+    </blockTableStyle>    
+    
+    <blockTableStyle id="Table_Header_Pur_ord_Line">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table_Order_Pur_line_Content">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="5,-1" stop="5,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table_All_Total_Detail">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEABOVE" colorName="#ffffff" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,2" stop="1,2"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,2" stop="2,2"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table_Outer_Notes">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <initialize>
+      <paraStyle name="all" alignment="justify"/>
+    </initialize>
+    <paraStyle name="terp_header" fontSize="12.0" leading="15" alignment="LEFT" spaceBefore="12.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_tblheader_General" fontSize="8.0" leading="10" alignment="LEFT" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_default_8" fontSize="8.0" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_tblheader_General_Centre" fontSize="8.0" leading="10" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_tblheader_General_Right" fontSize="8.0" leading="10" alignment="RIGHT" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_default_Centre_8" fontSize="8.0" leading="10" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_9" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Bold_9" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Right_9" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Bold_9_Right" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+
+    <paraStyle name="terp_default_Centre_8x" fontSize="8.0" fontName="calibri"  leading="10" alignment="justify" spaceBefore="0.0" spaceAfter="0.0"/>
+
+    <images/>
+  </stylesheet>
+  <story>
+  <pto>
+  <para style="terp_default_8">[[repeatIn(objects,'o')]]</para>
+    <blockTable colWidths="40.0,70.0,280.0,150" style="Tableau4" >
+      <tr>
+        <td>
+          <para style="terp_header"><b></b></para>
+        </td>
+        <td>
+			<image x="0.00cm" y="0.00cm" width="80" height="50.0">[[company.logo_header_immobi or removeParentNode('image')]]</image>                   
+        </td>
+        <td>
+          <para style="terp_header"><b></b></para>
+        </td>
+        <td>
+                <para style="terp_default_9"><b>[[company.name]]</b></para>
+                <para style="terp_default_9">[[ (company.partner_id.street)  or '']]</para>
+                <para style="terp_default_9">[[ (company.partner_id.street2)]]  </para>
+                <para style="terp_default_9">[[company.partner_id.city]] [[company.partner_id.zip]]</para>
+                <para style="terp_default_9">Phone: [[ (company.partner_id.phone)  or '']]</para>
+
+        </td>            
+      </tr>
+    </blockTable>
+  
+    <para style="terp_default_9">
+      <font color="white"> </font>
+    </para>
+    <para style="terp_default_9">
+      <font color="white"> </font>
+    </para>
+    <para style="terp_default_8">
+      <font color="white"> </font>
+    </para>
+    <para style="terp_default_8">
+      <font color="white"> s</font>
+    </para>
+
+    <blockTable colWidths="36.0,222.0,43.0,222.0,7.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b>PERJANJIAN KERJA WAKTU TERTENTU</b></para>
+          <para style="terp_default_Centre_8"><b>[[ o.name or '' ]]</b></para>
+          <para style="terp_default_Centre_8"><b>PRIBADI Dan RAHASIA</b></para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description2 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x</font>[[ o.description3 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">Nama<font color="white">x</font><font color="white">x</font><font color="white">x</font><font color="white">x</font><font color="white">x</font><font color="white">x</font><font color="white">x</font> : [[ o.employee_id.name or '' ]]</para>
+          <para style="terp_default_Centre_8x">Tgl Lahir<font color="white">x</font><font color="white">x</font><font color="white">x</font><font color="white">x</font><font color="white">x</font>: [[get_my_birthday(o.employee_id.birthday)]]</para>
+          <para style="terp_default_Centre_8x">No KTP<font color="white">x</font><font color="white">x</font><font color="white">x</font><font color="white">x</font><font color="white">x</font><font color="white">x</font> : [[ o.employee_id.identification_id or '' ]]</para>
+          <para style="terp_default_Centre_8x">Jenis Kelamin<font color="white">x</font>: [[ o.employee_id.gender or '' ]]</para>
+          <para style="terp_default_Centre_8x">Alamat<font color="white">x</font><font color="white">x</font><font color="white">x</font><font color="white">x</font><font color="white">x</font><font color="white">x</font> : [[ o.employee_id.address_home_id.street or '' ]] [[ o.employee_id.address_home_id.street2 or '' ]] ([[ o.employee_id.address_home_id.rt or '' ]]/[[ o.employee_id.address_home_id.rw or '' ]])[[ o.employee_id.address_home_id.kecamatan_id.name or '' ]] [[ o.employee_id.address_home_id.city or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description4 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description5 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description6 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8">PASAL 1</para>
+          <para style="terp_default_Centre_8">JANGKA WAKTU PERJANJIAN</para>
+		  <para style="terp_default_Centre_8x">[[ o.description7 or '' ]] [[o.contract_duration]] berlaku terhitung mulai tanggal [[get_my_startdate(o.date_start)]] sampai dengan tanggal [[get_my_enddate(o.date_end)]] </para>
+          <para style="terp_default_Centre_8x"><font color="white">x</font></para>
+          <para style="terp_default_Centre_8">PASAL 2</para>
+          <para style="terp_default_Centre_8">JENIS PEKERJAAN DAN LOKASI PENEMPATAN</para>
+		  <para style="terp_default_Centre_8x">[[ o.description8 or '' ]], <b>[[ o.job_id.name or '' ]]</b></para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+		  <para style="terp_default_Centre_8x">[[ o.description9 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+		  <para style="terp_default_Centre_8x">[[ o.description10 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+		  <para style="terp_default_Centre_8x">[[ o.description11 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8">PASAL 3</para>
+          <para style="terp_default_Centre_8">HAK DAN KEWAJIBAN</para>
+		  <para style="terp_default_Centre_8x">[[ o.description12 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+		  <para style="terp_default_Centre_8x">[[ o.description13 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+		  <para style="terp_default_Centre_8x">[[ o.description14 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+		  <para style="terp_default_Centre_8x">[[ o.description15 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+		  <para style="terp_default_Centre_8x">[[ o.description16 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+		  <para style="terp_default_Centre_8x">[[ o.description17 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+		  <para style="terp_default_Centre_8x">[[ o.description18 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+		  <para style="terp_default_Centre_8x">[[ o.description19 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+		  <para style="terp_default_Centre_8x">[[ o.description20 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+		  <para style="terp_default_Centre_8x">[[ o.description21 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+		  <para style="terp_default_Centre_8x">[[ o.description22 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+		  <para style="terp_default_Centre_8x">[[ o.description23 or '' ]]</para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,222.0,43.0,222.0,7.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">[[ o.description24 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description25 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8">PASAL 4</para>
+          <para style="terp_default_Centre_8">WAKTU KERJA</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description26 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description27 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description28 or '' ]]</para>
+          <para style="terp_default_Centre_8">PASAL 5</para>
+          <para style="terp_default_Centre_8">PEDOMAN DAN TATA TERTIB KERJA</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description29 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description30 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description31 or '' ]]</para>
+          <para style="terp_default_Centre_8">PASAL 6</para>
+          <para style="terp_default_Centre_8">BERAKHIRNYA PERJANJIAN</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description32 or '' ]]</para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">[[ o.description33 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description34 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description35 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description36 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description37 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description38 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description39 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description40 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description41 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description42 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description43 or '' ]]</para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,222.0,43.0,222.0,7.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8">PASAL 7</para>
+          <para style="terp_default_Centre_8">KLAUSUL PERJANJIAN</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description44 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description45 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description46 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description47 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description48 or '' ]]</para>
+          <para style="terp_default_Centre_8">PASAL 8</para>
+          <para style="terp_default_Centre_8">LAIN-LAIN</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description49 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">PIHAK KESATU</para>
+          <para style="terp_default_Centre_8x">Nama<font color="white">x</font><font color="white">x</font><font color="white">x</font><font color="white">x</font>: Asiyah</para>
+          <para style="terp_default_Centre_8x">Alamat<font color="white">x</font><font color="white">x</font><font color="white">x</font>: Gedung Tifa Lantai 8,</para>
+          <para style="terp_default_Centre_8x">Jl. Kuningan Barat no 26 Jakarta 12710</para>
+          <para style="terp_default_Centre_8x">Telepon<font color="white">x</font><font color="white">x</font> : 021-27510487</para>
+          <para style="terp_default_Centre_8x">Fax<font color="white">x</font><font color="white">x</font><font color="white">x</font><font color="white">x</font><font color="white">x</font><font color="white">x</font>: 021-27510489</para>
+          <para style="terp_default_Centre_8x">Email<font color="white">x</font><font color="white">x</font><font color="white">x</font><font color="white">x</font><font color="white">x</font>: asiyahi@immobisp.com</para>
+          
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">PIHAK KEDUA</para>
+          <para style="terp_default_Centre_8x">Nama<font color="white">x</font><font color="white">x</font><font color="white">x</font><font color="white">x</font><font color="white">x</font>: [[ o.employee_id.name or '' ]]</para>
+          <para style="terp_default_Centre_8x">Alamat<font color="white">x</font><font color="white">x</font><font color="white">x</font><font color="white">x</font>: [[ o.employee_id.address_home_id.street or '' ]] </para>
+          <para style="terp_default_Centre_8x">[[ o.employee_id.address_home_id.street2 or '' ]] [[ o.employee_id.address_home_id.rt or '' ]]/[[ o.employee_id.address_home_id.rw or '' ]] [[ o.employee_id.address_home_id.city or '' ]]</para>
+          <para style="terp_default_Centre_8x">Telepon<font color="white">x</font><font color="white">x</font><font color="white">x</font><font color="white">x</font>: [[ o.employee_id.mobile_phone or '' ]]</para>
+          <para style="terp_default_Centre_8x">Email<font color="white">x</font><font color="white">x</font><font color="white">x</font><font color="white">x</font><font color="white">x</font><font color="white">x</font>: [[ o.employee_id.work_email or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description50 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description51 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description52 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description53 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_Centre_8x">[[ o.description54 or '' ]]</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>    
+    <blockTable colWidths="36.0,219.0,213.0,36.0" style="Content_Order_Reference_Table_blok_line">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8">PIHAK KESATU</para>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>    
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>    
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>    
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>    
+          <para style="terp_default_Centre_8"></para>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8">PIHAK KEDUA</para>
+        
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>    
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>    
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>    
+          <para style="terp_default_Centre_8"></para>
+          <para style="terp_default_Centre_8"></para>              
+		</td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,219.0,213.0,36.0" style="Content_Order_Reference_Table_blok_line">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><u>Asiyah</u></para>
+          <para style="terp_default_Centre_8">Head of HR and Legal</para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><u>[[ o.employee_id.name or '' ]]</u></para>
+          <para style="terp_default_Centre_8">[[ o.type_id.name or '' ]]</para>              
+		</td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>    
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>    
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>    
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>    
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>    
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>    
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>    
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>    
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>    
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>    
+
+    <blockTable colWidths="76.0,152.0,43.0,209.0,50.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>LAMPIRAN I</b></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+          
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>    
+
+    <blockTable colWidths="309.0,52.0,43.0,76.0,50.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_8"><b>GAJI TUNJANGAN FASILITAS DAN SARANA PENUNJANG</b></para>
+          <para style="terp_default_8">PERJANJIAN KERJA JANGKA WAKTU TERTENTU</para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+          
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>    
+
+    <blockTable colWidths="20.0,162.0,256.0,43.0,50.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_8">1.</para>
+          <para style="terp_default_8">2.</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_8">3.</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_8">4.</para>
+          <para style="terp_default_8">5.</para>
+          <para style="terp_default_8">6.</para>
+        </td>
+        <td>
+          <para style="terp_default_8">Tanggal Perjanjian</para>
+          <para style="terp_default_8">PIHAK PERTAMA</para>
+          <para style="terp_default_8">Alamat</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_8">PIHAK KEDUA</para>
+          <para style="terp_default_8">Alamat</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_8">Tanggal Mulai Perjanjian</para>
+          <para style="terp_default_8">Tanggal Akhir Perjanjian</para>
+          <para style="terp_default_8">Jangka Waktu Perjanjian</para>
+        </td>
+        <td>
+          <para style="terp_default_8">:[[get_my_startdate(o.contract_date)]]</para>
+          <para style="terp_default_8">:Asiyah</para>
+          <para style="terp_default_8">:Gedung Tifa lantai 8 </para>
+          <para style="terp_default_8">:Jl. Kuningan barat no 26 Jakarta Selatan 12710</para>
+          <para style="terp_default_8">:[[ o.employee_id.name or '' ]]</para>
+          <para style="terp_default_8">:[[ o.employee_id.address_home_id.street or '' ]]</para>
+          <para style="terp_default_8">:[[ o.employee_id.address_home_id.street2 or '' ]] [[ o.employee_id.address_home_id.rt or '' ]]/[[ o.employee_id.address_home_id.rw or '' ]] [[ o.employee_id.address_home_id.kelurahan_id.name or '' ]] [[ o.employee_id.address_home_id.street2 or '' ]] [[ o.employee_id.address_home_id.kecamatan_id.name or '' ]] [[ o.employee_id.address_home_id.city or '' ]] [[ o.employee_id.address_home_id.state_id.name or '' ]]</para>
+          <para style="terp_default_8">:[[get_my_startdate(o.date_start)]]</para>
+          <para style="terp_default_8">:[[get_my_enddate(o.date_end)]]</para>
+          <para style="terp_default_8">:[[ o.timeframe_contract or '' ]]</para>
+        </td>
+        <td>
+          <para style="terp_default_8"></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>    
+
+    <blockTable colWidths="76.0,152.0,43.0,209.0,50.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_8">A. GAJI</para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+          
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="10.0,322.0,43.0,105.0,50.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_8">Gaji sebesar Rp [[ o.wage or '' ]] - (pajak ditanggung PIHAK KESATU).</para>
+          <para style="terp_default_8">Dibayarkan setiap tanggal 25 setiap bulan.</para>          
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>    
+
+    <blockTable colWidths="76.0,152.0,43.0,209.0,50.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_8">B. TUNJANGAN</para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+          
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="10.0,322.0,43.0,105.0,50.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_8">1. Transport dan Makan	Rp  [[ get_transport(o) ]]   -/bulan</para>
+          <para style="terp_default_8">2. Komunikasi	Rp   [[ get_komunikasi(o) ]]  / bulan</para>          
+          <para style="terp_default_8">3. Tunjangan Jabatan           Rp [[ get_jabatan(o) ]]    /bulan</para>          
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>    
+
+    <blockTable colWidths="176.0,152.0,43.0,109.0,50.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_8">C. CUTI TAHUNAN</para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+          
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="10.0,412.0,43.0,55.0,10.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_8">PIHAK KEDUA berhak akan 12 hari cuti setiap satu tahun.</para>
+          <para style="terp_default_8">Cuti tahunan bisa diambil setelah permohonan cuti disetujui oleh PIHAK PERTAMA.</para>          
+          <para style="terp_default_8">-  Permohonan cuti baru bisa diajukan setelah 12 bulan terus menerus berkerja sebagai karyawan</para>          
+          <para style="terp_default_8">PIHAK PERTAMA</para>          
+          <para style="terp_default_8">-  Permohonan cuti harus diajukan selambat-lambatnya 2 minggu sebelum cuti diambil.</para>          
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>    
+
+    <blockTable colWidths="176.0,152.0,43.0,109.0,50.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_8">D. TUNJANGAN HARI RAYA (THR)</para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+          
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="10.0,505.0,5.0,5.0,5.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_8">Besarnya THR sebagaimana dimaksud ditetapkan sebagai berikut:</para>
+          <para style="terp_default_8">1. Karyawan yang telah mempunyai masa kerja 12 bulan secara terus menerus atau lebih sebesar 1(satu) bulan upah.</para>          
+          <para style="terp_default_8">2. Karyawan yang mempunyai masa kerja 1 bulan secara terus menerus tetapi kurang dari 12 bulan diberikan secara proporsional dengan masa kerja yakni dengan perhitungan masa kerja/12 x 1(satu) bulan upah .</para>          
+          <para style="terp_default_8">Pemberian THR sebagaimana dimaksud disesuaikan dengan Hari Raya Keagamaan, masing-masing karyawan kecuali</para>          
+          <para style="terp_default_8">kesepakatan pengusaha dan pekerja menentukan lain.</para>          
+          <para style="terp_default_8">Pembayaran THR sebagaimana dimaksud wajib dibayarkan oleh PIHAK PERTAMA selambat-lambatnya 7 (tujuh) hari</para>          
+          <para style="terp_default_8">sebelum Hari, Raya Keagamaan</para>          
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>    
+
+    <blockTable colWidths="176.0,152.0,43.0,109.0,50.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_8">E. ASURANSI</para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+          
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="10.0,505.0,5.0,5.0,5.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_8">Asuransi Kesehatan berupa rawat inap diberikan setelah 3 bulan karyawan  bekerja.</para>
+          <para style="terp_default_8">Asuransi kesehatan berupa rawat jalan akan diberikan sebesar satu bulan gaji pokok untuk setahun dan akan dibayar</para>
+          <para style="terp_default_8">sebesar 80%nya.</para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+
+
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>    
+
+    <blockTable colWidths="176.0,152.0,43.0,109.0,50.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_8">F. BPJS Ketenagakerjaan.</para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+          
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+
+    <para style="terp_default_9">
+      <font color="white"> </font>
+    </para>
+    <para style="terp_default_9">
+      <font color="white"> </font>
+    </para>
+  </pto>
+  </story>
+</document>

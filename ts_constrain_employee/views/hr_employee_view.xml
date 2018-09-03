@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>    
+
+		<record id ="hr_employee_ext_view" model="ir.ui.view">
+			<field name ="name">hr.employee.ext.view</field>
+			<field name ="model">hr.employee</field>
+			<field name ="inherit_id" ref ="hr.view_employee_form"/>
+			<field name ="arch" type ="xml">
+		        <field name="otherid" position = "attributes">
+		         	    <attribute name = "required">1</attribute>		    
+				</field>		
+			</field>
+		</record> 
+
+		<record id ="hr_employee_tree_ext_view" model="ir.ui.view">
+			<field name ="name">hr.employee.tree.ext.view</field>
+			<field name ="model">hr.employee</field>
+			<field name ="inherit_id" ref ="hr.view_employee_tree"/>
+			<field name ="arch" type ="xml">
+					<xpath expr ="//field[@name='name']" position ="after">
+						<field name="otherid"  string="NIK" />	
+					</xpath>
+			</field>
+		</record> 
+
+
+		<record id ="hr_contract_const_ext_view" model="ir.ui.view">
+			<field name ="name">hr.contract.const.ext.view</field>
+			<field name ="model">hr.contract</field>
+			<field name ="inherit_id" ref ="hr_contract.hr_contract_view_form"/>
+			<field name ="arch" type ="xml">
+		        <field name="name" position = "attributes">
+		         	    <attribute name = "required">1</attribute>		    
+				</field>		
+			</field>
+		</record> 
+
+
+      
+    </data>
+</openerp>
+
+
+

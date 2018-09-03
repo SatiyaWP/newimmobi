@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>		
+		<record model="ir.ui.view" id="pr_create_bids_form">
+			<field name="name">pr.create.bids.form</field>
+			<field name="model">pr.create.bids</field>
+			<field name="arch" type="xml">
+				<form string="Create Bids">
+					<p class="oe_grey">
+						Create Call For Bids from Selected Purchase Requisiton Lines
+					</p>
+					<footer>
+						<button string="Create Call for Bids" name="create_bids"
+							type="object" default_focus="1" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_pr_create_bids">
+			<field name="name">Create Calls for Bids</field>
+			<field name="res_model">pr.create.bids</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+			<field name="view_id" ref="pr_create_bids_form" />
+		</record>
+		
+		<record model="ir.values" id="action_pr_create_bids_binding">
+			<field name="name">Create Call for Bids</field>
+			<field name="key2">client_action_multi</field>
+			<field name="value"
+				eval="'ir.actions.act_window,' +str(ref('action_pr_create_bids'))" />
+			<field name="model">stock.purchase.requisition.line</field>
+		</record>
+	</data>
+</openerp>

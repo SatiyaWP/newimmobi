@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>        
+        <!-- GROUP  -->
+        <record id="group_finance_report_pdf" model="res.groups">
+            <field name="category_id" ref="base.module_category_hidden"/>
+            <field name="name">Financial Reporting (pdf)</field>
+        </record>
+
+    </data>
+</openerp>

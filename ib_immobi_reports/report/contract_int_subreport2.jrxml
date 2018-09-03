@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="contract_int_subreport2" columnCount="2" pageWidth="595" pageHeight="802" columnWidth="292" columnSpacing="11" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="62f1d5f1-c43e-4b44-8c55-6262b45748e2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="284"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="802" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="1d690ac2-273c-4293-9364-fe3dd1b7bcc0" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="292" height="802"/>
+				<textElement textAlignment="Justified">
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[
+(3) PARA PIHAK mengadakan evaluasi setiap 3 (tiga) bulan atas kinerja dan realisasi dari pekerjaan dan tanggung jawab  yang telah ditetapkan pada Lampiran 2  Perjanjian ini.
+(4) Apabila hasil evaluasi yang tersebut dalam Pasal 3 ayat (3) Perjanjian ini PIHAK KEDUA tidak dapat meneruskan Perjanjian ini, maka PIHAK KEDUA dapat mengajukan permintaan untuk mengundurkan diri secara sukarela dengan tanpa memperoleh penggantian apapun dari PIHAK KESATU, dengan pemberitahuan tertulis paling lambat  30 hari  sebelum tanggal pengunduran diri.
+
+
+PASAL 4
+WAKTU KERJA
+
+(1) Hari Kerja normal adalah Senin sampai dengan Jumat, kecuali diperjanjikan lain sebagaimana pada Lampiran 2 Perjanjian ini.
+(2) Jam kerja normal dimulai jam 08.30 sampai dengan jam 17.30, dengan waktu istirahat maksimal 1 jam, kecuali diperjanjikan lain sebagaimana disebutkan dalam Lampiran 2 Perjanjian ini dan total jam kerja normal dalam 1 minggu adalah 40 jam.
+(3) Ketentuan waktu kerja ini dapat berubah sewaktu-waktu sesuai dengan kebutuhan PIHAK KESATU. Setiap perubahan tentang waktu kerja akan diberitahukan kepada PIHAK KEDUA dan bersifat mengikat.
+
+PASAL 5
+PEDOMAN DAN TATA TERTIB KERJA
+(1) Perjanjian ini tunduk pada Peraturan Perundangan Tentang Ketenagakerjaan di Indonesia.
+(2) PIHAK KEDUA setuju untuk patuh kepada segala peraturan dan tata tertib yang berlaku pada perusahaan PIHAK KESATU, dan taat pada tatanan hukum yang berlaku di Negara Republik Indonesia.
+(3) PIHAK KEDUA tidak berhak dan dilarang keras menyebarkan semua data dan/atau informasi yang bersifat rahasia dalam bentuk dan alasan apapun seperti dan tidak terbatas pada keterangan pelanggan, pemasok, formula, contoh barang, rencana kerja, metode dan rahasia dagang, yang diketahuinya baik secara langsung, maupun tidak langsung sehubungan dengan pekerjaannya kepada pihak lain tanpa seizin tertulis dari PIHAK KESATU, baik selama Perjanjian ini berlangsung, maupun 60 (enam puluh) bulan setelah berakhirnya jangka waktu Perjanjian ini.
+
+Pasal 6
+ BERAKHIRNYA PERJANJIAN
+(1) PIHAK KESATU berhak secara sepihak mengakhiri Perjanjian ini setiap waktu, jika terjadi hal-hal sebagaimana disebutkan di bawah ini:
+a. PIHAK KEDUA secara berturut-turut selama 5 (lima) hari telah meninggalkan pekerjaannya tanpa pemberitahuan secara tertulis dan tanpa alasan yang dapat dipertanggungjawabkan.
+b. PIHAK KEDUA dijatuhi hukuman oleh Instansi yang berwajib karena tindakan kriminal yang dilakukan.
+c. PIHAK KEDUA meninggal dunia, mengalami gangguan kesehatan kronis atau berada dalam penanganan dokter karena gangguan kesehatan kronis.
+d. PIHAK KEDUA tidak cakap melakukan pekerjaannya walaupun sudah diberi peringatan.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ab4ebcf4-df02-4894-9a47-c858d52617fd" positionType="Float" stretchType="RelativeToTallestObject" x="304" y="0" width="291" height="802"/>
+				<textElement textAlignment="Justified" markup="none">
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[e. Pada saat kesepakatan kerja diadakan, PIHAK KEDUA memberikan keterangan palsu atau dipalsukan.
+
+f. Apabila PIHAK KEDUA melakukan pelanggaran ringan dan telah diberikan 3 (tiga) kali surat peringatan, namun tidak memperbaiki diri.
+
+(2) Apabila, karena satu dan lain hal Perjanjian ini berakhir sebagaimana disebutkan dalam Pasal 3 ayat (4), Pasal 5 ayat (3), Pasal 6 ayat (1) Perjanjian ini,  maka PIHAK KEDUA harus mengembalikan fasilitas dan sarana penunjang yang diberikan oleh perusahaan sebagaimana disebutkan pada Lampiran 1 Perjanjian ini.
+
+(3) Pada saat  Perjanjian ini berakhir, PIHAK KEDUA wajib menyerahkan seluruh catatan, memorandum, surat-menyurat dan dokumen lain serta barang-barang milik perusahaan, baik secara fisik maupun data digital, kecuali hasil penelitian-penelitian serta tulisan-tulisan ilmiah yang dibuat oleh PIHAK KEDUA selama jangka waktu berlakunya Perjanjian ini yang merupakan hak cipta pribadi dari PIHAK KEDUA.  PIHAK KEDUA tidak akan menahan salinan dari dokumen-dokumen milik perusahaan serta tidak akan mempergunakannya untuk kepentingan sendiri dan atau untuk orang/pihak lain.
+
+(4) Apabila Perjanjian ini berakhir karena alasan-alasan sebagaimana tersebut dalam Pasal 5 ayat (3) dan Pasal  6 ayat (1) Perjanjian ini, PIHAK KEDUA tidak lagi mempunyai hubungan kerja atau kaitan apapun dengan PIHAK KESATU, dan oleh karenanya PIHAK KEDUA tidak akan mengajukan segala tuntutan, klaim, gugatan dan ganti rugi dalam bentuk apapun kepada PIHAK KESATU sehubungan dengan berakhirnya hubungan kerja tersebut dan/ atau Perjanjian ini.
+
+(5) Apabila masa berlakunya Perjanjian ini telah selesai atau sekalipun diperpanjang dan berakhir pula masa berlakunya, maka hubungan kerja PIHAK KESATU dengan PIHAK KEDUA putus dengan sendirinya, kecuali PARA PIHAK menginginkan perpanjangan masa Perjanjian ini.
+
+(6) PIHAK KESATU tidak berhak membayar kewajiban dalam bentuk apapun kepada PIHAK KEDUA bilamana jangka waktu Perjanjian ini berakhir, termasuk jika terdapat perpanjangan atau perubahan terhadap Perjanjian ini, kecuali upah PIHAK KEDUA pada bulan berjalan.]]></text>
+			</staticText>
+			<break>
+				<reportElement uuid="64a84a6e-e4c6-492c-9d14-19209e07ba3d" x="0" y="801" width="595" height="1"/>
+			</break>
+		</band>
+	</detail>
+</jasperReport>

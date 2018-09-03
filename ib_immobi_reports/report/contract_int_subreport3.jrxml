@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="contract_int_subreport3" columnCount="2" pageWidth="595" pageHeight="802" columnWidth="292" columnSpacing="11" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4fb019d0-623b-45ab-a6bf-45864ea1a8c5">
+	<property name="ireport.zoom" value="1.1000000000000005"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="366"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="802" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="6e3c8f21-5894-4289-b313-56efe995007a" x="12" y="0" width="280" height="802"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[
+PASAL 7
+KLAUSUL PERJANJIAN
+
+(1) Perjanjian ini ditafsirkan, tunduk dan diatur serta dilaksanakan menurut Hukum Negara Republik Indonesia.
+(2) Perjanjian ini tidak dapat diubah atau dimodifikasi kecuali dengan persetujuan tertulis bersama PARA PIHAK.
+(3) Kecuali disetujui secara tegas dalam suatu dokumen terpisah, Perjanjian ini menggantikan semua perjanjian dan kesepakatan lain yang ada dan atau telah dibuat sebelum tanggal penjanjian ini, baik tertulis maupun tidak tertulis, yang dibuat
+oleh PARA PIHAK mengenai pokok masalah yang sama.
+(4) Jika ada salah satu atau lebih ketentuan Perjanjian ini dinyatakan atau menjadi tidak sah atau tidak dapat dilaksanakan, maka tidak absahnya atau tidak dapat dilaksanakannya ketentuan-ketentuan tersebut tidak akan mempengaruhi keabsahan Perjanjian ini secara keseluruhan dan dapat dilaksanakannya ketentuan lainnya dari Perjanjian ini. PARA PIHAK wajib untuk mengganti ketentuan yang dinyatakan atau menjadi tidak sah atau tidak dapat dilaksanakan tersebut dengan ketentuan lain yang sah yang dapat dilaksanakan yang memiliki maksud dan pengertian yang terdekat dengan ketentuan yang digantikan tersebut.
+(5) Judul Perjanjian ini dan setiap pasal-pasal yang terkandung di dalamnya dinyatakan demikian untuk maksud kemudahan saja dan tidak akan mempengaruhi penafsiran dari perjanjian dan masing-masing pasal yang bersangkutan.
+
+PASAL 8
+LAIN-LAIN
+
+(1) Setiap pemberitahuan atau komunikasi yang menyangkut Perjanjian ini wajib dilakukan secara tertulis dalam bahasa Indonesia dan diserahkan langsung atau dengan jasa kurir atau fax atau email yang dialamatkan kepada:]]></text>
+			</staticText>
+			<break>
+				<reportElement uuid="6c699173-6067-4572-b9a6-e4ab5467c6ee" x="0" y="801" width="595" height="1"/>
+			</break>
+		</band>
+	</detail>
+</jasperReport>

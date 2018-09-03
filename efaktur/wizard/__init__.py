@@ -1,0 +1,1 @@
+import faktur_pajak_generate

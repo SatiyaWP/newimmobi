@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!--SALE ORDER-->
+    	<record model="ir.ui.view" id="inherit1_view_order_form">
+			<field name="name">inherit1.sale.order.form</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_order_form" />
+			<field name="arch" type="xml">
+				<button name="print_quotation" string="Print" states="draft" position="replace">
+					<button name="print_so_immobi" string="Quotation" type="object" states="draft,sent"
+							groups="base.group_user" context="{'report_name': 'quotation.pdf'}" />
+					<button name="print_so_immobi" string="Quotation B" type="object" states="draft,sent" invisible="True"
+							groups="base.group_user" context="{'report_name': 'quotation.other.pdf'}" />
+				</button>
+                <button name="print_quotation" string="Print" states="sent,progress,manual" position="replace">
+                	<button name="print_so_immobi" string="SO" type="object" states="progress,manual"
+                		groups="base.group_user" context="{'report_name': 'sales.order.pdf'}" />
+                </button>
+				<xpath expr="//button[@name='action_button_confirm']" position="before">
+					<button name="print_boq_immobi" string="BoQ" type="object" states="draft,sent,progress,manual"
+                		groups="base.group_user" />
+				</xpath>
+				<xpath expr="//field[@name='price_subtotal']" position="after">
+					<field name="subtotal_cost" invisible="1"/>
+				</xpath>
+				<xpath expr="//field[@name='amount_total']" position="after">
+					<field name="grand_total_cost" invisible="1"/>
+				</xpath>
+			</field>
+		</record>
+
+        <record id="report_sales_order_pdf" model="ir.actions.report.xml">
+	        <field name="name">Sales Order</field>
+	        <field name="type">ir.actions.report.xml</field>
+	        <field name="model">sale.order</field>
+	        <field name="report_name">sales.order.pdf</field> <!--sale_order.jrxml, sales_order.jrxml-->
+	        <field name="report_rml">ib_immobi_reports/report/so.jrxml</field>
+	        <field name="report_type">pdf</field>
+	        <field name="jasper_report">True</field>
+	        <field name="jasper_output">pdf</field>
+	    </record>
+		<record id="report_quotation_pdf" model="ir.actions.report.xml">
+	        <field name="name">Quotation</field>
+	        <field name="type">ir.actions.report.xml</field>
+	        <field name="model">sale.order</field>
+	        <field name="report_name">quotation.pdf</field>
+	        <field name="report_rml">ib_immobi_reports/report/quotation.jrxml</field>
+	        <field name="report_type">pdf</field>
+	        <field name="jasper_report">True</field>
+	        <field name="jasper_output">pdf</field>
+	    </record>
+		<record id="report_quotation_other_pdf" model="ir.actions.report.xml">
+	        <field name="name">Quotation</field>
+	        <field name="type">ir.actions.report.xml</field>
+	        <field name="model">sale.order</field>
+	        <field name="report_name">quotation.other.pdf</field>
+	        <field name="report_rml">ib_immobi_reports/report/quotation_other.jrxml</field>
+	        <field name="report_type">pdf</field>
+	        <field name="jasper_report">True</field>
+	        <field name="jasper_output">pdf</field>
+	    </record>
+
+        <record id="report_boq_pdf" model="ir.actions.report.xml">
+	        <field name="name">BoQ</field>
+	        <field name="type">ir.actions.report.xml</field>
+	        <field name="model">product.combo.item</field>
+	        <field name="report_name">boq.pdf</field>
+	        <field name="report_rml">ib_immobi_reports/report/bill_of_qty.jrxml</field>
+	        <field name="report_type">pdf</field>
+	        <field name="jasper_report">True</field>
+	        <field name="jasper_output">pdf</field>
+	    </record>
+		<record id="report_boq2_pdf" model="ir.actions.report.xml">
+	        <field name="name">BoQ</field>
+	        <field name="type">ir.actions.report.xml</field>
+	        <field name="model">sale.order</field>
+	        <field name="report_name">boq2.pdf</field>
+	        <field name="report_rml">ib_immobi_reports/report/boq.jrxml</field>
+	        <field name="report_type">pdf</field>
+	        <field name="jasper_report">True</field>
+	        <field name="jasper_output">pdf</field>
+	    </record>
+
+		<record id="inherit1_view_partner_form" model="ir.ui.view">
+			<field name="name">res.partner.form.inherit1</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_form" />
+			<field name="arch" type="xml">
+				<field name="website" position="after">
+					<field name="code"/>
+				</field>
+			</field>
+		</record>
+
+
+	</data>
+</openerp>

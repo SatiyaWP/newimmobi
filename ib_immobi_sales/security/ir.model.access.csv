@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sale_otl_salesman,sale.order.tax.line.salesman,model_sale_order_tax_line,base.group_sale_salesman,1,1,1,1
+access_sale_otl_mgr,sale.order.tax.line.manager,model_sale_order_tax_line,base.group_sale_manager,1,1,1,1
+access_combo_product_sales,items.combo.product salesman,model_product_combo_item,base.group_sale_salesman,1,1,1,0
+access_combo_product_mger,items.combo.product manager,model_product_combo_item,base.group_sale_manager,1,1,1,1

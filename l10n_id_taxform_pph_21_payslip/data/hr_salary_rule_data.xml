@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="salary_rule_pph" model="hr.salary.rule">
+    <field name="name">PPh</field>
+    <field name="code">PPh</field>
+    <field name="sequence" eval="100"/>
+    <field name="category_id" ref="rule_categ_pph"/>
+    <field name="condition_select">none</field>
+    <field name="amount_select">code</field>
+    <field name="amount_python_compute">
+if not employee.address_home_id:
+    result = 0.0
+else:
+    perhitungan_pph = employee.address_home_id.compute_pph_21_2110001(
+        period_amount=payslip.joining_tax_month,
+        tanggal_pemotongan=payslip.date_to,
+        gaji=categories.BASIC,
+        tunjangan_pph=categories.TP,
+        tunjangan_lain=categories.TL,
+        jumlah_penghasilan_non_rutin=categories.PNR,
+        pensiun=categories.PEN,
+        jht=categories.JHT)
+    result = -1.0 * perhitungan_pph['pph']</field>
+</record>
+
+
+</data>
+</openerp>

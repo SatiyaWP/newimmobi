@@ -1,0 +1,35 @@
+id,name,country_id/id,code
+state_indonesia_1,Bali,base.id,IBA
+state_indonesia_2,Bangka Belitung,base.id,IBB
+state_indonesia_3,Banten,base.id,IBT
+state_indonesia_4,Bengkulu,base.id,IBE
+state_indonesia_5,DI Yogyakarta,base.id,IYO
+state_indonesia_6,DKI Jakarta,base.id,IJK
+state_indonesia_7,Jambi,base.id,IJA
+state_indonesia_8,Jawa Barat,base.id,IJB
+state_indonesia_9,Jawa Tengah,base.id,IJT
+state_indonesia_10,Jawa Timur,base.id,IJI
+state_indonesia_11,Kalimantan Barat,base.id,IKB
+state_indonesia_12,Kalimantan Selatan,base.id,IKS
+state_indonesia_13,Kalimantan Tengah,base.id,IKT
+state_indonesia_14,Kalimantan Timur,base.id,IKI
+state_indonesia_15,Kalimantan Utara,base.id,IKU
+state_indonesia_16,Kepulauan Riau,base.id,IKR
+state_indonesia_17,Lampung,base.id,ILA
+state_indonesia_18,Nanggroe Aceh Darussalam (NAD),base.id,IAC
+state_indonesia_19,Nusa Tenggara Barat (NTB),base.id,INB
+state_indonesia_20,Nusa Tenggara Timur (NTT),base.id,INT
+state_indonesia_21,Riau,base.id,IRI
+state_indonesia_22,Sulawesi Barat,base.id,ISR
+state_indonesia_23,Sulawesi Selatan,base.id,ISN
+state_indonesia_24,Sulawesi Tengah,base.id,IST
+state_indonesia_25,Sulawesi Utara,base.id,ISA
+state_indonesia_26,Sulawesi Tenggara,base.id,ISG
+state_indonesia_27,Sumatera Barat,base.id,ISB
+state_indonesia_28,Sumatera Selatan,base.id,ISS
+state_indonesia_29,Sumatera Utara,base.id,ISU
+state_indonesia_30,Gorontalo,base.id,IGO
+state_indonesia_31,Maluku,base.id,IMA
+state_indonesia_32,Maluku Utara,base.id,IMU
+state_indonesia_33,Papua,base.id,IPA
+state_indonesia_34,Papua Barat,base.id,IPB

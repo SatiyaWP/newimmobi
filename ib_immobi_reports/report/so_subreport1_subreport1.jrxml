@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="so_subreport1_subreport1" pageWidth="578" pageHeight="842" columnWidth="578" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="d326e773-9a56-4f52-9b84-c8359481ed37">
+	<property name="ireport.zoom" value="1.6105100000000037"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="OPENERP_RELATIONS" value="&apos;combo_product_line&apos;"/>
+	<parameter name="product_tmpl_id" class="java.lang.Integer"/>
+	<parameter name="currency" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select p.name_template as product_name, p.default_code as product_code, c.quantity, u.name as product_uom,
+CAST(CASE WHEN u.uom_type='bigger' THEN (1/u.factor) WHEN u.uom_type='smaller' THEN u.factor END AS varchar) as factor, u.uom_type, c.combo_subtotal, q.categ_id, pc.name as product_categ, pc.parent_id as parent_categ_id, (select name from product_category where id=pc.parent_id) as parent_categ_product,
+(select cost from product_price_history where product_template_id=p.product_tmpl_id order by datetime desc limit 1) as product_price
+
+from product_combo_item as c left join product_product as p on c.product_id=p.id
+left join product_template as q on p.product_tmpl_id=q.id left join product_uom as u on c.uom_id=u.id left join product_category as pc on q.categ_id=pc.id
+
+where c.product_tmpl_id=$P{product_tmpl_id}
+
+order by parent_categ_product asc, product_categ asc]]>
+	</queryString>
+	<field name="product_name" class="java.lang.String">
+		<fieldDescription><![CDATA[Product Name]]></fieldDescription>
+	</field>
+	<field name="product_code" class="java.lang.String">
+		<fieldDescription><![CDATA[Product Code]]></fieldDescription>
+	</field>
+	<field name="quantity" class="java.math.BigDecimal"/>
+	<field name="product_uom" class="java.lang.String">
+		<fieldDescription><![CDATA[Product Unit of Measure]]></fieldDescription>
+	</field>
+	<field name="factor" class="java.lang.String">
+		<fieldDescription><![CDATA[Ratio]]></fieldDescription>
+	</field>
+	<field name="uom_type" class="java.lang.String">
+		<fieldDescription><![CDATA[Type]]></fieldDescription>
+	</field>
+	<field name="combo_subtotal" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[Total Price]]></fieldDescription>
+	</field>
+	<field name="categ_id" class="java.lang.Integer"/>
+	<field name="product_categ" class="java.lang.String"/>
+	<field name="parent_categ_id" class="java.lang.Integer"/>
+	<field name="parent_categ_product" class="java.lang.String"/>
+	<field name="product_price" class="java.math.BigDecimal"/>
+	<variable name="combo_subtotal_1" class="java.math.BigDecimal" resetType="Group" resetGroup="product_category" calculation="Sum">
+		<variableExpression><![CDATA[$F{combo_subtotal}]]></variableExpression>
+	</variable>
+	<variable name="combo_subtotal_2" class="java.math.BigDecimal" resetType="Group" resetGroup="parent_category" calculation="Sum">
+		<variableExpression><![CDATA[$F{combo_subtotal}]]></variableExpression>
+	</variable>
+	<group name="parent_category">
+		<groupExpression><![CDATA[$F{parent_categ_id}]]></groupExpression>
+		<groupHeader>
+			<band height="20">
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="51057765-eecb-4eb0-b23e-8eec681a05a6" positionType="Float" stretchType="RelativeToTallestObject" x="49" y="0" width="240" height="20" isPrintWhenDetailOverflows="true">
+						<printWhenExpression><![CDATA[$F{parent_categ_id}.intValue() > 0]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<leftPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font isBold="true"/>
+						<paragraph leftIndent="4" spacingBefore="1"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{parent_categ_product}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="parent_category" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement uuid="0ecd5f6d-27bf-410e-924d-c81ac4f0421a" x="478" y="0" width="93" height="20"/>
+					<box>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<paragraph rightIndent="3" spacingBefore="1"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00;(#,##0.00)").format($V{combo_subtotal_2})]]></textFieldExpression>
+				</textField>
+				<frame>
+					<reportElement uuid="2892ff09-dc33-4c9a-9716-a75290832661" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="49" height="20" isPrintWhenDetailOverflows="true"/>
+					<box>
+						<leftPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</frame>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="6d9d6540-defd-4ef0-856b-77ba5858f13d" positionType="Float" stretchType="RelativeToTallestObject" x="451" y="0" width="27" height="20" isPrintWhenDetailOverflows="true"/>
+					<box>
+						<leftPen lineWidth="0.25"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font size="10"/>
+						<paragraph leftIndent="2" spacingBefore="1"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($P{currency}.isEmpty() ? null : $P{currency})]]></textFieldExpression>
+				</textField>
+				<frame>
+					<reportElement uuid="17260e74-ac61-4c07-a188-0652922eecc2" positionType="Float" stretchType="RelativeToTallestObject" x="289" y="0" width="52" height="20" isPrintWhenDetailOverflows="true"/>
+					<box>
+						<leftPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</frame>
+				<frame>
+					<reportElement uuid="39cfdbcd-d74e-4ebb-9126-acd56263d714" positionType="Float" stretchType="RelativeToTallestObject" x="341" y="0" width="110" height="20" isPrintWhenDetailOverflows="true"/>
+					<box>
+						<leftPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</frame>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="product_category">
+		<groupExpression><![CDATA[$F{categ_id}]]></groupExpression>
+		<groupHeader>
+			<band height="20">
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="80bd89e1-7a5c-4e9a-bb83-685ef42d00cc" positionType="Float" stretchType="RelativeToTallestObject" x="49" y="0" width="240" height="20">
+						<printWhenExpression><![CDATA[$F{categ_id}.intValue() > 0]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<leftPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font isBold="true"/>
+						<paragraph leftIndent="4" spacingBefore="1"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{product_categ}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="product_category" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement uuid="9fcc75d2-05aa-416e-b891-fc6ed62bd44f" positionType="Float" stretchType="RelativeToTallestObject" x="478" y="0" width="93" height="20"/>
+					<box>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Right">
+						<paragraph rightIndent="3" spacingBefore="1"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00;(#,##0.00)").format($V{combo_subtotal_1})]]></textFieldExpression>
+				</textField>
+				<frame>
+					<reportElement uuid="11982e54-5818-4577-90bd-2e13a3127144" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="49" height="20" isPrintWhenDetailOverflows="true"/>
+					<box>
+						<leftPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</frame>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="29df69d3-b74c-4b03-bce6-5fbfb5d70c19" positionType="Float" stretchType="RelativeToTallestObject" x="451" y="0" width="27" height="20" isPrintWhenDetailOverflows="true"/>
+					<box>
+						<leftPen lineWidth="0.25"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font size="10"/>
+						<paragraph leftIndent="2" spacingBefore="1"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($P{currency}.isEmpty() ? null : $P{currency})]]></textFieldExpression>
+				</textField>
+				<frame>
+					<reportElement uuid="90f7ccb6-7c87-41b3-8230-9b9c5208a590" positionType="Float" stretchType="RelativeToTallestObject" x="289" y="0" width="52" height="20" isPrintWhenDetailOverflows="true"/>
+					<box>
+						<leftPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</frame>
+				<frame>
+					<reportElement uuid="80ebfa9a-bf07-41d0-8eb0-b991c322be11" positionType="Float" stretchType="RelativeToTallestObject" x="341" y="0" width="110" height="20" isPrintWhenDetailOverflows="true"/>
+					<box>
+						<leftPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</frame>
+			</band>
+		</groupHeader>
+	</group>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="cc51cfab-3ca1-40a0-b128-ed05ecc6ecfc" positionType="Float" stretchType="RelativeToTallestObject" x="478" y="0" width="93" height="18" isPrintWhenDetailOverflows="true"/>
+				<box>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="10"/>
+					<paragraph rightIndent="3" spacingBefore="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00;(#,##0.00)").format($F{combo_subtotal})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="3293f4f5-bf57-4359-9861-3b464eeafcdb" positionType="Float" stretchType="RelativeToTallestObject" x="368" y="0" width="83" height="18" isPrintWhenDetailOverflows="true"/>
+				<box>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="10"/>
+					<paragraph rightIndent="3" spacingBefore="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00;(#,##0.00)").format($F{product_price})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="fd6a8dcf-09c8-42dd-b2ed-5bcd04655d8c" positionType="Float" stretchType="RelativeToTallestObject" x="289" y="1" width="52" height="17" isPrintWhenDetailOverflows="true"/>
+				<box>
+					<leftPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{quantity}.intValue() > 0 ?
+    ($F{product_uom}.isEmpty() ?
+        new DecimalFormat("#,##0;(#,##0)").format($F{quantity}) :
+        new DecimalFormat("#,##0;(#,##0)").format($F{quantity})+" "+$F{product_uom}) : null)]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement uuid="ca1454a5-610e-40f5-a961-179ec0286322" positionType="Float" stretchType="RelativeToTallestObject" x="49" y="0" width="240" height="18" isPrintWhenDetailOverflows="true"/>
+				<box>
+					<leftPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font size="10"/>
+					<paragraph leftIndent="7" rightIndent="1" spacingBefore="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{product_name}.isEmpty() ? null : $F{product_name})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="48e3bd55-607b-499e-8476-da0671103ec4" positionType="Float" stretchType="RelativeToTallestObject" x="341" y="0" width="27" height="18" isPrintWhenDetailOverflows="true"/>
+				<box>
+					<leftPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font size="10"/>
+					<paragraph leftIndent="2" spacingBefore="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($P{currency}.isEmpty() ? null : $P{currency})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="30bcefcb-c6d4-48dc-856d-30e527cda221" positionType="Float" stretchType="RelativeToTallestObject" x="451" y="0" width="27" height="18" isPrintWhenDetailOverflows="true"/>
+				<box>
+					<leftPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font size="10"/>
+					<paragraph leftIndent="2" spacingBefore="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($P{currency}.isEmpty() ? null : $P{currency})]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement uuid="0a360102-9f24-4bf1-b35a-e602e804ef7f" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="49" height="18" isPrintWhenDetailOverflows="true"/>
+				<box>
+					<leftPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+			</frame>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement uuid="f92f0a34-1494-49c4-9e5c-08589789bc3a" positionType="Float" stretchType="RelativeToTallestObject" x="49" y="18" width="240" height="15" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true"/>
+				<box>
+					<leftPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font size="10"/>
+					<paragraph leftIndent="7" rightIndent="1" spacingBefore="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA["( Ratio Unit: "+new DecimalFormat("#,##0;(#,##0)").format(Double.valueOf($F{factor}))+" )"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

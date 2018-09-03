@@ -1,0 +1,7 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_stock_purchase_requisition","stock.pr","model_stock_purchase_requisition","base.group_user",1,1,1,0
+"access_stock_purchase_requisition_line","stock.pr.line","model_stock_purchase_requisition_line","base.group_user",1,1,1,0
+"access_stock_picking_user","stock.picking.user","stock.model_stock_picking","base.group_user",1,0,0,0
+"access_purchase_order_user","purchase.order.user","purchase.model_purchase_order","base.group_user",1,0,0,0
+"access_stock_picking_manager","stock.picking.manager","stock.model_stock_picking","stock_purchase_requisition.group_user_manager",1,0,1,0
+"access_report_stock_purchase_requisition","report.stock.pr.line","model_report_stock_purchase_requisition","base.group_user",1,,,

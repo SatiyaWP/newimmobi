@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="contract_int" pageWidth="595" pageHeight="842" columnWidth="559" leftMargin="18" rightMargin="18" topMargin="16" bottomMargin="16" uuid="8d2a1401-b885-4438-848d-e6091b66bbad">
+	<property name="ireport.zoom" value="1.0000000000000078"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="71"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["/home/baim/Documents/Customs/8.0/ib_immobi_reports/report/"]]></defaultValueExpression>
+	</parameter>
+	<queryString language="xPath">
+		<![CDATA[]]>
+	</queryString>
+	<field name="Contract_Reference-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Contract_Reference-name]]></fieldDescription>
+	</field>
+	<field name="Wage-wage" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Wage-wage]]></fieldDescription>
+	</field>
+	<field name="Date_of_Birth-birthday" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Date_of_Birth-birthday]]></fieldDescription>
+	</field>
+	<field name="Name-name_related" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Name-name_related]]></fieldDescription>
+	</field>
+	<field name="City-city" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Home_Address-address_home_id/City-city]]></fieldDescription>
+	</field>
+	<field name="Street-street" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Home_Address-address_home_id/Street-street]]></fieldDescription>
+	</field>
+	<field name="Street2-street2" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Home_Address-address_home_id/Street2-street2]]></fieldDescription>
+	</field>
+	<field name="RT-rt" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Home_Address-address_home_id/RT-rt]]></fieldDescription>
+	</field>
+	<field name="RW-rw" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Home_Address-address_home_id/RW-rw]]></fieldDescription>
+	</field>
+	<field name="Kelurahan-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Home_Address-address_home_id/Kelurahan-kelurahan_id/Kelurahan-name]]></fieldDescription>
+	</field>
+	<field name="Kecamatan-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Home_Address-address_home_id/Kecamatan-kecamatan_id/Kecamatan-name]]></fieldDescription>
+	</field>
+	<field name="Kabupaten-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Home_Address-address_home_id/Kabupaten-kabupaten_id/Kabupaten-name]]></fieldDescription>
+	</field>
+	<field name="Province-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Home_Address-address_home_id/State-state_id/Province-name]]></fieldDescription>
+	</field>
+	<field name="Country_Name-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Home_Address-address_home_id/Country-country_id/Country_Name-name]]></fieldDescription>
+	</field>
+	<field name="Identification_No-identification_id" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Identification_No-identification_id]]></fieldDescription>
+	</field>
+	<field name="Work_Mobile-mobile_phone" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Work_Mobile-mobile_phone]]></fieldDescription>
+	</field>
+	<field name="Work_Phone-work_phone" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Work_Phone-work_phone]]></fieldDescription>
+	</field>
+	<field name="Work_Email-work_email" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Work_Email-work_email]]></fieldDescription>
+	</field>
+	<field name="Start_Date-date_start" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Start_Date-date_start]]></fieldDescription>
+	</field>
+	<field name="Religion-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Religion-religion_id/Religion-name]]></fieldDescription>
+	</field>
+	<field name="Gender-gender" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Gender-gender]]></fieldDescription>
+	</field>
+	<field name="Department_Name-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Department-department_id/Department_Name-name]]></fieldDescription>
+	</field>
+	<field name="Account_Number-acc_number" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Bank_Account_Number-bank_account_id/Account_Number-acc_number]]></fieldDescription>
+	</field>
+	<field name="Bank_Name-bank_name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Bank_Account_Number-bank_account_id/Bank_Name-bank_name]]></fieldDescription>
+	</field>
+	<field name="Account_Owner_Name-owner_name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Bank_Account_Number-bank_account_id/Account_Owner_Name-owner_name]]></fieldDescription>
+	</field>
+	<field name="Job_Name-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Job_Title-job_id/Job_Name-name]]></fieldDescription>
+	</field>
+	<field name="Zip-zip" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Home_Address-address_home_id/Zip-zip]]></fieldDescription>
+	</field>
+	<field name="End_Date-date_end" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/End_Date-date_end]]></fieldDescription>
+	</field>
+	<field name="Contract_Date-contract_date" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Contract_Date-contract_date]]></fieldDescription>
+	</field>
+	<field name="Contract_timeframe-timeframe_contract" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Contract_timeframe-timeframe_contract]]></fieldDescription>
+	</field>
+	<field name="Job_Description-contract_body" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Contract_Template-contract_template_report_id/Job_Description-contract_body]]></fieldDescription>
+	</field>
+	<field name="Footer-contract_footer" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Contract_Template-contract_template_report_id/Footer-contract_footer]]></fieldDescription>
+	</field>
+	<field name="Header-contract_header" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Contract_Template-contract_template_report_id/Header-contract_header]]></fieldDescription>
+	</field>
+	<field name="Title-contract_title" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Contract_Template-contract_template_report_id/Title-contract_title]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="35">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="a2679281-c469-48a2-8b1d-2c1da47a66a8" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="559" height="35"/>
+				<textElement textAlignment="Center" markup="html">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Title-contract_title}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="794">
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement uuid="32275666-f193-42eb-b56d-9b38d4a90f18" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="559" height="150"/>
+				<textElement textAlignment="Center" markup="html">
+					<paragraph leftIndent="2" spacingBefore="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{Header-contract_header}.isEmpty() ? "" : $F{Header-contract_header})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement uuid="dfd9534a-d239-4879-8a24-ef5aa4254eaa" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="150" width="559" height="419"/>
+				<textElement textAlignment="Center" markup="html">
+					<paragraph leftIndent="2" spacingBefore="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{Job_Description-contract_body}.isEmpty() ? "" : "\n\n"+$F{Job_Description-contract_body})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement uuid="6043d0da-06ab-4c37-8733-1077b1c45f8f" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="569" width="559" height="225"/>
+				<textElement textAlignment="Center" markup="html">
+					<paragraph leftIndent="2" spacingBefore="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{Footer-contract_footer}.isEmpty() ? "" : "\n\n"+$F{Footer-contract_footer})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="16">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="e7c0a307-0659-4b5a-b340-3b10d680f566" positionType="Float" stretchType="RelativeToTallestObject" x="462" y="1" width="97" height="15"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="9"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="834eefa8-97c8-4725-8e7d-21af53931579" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="1" width="281" height="15"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="9"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["PKWT – No." + ($F{Contract_Reference-name}.isEmpty() ? "000/PKWT-HRD/00/00" : $F{Contract_Reference-name})]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="0c73d8f0-81fd-45aa-82ea-d7726e09e497" x="0" y="0" width="559" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.5" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageFooter>
+</jasperReport>

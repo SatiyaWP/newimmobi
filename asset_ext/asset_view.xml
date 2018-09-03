@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+
+       <record model="ir.ui.view" id="asset_form_add">
+			<field name="name">asset.asset.form.add</field>
+			<field name="model">asset.asset</field>
+			<field name="inherit_id" ref="asset.assets_form_view"/>
+			<field name="arch" type="xml">
+	 			    <xpath expr="//field[@name='name']" position="after">
+	                            <field name="category_ids" widget="many2many_tags" placeholder="Tags..."/>
+                    </xpath>  
+	 			    <xpath expr="//field[@name='active']" position="after">
+	                            <field name="condition" />
+	                            <field name="price" />
+                    </xpath>                   
+	 			    <xpath expr="//field[@name='active']" position="before">
+	                            <field name="color" />
+	                            <field name="qty" />
+                    </xpath>                                             
+	 			    <xpath expr="//field[@name='user_id']" position="after">
+                       			<field name = "employee_id"/>
+                       			<field name = "contact_numb"/>
+                       			<field name = "address_id"/>
+                    </xpath>                      
+                    <xpath expr="/form/sheet/notebook/page[@string='Info']/group/group/field[@name='serial']" position="after">
+								<field name = "imei_id"/>
+								<field name = "model_no"/>
+								<field name = "serial_pt"/>
+                    </xpath>
+                    <xpath expr="/form/sheet/notebook/page[@string='Info']/group[@string='Warranty']" position="after">
+                            <div class="oe_clear"/>
+                            <field name="notes" class="oe_inline" placeholder="Notes..."/>
+                    </xpath>                    
+			</field>
+		</record>
+
+	</data>
+</openerp>

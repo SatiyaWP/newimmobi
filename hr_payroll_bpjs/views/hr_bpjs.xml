@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>	
+    	
+		<record id="wiz_payroll_bpjs" model="ir.ui.view">
+            <field name="name">Payroll BPJS</field>
+            <field name="model">wizard.payroll.bpjs</field>
+			<field eval="16" name="priority"/>
+			<field name="arch" type="xml">
+            <form string="Show Payroll BPJS" create="false" version="7.0">
+			    <group>
+					<field name="period_id" style="width: 20%%"/>
+				</group>
+                   <footer>
+                       <button name="list_report" string="Show" colspan="1" type="object" class="oe_highlight"/>
+                       or
+                       <button string="Cancel" class="oe_link" special="cancel"/>
+                   </footer>
+            </form>
+            </field>
+        </record>
+
+        <record id="action_payroll_bpjs" model="ir.actions.act_window">
+            <field name="name">Show Payroll BPJS</field>
+            <field name="res_model">wizard.payroll.bpjs</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="wiz_payroll_bpjs"/>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem action="action_payroll_bpjs" name="Payroll BPJS" id="hr_payroll_bpjs.payroll_bpjs" parent="hr_payroll.menu_hr_root_payroll"/>
+
+        <record id="payroll_bpjs_search_id" model="ir.ui.view">
+            <field name="name">payroll.bpjs.search</field>
+            <field name="model">payroll.bpjs</field>
+            <field name="arch" type="xml">
+                <search string="Payroll BPJS">
+					<field name="nik" filter_domain="[('nik','ilike',self)]"/>
+					<field name="nik_name" filter_domain="[('nik_name','ilike',self)]"/>
+                    <group expand="0" string="Group By...">
+						<filter string="Job Title" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'job_title'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="payroll_bpjs_tree_id" model="ir.ui.view">
+            <field name="name">payroll.bpjs.tree</field>
+            <field name="model">payroll.bpjs</field>
+            <field name="arch" type="xml">
+            <tree string="Payroll BPJS" edit="false" create="false" delete="false">
+					<field name="norut"/>
+					<field name="nik"/>
+					<field name="nik_name"/>
+                    <field name="noktp"/>
+					<field name="job_title"/>
+					<field name="date_in"/>
+					<field name="basic"/>
+                    <field name="jkk"/>
+					<field name="jkm"/>
+                    <field name="jht_002"/>
+					<field name="jht_037"/>
+					<field name="jp_1p" />
+					<field name="jp_2p" />
+                    <field name="total_premi"/>
+                    <field name="remark"/>
+                </tree>
+            </field>
+        </record>	
+   
+		<record id ="tenaga_ahli_type_viewx" model="ir.ui.view">
+			<field name ="name">tenaga.ahli.type.viewx</field>
+			<field name ="model">hr.employee</field>
+			<field name ="inherit_id" ref ="hr.view_employee_form"/>
+			<field name ="arch" type ="xml">
+				<data>
+					<xpath expr ="//field[@name='manager']" position ="after">
+						<field name ="type_employee"/>
+					</xpath>
+				</data>
+			</field>
+		</record>
+   
+                
+    </data>
+</openerp>

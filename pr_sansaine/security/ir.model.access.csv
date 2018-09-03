@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+pr_aai,pr.aai,purchase_requisition.model_purchase_requisition,stock.group_stock_user,1,1,1,0
+pr_aai_line,pr.aai.line,purchase_requisition.model_purchase_requisition_line,stock.group_stock_user,1,1,1,1

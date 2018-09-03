@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="1">
+
+		<!-- notify all employees of module installation -->
+		<record model="mail.message" id="module_install_notification">
+			<field name="model">mail.group</field>
+			<field name="res_id" ref="mail.group_all_employees" />
+			<field name="type">notification</field>
+			<field name="subtype_id" ref="mail.mt_comment" />
+			<field name="subject">Purchase Requisition application installed!</field>
+			<field name="body"><![CDATA[<p>From the top menu PR, create PR to request products from your warehouse, enter type of operation and reserve budget.</p>]]></field>
+		</record>
+
+		<!-- PR-related subtypes for messaging / Chatter -->
+		<record id="mt_pr_confirmed" model="mail.message.subtype">
+			<field name="name">PR Confirmed</field>
+			<field name="default" eval="False" />
+			<field name="res_model">stock.purchase.requisition</field>
+		</record>
+		<record id="mt_pr_approved" model="mail.message.subtype">
+			<field name="name">PR Approved</field>
+			<field name="default" eval="False" />
+			<field name="res_model">stock.purchase.requisition</field>
+		</record>
+		<record id="mt_pr_draft" model="mail.message.subtype">
+			<field name="name">PR Set to Draft</field>
+			<field name="default" eval="False" />
+			<field name="res_model">stock.purchase.requisition</field>
+		</record>
+		<record id="mt_pr_done" model="mail.message.subtype">
+			<field name="name">PR Done</field>
+			<field name="default" eval="False" />
+			<field name="res_model">stock.purchase.requisition</field>
+		</record>
+	</data>
+</openerp>

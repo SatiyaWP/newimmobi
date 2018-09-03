@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Budget Manager Menu -->
+		<record id="view_account_budget_graph" model="ir.ui.view">
+			<field name="name">report.account.budget.graph</field>
+			<field name="model">report.account.budget</field>
+			<field name="arch" type="xml">
+				<graph string="Budget Analysis" type="pivot">
+					<field name="crossovered_budget_id" type="row" />
+					<field name="analytic_account_id" type="row" />
+					<field name="general_budget_id" type="row" />
+					<!-- <field name="period" type="col" /> -->
+					<field name="planned_amount" type="measure" />
+					<!-- <field name="reserved_amount" type="measure" /> -->
+					<field name="practical_amount" type="measure" />
+					<field name="remaining_amount" type="measure" />
+				</graph>
+			</field>
+		</record>
+
+		<!-- accoount budget -->
+		<record model="ir.ui.view" id="wizard_account_budget_form">
+			<field name="name">wizard.account.budget.form</field>
+			<field name="model">wizard.account.budget</field>
+			<field name="arch" type="xml">
+				<form string="Budget Analysis">
+					<group>
+						<group>
+							<field name="budget_ids" widget="many2many_tags" />
+							<field name="analytic_account_id" />
+							<field name="general_budget_id" />
+						</group>
+						<group>
+							<label for="date_from" string="Duration" />
+							<div>
+								<field name="date_from" class="oe_inline" />
+								-
+								<field name="date_to" class="oe_inline" />
+							</div>
+							<field name="state" />
+						</group>
+					</group>
+					<footer>
+						<button name="view_budget" string="_View" type="object"
+							class="oe_highlight" />
+						or
+						<button string="_Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_account_budget_report_wizard">
+			<field name="name">Budget Analysis</field>
+			<field name="res_model">wizard.account.budget</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+			<field name="view_id" ref="wizard_account_budget_form" />
+		</record>
+
+		<menuitem parent="account.menu_finance_reporting" action="action_account_budget_report_wizard"
+			name="Budget Analysis" id="menu_account_budget_report" sequence="1"
+			groups="group_budget_manager" />
+
+
+		<!-- Division Head Budget Report Menu -->
+		<record model="ir.ui.view" id="wizard_account_budget_dh_form">
+			<field name="name">wizard.account.budget.form</field>
+			<field name="model">wizard.account.budget</field>
+			<field name="arch" type="xml">
+				<form string="Budget Analysis">
+					<group>
+						<group>
+							<field name="budget_ids" widget="many2many_tags" />
+							<field name="analytic_account_id" required="1"
+								domain="[('user_ids','in',uid)]" />
+							<field name="general_budget_id" />
+						</group>
+						<group>
+							<label for="date_from" string="Duration" />
+							<div>
+								<field name="date_from" class="oe_inline" />
+								-
+								<field name="date_to" class="oe_inline" />
+							</div>
+							<field name="state" />
+						</group>
+					</group>
+					<footer>
+						<button name="view_budget" string="_View" type="object"
+							class="oe_highlight" />
+						or
+						<button string="_Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_account_budget_dh_report_wizard">
+			<field name="name">Budget Analysis</field>
+			<field name="res_model">wizard.account.budget</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+			<field name="view_id" ref="wizard_account_budget_dh_form" />
+		</record>
+
+		<menuitem parent="account.menu_finance_reporting" action="action_account_budget_dh_report_wizard"
+			name="Budget Analysis" id="menu_account_budget_report_dh" sequence="1"
+			groups="group_budget_dh" />
+	</data>
+</openerp>

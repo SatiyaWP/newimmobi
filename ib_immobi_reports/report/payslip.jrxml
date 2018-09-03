@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="payslip" pageWidth="595" pageHeight="842" columnWidth="567" leftMargin="14" rightMargin="14" topMargin="14" bottomMargin="14" uuid="d6c4af3b-22c4-405a-81f6-76a104ff064a">
+	<property name="ireport.zoom" value="1.7715610000000075"/>
+	<property name="ireport.x" value="134"/>
+	<property name="ireport.y" value="167"/>
+	<parameter name="employee_id" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="period_id" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="slip_no" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="contract_id" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="struct_id" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/home/baim/Documents/Bitbucket/immobi_erp/ib_immobi_reports/report/"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT b.name_related AS karyawan,
+	to_char(c.date_start,'Mon-YY') AS period, d.name AS job_title,
+    (SELECT SUM(total) FROM hr_payslip_line
+    	WHERE slip_id=a.id AND employee_id=$P{employee_id} AND code<>'GROSS') AS total_salary,
+    (SELECT total FROM hr_payslip_line
+    	WHERE slip_id=a.id AND employee_id=$P{employee_id} AND code IN ('GP','BASIC')) AS gapok,
+    (SELECT SUM(x.total)
+     FROM hr_payslip_line AS x
+	LEFT JOIN hr_salary_rule AS y ON x.salary_rule_id=y.id
+     WHERE x.slip_id=a.id AND x.employee_id=$P{employee_id} AND x.contract_id=$P{contract_id}
+         AND y.code NOT IN ('GP','GROSS','BASIC','PPh','POT','PPH-TA','NET')) AS tambahan_penghasilan
+
+FROM hr_payslip AS a LEFT JOIN hr_employee AS b ON a.employee_id=b.id
+	LEFT JOIN l10n_id_tax_period AS c ON a.tax_period_id=c.id
+    LEFT JOIN hr_job AS d ON b.job_id=d.id
+
+WHERE a.employee_id=$P{employee_id} AND
+	a.number=$P{slip_no} AND a.contract_id=$P{contract_id} AND a.struct_id=$P{struct_id}]]>
+	</queryString>
+	<field name="karyawan" class="java.lang.String"/>
+	<field name="period" class="java.lang.String">
+		<fieldDescription><![CDATA[Periods]]></fieldDescription>
+	</field>
+	<field name="job_title" class="java.lang.String">
+		<fieldDescription><![CDATA[Jabatan]]></fieldDescription>
+	</field>
+	<field name="total_salary" class="java.math.BigDecimal"/>
+	<field name="gapok" class="java.math.BigDecimal"/>
+	<field name="tambahan_penghasilan" class="java.math.BigDecimal"/>
+	<variable name="total_salary_1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{total_salary}]]></variableExpression>
+	</variable>
+	<variable name="gapok_1" class="java.math.BigDecimal" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{gapok}]]></variableExpression>
+	</variable>
+	<variable name="tambahan_penghasilan_1" class="java.math.BigDecimal" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{tambahan_penghasilan}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<frame>
+				<reportElement uuid="be1f0cd0-5ced-4950-bf1a-1540f9674189" x="0" y="17" width="567" height="63"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<staticText>
+				<reportElement uuid="12712b1f-6f6d-4627-bf4f-ec6be67d2e0d" positionType="Float" stretchType="RelativeToTallestObject" x="120" y="21" width="435" height="22"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PT. Immobi Solusi Prima]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="77a731b7-e932-472e-9c81-8774035617ac" positionType="Float" stretchType="RelativeToTallestObject" x="120" y="43" width="435" height="34"/>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<text><![CDATA[Tifa Building 8 Floor Kuningan Barat No. 26 Jakarta Selatan 17410
+Phone: +62-21 2751 0487]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="4f411cc7-290f-4b6e-b96a-abc1dc01c3ed" x="2" y="21" width="118" height="50"/>
+				<imageExpression><![CDATA["/opt/odoo/addons_custom/immobi_erp/ib_immobi_reports/report/immobi_logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="130" splitType="Stretch">
+			<frame>
+				<reportElement uuid="752f0dce-73ed-4db0-8640-795db8b4fa7a" x="0" y="0" width="567" height="130"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<staticText>
+				<reportElement uuid="8cd77d4b-74cf-45d3-b5fe-32083bc79bef" x="18" y="3" width="505" height="25"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Slip Gaji]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ece63c9f-6582-4e52-af16-0d6172326b53" positionType="Float" stretchType="RelativeToTallestObject" x="6" y="35" width="100" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2ef40222-94bb-49ba-b260-3f4ee8f74edb" positionType="Float" stretchType="RelativeToTallestObject" x="6" y="52" width="100" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Posisi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="891e7968-a4b3-471a-bab2-f013893f4407" positionType="Float" stretchType="RelativeToTallestObject" x="6" y="69" width="100" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Periode]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d73e7664-83f2-41d4-9101-d2f415a0fee5" positionType="Float" stretchType="RelativeToTallestObject" x="106" y="35" width="7" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="01496e43-fefb-4988-acba-16b168595c6e" positionType="Float" stretchType="RelativeToTallestObject" x="106" y="52" width="7" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9a7f5765-c16c-4bf5-acb4-82267437e70f" positionType="Float" stretchType="RelativeToTallestObject" x="106" y="69" width="7" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="35ef394e-a2db-4aca-be10-425ff07db494" positionType="Float" stretchType="RelativeToTallestObject" x="113" y="35" width="311" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{karyawan}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="50801e4e-e6c7-4952-842c-13130a71b535" positionType="Float" stretchType="RelativeToTallestObject" x="113" y="69" width="311" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{period}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="34702914-5a24-4b43-9c6a-446cc0169442" positionType="Float" stretchType="RelativeToTallestObject" x="113" y="52" width="311" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{job_title}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="61f5377b-aeeb-4912-8e1b-0fb17d662fea" x="6" y="91" width="448" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Gaji Pokok]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7934b8d6-6e82-4235-8577-781a4dec58fa" x="6" y="108" width="448" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Tambahan Penghasilan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2cf54280-5ca4-4a68-9436-a49437047a1a" positionType="Float" stretchType="RelativeToTallestObject" x="454" y="91" width="7" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7c41adbc-7293-49c0-a7b1-7d8ee85b334e" positionType="Float" stretchType="RelativeToTallestObject" x="454" y="108" width="7" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" evaluationTime="Page" pattern="#,##0;(#,##0)" isBlankWhenNull="true">
+				<reportElement uuid="a5444a9e-020b-465b-b617-1d80864cc65e" positionType="Float" stretchType="RelativeToTallestObject" x="461" y="91" width="100" height="17"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="11"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{gapok_1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Page" pattern="#,##0;(#,##0)" isBlankWhenNull="true">
+				<reportElement uuid="3e47264d-84f7-4923-915d-3a3073726d04" positionType="Float" stretchType="RelativeToTallestObject" x="461" y="108" width="100" height="17"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="11"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{tambahan_penghasilan_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="106" splitType="Stretch">
+			<frame>
+				<reportElement uuid="f88556f6-5633-4db3-91e4-ea8fd10e751b" x="0" y="0" width="567" height="106"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</frame>
+			<subreport>
+				<reportElement uuid="aee40071-f3a1-4f23-baef-7616b53d6227" positionType="Float" stretchType="RelativeToTallestObject" x="6" y="3" width="270" height="100" isPrintWhenDetailOverflows="true"/>
+				<subreportParameter name="period_id">
+					<subreportParameterExpression><![CDATA[$P{period_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="slip_no">
+					<subreportParameterExpression><![CDATA[$P{slip_no}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="struct_id">
+					<subreportParameterExpression><![CDATA[$P{struct_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="contract_id">
+					<subreportParameterExpression><![CDATA[$P{contract_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="employee_id">
+					<subreportParameterExpression><![CDATA[$P{employee_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "payslip_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement uuid="2e8febd6-2ba1-4473-a5e6-8da69a70e1e8" positionType="Float" stretchType="RelativeToTallestObject" x="291" y="3" width="270" height="100"/>
+				<subreportParameter name="period_id">
+					<subreportParameterExpression><![CDATA[$P{period_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="struct_id">
+					<subreportParameterExpression><![CDATA[$P{struct_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="slip_no">
+					<subreportParameterExpression><![CDATA[$P{slip_no}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="contract_id">
+					<subreportParameterExpression><![CDATA[$P{contract_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="employee_id">
+					<subreportParameterExpression><![CDATA[$P{employee_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "payslip_subreport2.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<summary>
+		<band height="30" splitType="Stretch">
+			<frame>
+				<reportElement uuid="bbe3274f-3a71-48e6-a449-13327a1bb30f" x="0" y="0" width="567" height="30"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textField isStretchWithOverflow="true" pattern="#,##0;(#,##0)" isBlankWhenNull="true">
+					<reportElement uuid="1ad28ebc-9d63-4974-ab26-f7f1dfaf54e4" positionType="Float" stretchType="RelativeToTallestObject" x="461" y="0" width="100" height="20"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="11"/>
+						<paragraph rightIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{total_salary_1}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="d74015fd-0404-4c7e-a75e-bed6933e6dcd" positionType="Float" stretchType="RelativeToTallestObject" x="454" y="0" width="7" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="4d71301b-b96c-4340-ac1e-f1838867cf7c" x="291" y="0" width="163" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font size="11" isBold="true"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[Penghasilan Bersih]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_purchase_order_bod,purchase.order bod,purchase.model_purchase_order,purchase.group_purchase_bod,1,1,1,1
+access_purchase_order_line_bod,purchase.order.line bod,purchase.model_purchase_order_line,purchase.group_purchase_bod,1,0,0,0
+access_report_po_bod,purchase.report bod,purchase.model_purchase_report,purchase.group_purchase_bod,1,0,0,0
+access_stk_loc_purchase_bod,stock.location bod,stock.model_stock_location,purchase.group_purchase_bod,1,0,0,0
+access_stk_warehouse_purchase_bod,stock.warehouse bod,stock.model_stock_warehouse,purchase.group_purchase_bod,1,0,0,0
+access_stk_pick_purchase_bod,stock.picking bod,stock.model_stock_picking,purchase.group_purchase_bod,1,1,1,1
+access_stk_move_purchase_bod,stock.move bod,stock.model_stock_move,purchase.group_purchase_bod,1,1,1,1
+access_account_tax_purchase_bod,account.tax bod,account.model_account_tax,purchase.group_purchase_bod,1,0,0,0
+access_product_product_purchase_bod,product.product purchase_bod,product.model_product_product,purchase.group_purchase_bod,1,1,1,1
+access_product_template_purchase_bod,product.template purchase_bod,product.model_product_template,purchase.group_purchase_bod,1,1,1,0
+access_acc_inv_purchase_bod,account_invoice purchase_bod,account.model_account_invoice,purchase.group_purchase_bod,1,0,0,0
+access_acc_inv_line_purchase_bod,account_invoice.line purchase_bod,account.model_account_invoice_line,purchase.group_purchase_bod,1,0,0,0
+access_account_journal_bod,account.journal bod,account.model_account_journal,purchase.group_purchase_bod,1,0,0,0

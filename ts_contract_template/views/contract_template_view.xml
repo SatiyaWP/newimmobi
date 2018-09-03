@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>    
+
+
+<!-- view nama Contract Template -->
+
+	<!-- Menu Item -->
+		<!-- searching package -->
+        <record id="contract_template_search_form_view" model="ir.ui.view">
+            <field name="name">contract.template.search.form</field>
+            <field name="model">contract.template</field>
+            <field name="arch" type="xml">
+                <search string="Contract Template">
+                   <field name="name" string="Move Number" filter_domain="[('name','ilike',self)]"/>
+	       		</search>
+            </field>
+        </record>
+
+		<!-- Tampilan Form -->
+		<record model="ir.ui.view" id="contract_template_view_form">
+			<field name="name">contract.template.form</field>
+			<field name="model">contract.template</field>
+			<field eval="16" name="priority"/>
+			<field name="arch" type="xml">
+				<form string="Contract Template" version="7.0">
+					<header>
+						<button name="action_confirm"   string="Confirm" class="oe_highlight"  type="object"/>
+					</header>				
+					<sheet>
+						<group>
+							<field name="name" />
+							<field name="logo_header_immobi" />
+						</group>
+						<notebook>
+							<page string="Description">
+							<field name="description" nolabel="1" colspan="4"/>
+							</page>
+						</notebook>
+					</sheet>
+	                <div class="oe_chatter">
+	                    <field name="message_follower_ids" widget="mail_followers"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+	                </div>
+				</form>
+			</field>
+		</record>
+		
+		<!-- Tampilan list / tree -->
+		<record model="ir.ui.view" id="contract_template_view_tree">
+			<field name="name">contract.template.tree</field>
+			<field name="model">contract.template</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<tree string="Contract Template" version="7.0">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>				 			
+				
+
+				<!-- Fungsi Action -->
+		<record model="ir.actions.act_window" id="contract_template_list_action">
+			<field name="name">Contract Template</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">contract.template</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="contract_template_search_form_view"/>
+			<field name="view_id" ref="contract_template_view_tree"/>
+		<!-- 	<field name="context">{'search_default_my_courses':1}</field>
+			 --><field name="help" type="html">
+			<p class="oe_view_nocontent_create">
+					Contract Template
+				</p>				
+			</field>
+		</record>
+        <record id="open_view_contract_template_form1" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="contract_template_view_form"/>
+            <field name="act_window_id" ref="contract_template_list_action"/>
+        </record>
+        <record id="open_view_contract_template_tree1" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="contract_template_view_tree"/>
+            <field name="act_window_id" ref="contract_template_list_action"/>
+        </record>
+		<!-- Menu Action -->
+	
+		<menuitem id="contract_template" name="Contract Template" parent="hr.menu_hr_configuration" action="contract_template_list_action" sequence="150"/>
+
+<!-- add view asset -->
+
+<!--		<record id ="asset_ext_view" model="ir.ui.view">
+			<field name ="name">asset.ext.view</field>
+			<field name ="model">asset.asset</field>
+			<field name ="inherit_id" ref ="asset.assets_form_view"/>
+			<field name ="arch" type ="xml">
+					<xpath expr ="//field[@name='serial']" position ="after">
+						<field name="date_move"  />	
+					</xpath>
+			</field>
+		</record> 
+      
+      -->
+
+        		<record id="image_ttd_view" model="ir.ui.view">
+	            <field name="name">image.print.view</field>
+	            <field name="model">res.company</field>
+	            <field name="inherit_id" ref="base.view_company_form"/>
+	            <field name="arch" type="xml">
+		            <data>
+		                <xpath expr="//field[@name='company_registry']" position="after">
+                    	<field name="logo_header_immobi" widget='image' class="oe_avatar oe_left" />
+		                </xpath>
+
+                	</data>
+             	</field>
+       		</record>
+      
+    </data>
+</openerp>
+
+
+

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!--Data Religion-->
+        <record id="hr_religion_islam" model="hr.religion.employee">
+            <field name="name">Islam</field>
+        </record>
+        <record id="hr_religion_katolik" model="hr.religion.employee">
+            <field name="name">Catholic</field>
+        </record>
+        <record id="hr_religion_kristen_protestan" model="hr.religion.employee">
+            <field name="name">Christian Protestant</field>
+        </record>
+        <record id="hr_religion_budha" model="hr.religion.employee">
+            <field name="name">Buddha</field>
+        </record>
+        <record id="hr_religion_hindu" model="hr.religion.employee">
+            <field name="name">Hindu</field>
+        </record>
+        <record id="hr_religion_konghucu" model="hr.religion.employee">
+            <field name="name">Confucianism</field>
+        </record>
+
+        <!--Data Education-->
+        <record id="hr_level_edu_none" model="hr.employee.edu.level">
+            <field name="name">No Education</field>
+        </record>
+        <record id="hr_level_edu_primary" model="hr.employee.edu.level">
+            <field name="name">Primary School</field>
+        </record>
+        <record id="hr_level_edu_secondary" model="hr.employee.edu.level">
+            <field name="name">Secondary School</field>
+        </record>
+        <record id="hr_level_edu_diploma" model="hr.employee.edu.level">
+            <field name="name">Diploma</field>
+        </record>
+        <record id="hr_level_edu_degree1" model="hr.employee.edu.level">
+            <field name="name">First Degree</field>
+        </record>
+        <record id="hr_level_edu_masters" model="hr.employee.edu.level">
+            <field name="name">Masters Degree</field>
+        </record>
+        <record id="hr_level_edu_phd" model="hr.employee.edu.level">
+            <field name="name">PhD</field>
+        </record>
+
+        <!--Data Institutions or Organization-->
+        <record id="hr_edu_insti_org_ui" model="hr.employee.edu.institutions">
+            <field name="name">Universitas Indonesia</field>
+        </record>
+        <record id="hr_edu_insti_org_ugm" model="hr.employee.edu.institutions">
+            <field name="name">Universitas Gadjah Mada</field>
+        </record>
+        <record id="hr_edu_insti_org_itb" model="hr.employee.edu.institutions">
+            <field name="name">Institut Teknologi Bandung</field>
+        </record>
+        <record id="hr_edu_insti_org_undip" model="hr.employee.edu.institutions">
+            <field name="name">Universitas Diponegoro</field>
+        </record>
+        <record id="hr_edu_insti_org_ipb" model="hr.employee.edu.institutions">
+            <field name="name">Institut Pertanian Bogor</field>
+        </record>
+
+        <!--Data Majors-->
+        <record id="hr_edu_majors_psikologi" model="hr.employee.edu.majors">
+            <field name="name">Psikologi</field>
+        </record>
+        <record id="hr_edu_majors_manajemen" model="hr.employee.edu.majors">
+            <field name="name">Manajemen</field>
+        </record>
+        <record id="hr_edu_majors_akuntansi" model="hr.employee.edu.majors">
+            <field name="name">Akuntansi</field>
+        </record>
+        <record id="hr_edu_majors_ilkom" model="hr.employee.edu.majors">
+            <field name="name">Ilmu Komunikasi</field>
+        </record>
+        <record id="hr_edu_majors_teknik_ind" model="hr.employee.edu.majors">
+            <field name="name">Teknik Industri</field>
+        </record>
+        <record id="hr_edu_majors_teknik_mesin" model="hr.employee.edu.majors">
+            <field name="name">Teknik Mesin</field>
+        </record>
+        <record id="hr_edu_majors_teknik_elektro" model="hr.employee.edu.majors">
+            <field name="name">Teknik Elektro</field>
+        </record>
+        <record id="hr_edu_majors_sistem_info" model="hr.employee.edu.majors">
+            <field name="name">Teknik Informatika</field>
+        </record>
+        <record id="hr_edu_majors_teknik_informatika" model="hr.employee.edu.majors">
+            <field name="name">Sistem Informasi</field>
+        </record>
+
+
+    </data>
+</openerp>

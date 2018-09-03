@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<menuitem id="menu_parent_request" name="Request" />
+
+		<record id="account_supplier_adv.submenu_finance_advance" model="ir.ui.menu">
+			<field name="parent_id" eval="ref('menu_parent_request')" />
+		</record>
+
+		<record id="stock_purchase_requisition.submenu_pr" model="ir.ui.menu">
+			<field name="parent_id" eval="ref('menu_parent_request')" />
+		</record>
+
+<!-- 		<delete model="ir.ui.menu" id="account_supplier_adv.menu_parent_advance" /> -->
+<!-- 		<delete model="ir.ui.menu" id="stock_purchase_requisition.menu_parent_pr" /> -->
+	</data>
+</openerp>

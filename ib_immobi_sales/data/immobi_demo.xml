@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!--Sales (Base Code)  -->
+        <record id="base_code_pph_jasa" model="account.tax.code.template">
+            <field name="parent_id" ref="account.tax_code_base_sales"/>
+            <field name="name">Taxable Sales [PPH Jasa 2%]</field>
+            <field eval="1.0" name="sign"/>
+        </record>
+        <record id="base_code_pph_badan" model="account.tax.code.template">
+            <field name="parent_id" ref="account.tax_code_base_sales"/>
+            <field name="name">Taxable Sales [PPH Badan 1%]</field>
+            <field eval="1.0" name="sign"/>
+        </record>
+
+        <!-- TAX Code Definitions -->
+        <!-- Input (Tax Code) -->
+        <record id="tax_code_pph_jasa" model="account.tax.code.template">
+            <field name="parent_id" ref="account.tax_code_input"/>
+            <field name="name">Tax Received [PPH Jasa 2%]</field>
+            <field eval="1.0" name="sign"/>
+        </record>
+        <record id="tax_code_pph_badan" model="account.tax.code.template">
+            <field name="parent_id" ref="account.tax_code_input"/>
+            <field name="name">Tax Received [PPH Badan 1%]</field>
+            <field eval="1.0" name="sign"/>
+        </record>
+
+        <!-- Sales + Input VAT -->
+        <record id="tax_pph_badan" model="account.tax.template">
+            <field name="chart_template_id" ref="account.configurable_chart_template"/>
+            <field name="name">PPH Badan 1%</field>
+            <field eval="0.01" name="amount"/>
+            <field name="type">percent</field>
+            <!--<field name="account_collected_id" ref="account.conf_iva"/>-->
+            <!--<field name="account_paid_id" ref="account.conf_iva"/>-->
+            <field name="base_code_id" ref="base_code_pph_badan"/>
+            <field name="tax_code_id" ref="tax_code_pph_badan"/>
+            <field name="ref_base_code_id" ref="base_code_pph_badan"/>
+            <field name="ref_tax_code_id" ref="tax_code_pph_badan"/>
+            <field name="type_tax_use">sale</field>
+        </record>
+        <record id="tax_pph_jasa" model="account.tax.template">
+            <field name="chart_template_id" ref="account.configurable_chart_template"/>
+            <field name="name">PPH Jasa 2%</field>
+            <field eval="0.02" name="amount"/>
+            <field name="type">percent</field>
+            <!--<field name="account_collected_id" ref="account.conf_iva"/>-->
+            <!--<field name="account_paid_id" ref="account.conf_iva"/>-->
+            <field name="base_code_id" ref="base_code_pph_jasa"/>
+            <field name="tax_code_id" ref="tax_code_pph_jasa"/>
+            <field name="ref_base_code_id" ref="base_code_pph_jasa"/>
+            <field name="ref_tax_code_id" ref="tax_code_pph_jasa"/>
+            <field name="type_tax_use">sale</field>
+        </record>
+
+        <record id="product_uom_pcs" model="product.uom">
+            <field name="category_id" ref="product.product_uom_categ_unit"/>
+            <field name="name">Pcs</field>
+            <field name="factor" eval="1.0"/>
+            <field name="rounding" eval="0.001"/>
+        </record>
+        <!--Resource: product.category-->
+        <record id="product_category_direct_cost" model="product.category">
+            <field name="parent_id" ref="product.product_category_1"/>
+            <field name="name">DIRECT COST</field>
+        </record>
+        <record id="product_category_indirect_cost" model="product.category">
+            <field name="parent_id" ref="product.product_category_1"/>
+            <field name="name">INDIRECT COST</field>
+        </record>
+        <record id="product_category_equipment" model="product.category">
+            <field name="parent_id" ref="product.product_category_1"/>
+            <field name="name">Equipment</field>
+        </record>
+        <record id="product_category_install_maintan" model="product.category">
+            <field name="parent_id" ref="product.product_category_5"/>
+            <field name="name">Installation + Maintenance</field>
+        </record>
+        <record id="product_category_pulsa_usage" model="product.category">
+            <field name="parent_id" ref="product.product_category_5"/>
+            <field name="name">Pulsa Usage</field>
+        </record>
+        <record id="product_category_software_rat" model="product.category">
+            <field name="parent_id" ref="product.product_category_5"/>
+            <field name="name">Software RAT</field>
+        </record>
+        <record id="product_category_handset" model="product.category">
+            <field name="parent_id" ref="product_category_equipment"/>
+            <field name="name">Handset</field>
+        </record>
+        <record id="product_category_box_accessories" model="product.category">
+            <field name="parent_id" ref="product_category_equipment"/>
+            <field name="name">Box + Accessories</field>
+        </record>
+
+        <!--Resource: product.product-->
+        <record id="product_pulsa_usage" model="product.product">
+            <field name="name">Pulsa Usage</field>
+            <field name="categ_id" ref="product_category_pulsa_usage"/>
+            <field name="list_price">150000.0</field>
+            <field name="standard_price">1.0</field>
+            <field name="type">service</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="uom_po_id" ref="product.product_uom_unit"/>
+            <field name="description_sale">for 5 minutes Scenario,
+24 Hour Usage for 3 Handset UNIT</field>
+        </record>
+        <record id="product_soft_rat" model="product.product">
+            <field name="name">Remote Application Tools License Including Dashboard</field>
+            <field name="categ_id" ref="product_category_software_rat"/>
+            <field name="list_price">1500000.0</field>
+            <field name="standard_price">1.0</field>
+            <field name="uom_id" ref="product_uom_pcs"/>
+            <field name="uom_po_id" ref="product_uom_pcs"/>
+            <field name="type">service</field>
+        </record>
+        <record id="product_matl_cost" model="product.product">
+            <field name="name">Material Cost</field>
+            <field name="categ_id" ref="product_category_direct_cost"/>
+            <field name="list_price">1.0</field>
+            <field name="standard_price">1.0</field>
+            <field name="type">consu</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="uom_po_id" ref="product.product_uom_unit"/>
+        </record>
+        <record id="product_soft_cost" model="product.product">
+            <field name="name">Software Cost</field>
+            <field name="categ_id" ref="product_category_direct_cost"/>
+            <field name="list_price">1.0</field>
+            <field name="standard_price">1.0</field>
+            <field name="type">consu</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="uom_po_id" ref="product.product_uom_unit"/>
+        </record>
+        <record id="product_production_cost" model="product.product">
+            <field name="name">Production Cost</field>
+            <field name="categ_id" ref="product_category_direct_cost"/>
+            <field name="list_price">1.0</field>
+            <field name="standard_price">1.0</field>
+            <field name="type">consu</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="uom_po_id" ref="product.product_uom_unit"/>
+        </record>
+        <record id="product_implement_cost" model="product.product">
+            <field name="name">Implementation Cost</field>
+            <field name="categ_id" ref="product_category_direct_cost"/>
+            <field name="list_price">1.0</field>
+            <field name="standard_price">1.0</field>
+            <field name="type">consu</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="uom_po_id" ref="product.product_uom_unit"/>
+        </record>
+        <record id="product_marketing_cost" model="product.product">
+            <field name="name">Marketing Cost</field>
+            <field name="categ_id" ref="product_category_indirect_cost"/>
+            <field name="list_price">1.0</field>
+            <field name="standard_price">1.0</field>
+            <field name="type">consu</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="uom_po_id" ref="product.product_uom_unit"/>
+        </record>
+        <record id="product_admin_cost" model="product.product">
+            <field name="name">Admin Cost</field>
+            <field name="categ_id" ref="product_category_indirect_cost"/>
+            <field name="list_price">1.0</field>
+            <field name="standard_price">1.0</field>
+            <field name="type">consu</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="uom_po_id" ref="product.product_uom_unit"/>
+        </record>
+        <record id="product_rnd_cost" model="product.product">
+            <field name="name">RND Cost</field>
+            <field name="categ_id" ref="product_category_indirect_cost"/>
+            <field name="list_price">1.0</field>
+            <field name="standard_price">1.0</field>
+            <field name="type">consu</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="uom_po_id" ref="product.product_uom_unit"/>
+        </record>
+        <record id="product_box_accessories" model="product.product">
+            <field name="name">Box + Accessories</field>
+            <field name="categ_id" ref="product_category_box_accessories"/>
+            <field name="list_price">3500000.0</field>
+            <field name="standard_price">1.0</field>
+            <field name="type">consu</field>
+            <field name="uom_id" ref="product_uom_pcs"/>
+            <field name="uom_po_id" ref="product_uom_pcs"/>
+        </record>
+        <record id="product_samsung_a3" model="product.product">
+            <field name="name">Samsung A3</field>
+            <field name="categ_id" ref="product_category_handset"/>
+            <field name="list_price">3300000.00</field>
+            <field name="standard_price">1.0</field>
+            <field name="type">consu</field>
+            <field name="uom_id" ref="product_uom_pcs"/>
+            <field name="uom_po_id" ref="product_uom_pcs"/>
+        </record>
+        <record id="product_install_maintain" model="product.product">
+            <field name="name">Installation + Maintenance/Spot per Year</field>
+            <field name="categ_id" ref="product_category_install_maintan"/>
+            <field name="list_price">1500000.0</field>
+            <field name="standard_price">1.0</field>
+            <field name="type">service</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="uom_po_id" ref="product.product_uom_unit"/>
+        </record>
+        <record id="product_matl_lokal" model="product.product">
+            <field name="name">MATERIAL LOKAL</field>
+            <field name="categ_id" ref="product_category_direct_cost"/>
+            <field name="list_price">1.0</field>
+            <field name="standard_price">1.0</field>
+            <field name="type">consu</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="uom_po_id" ref="product.product_uom_unit"/>
+        </record>
+        <record id="product_matl_import" model="product.product">
+            <field name="name">MATERIAL IMPOR</field>
+            <field name="categ_id" ref="product_category_direct_cost"/>
+            <field name="list_price">1.0</field>
+            <field name="standard_price">1.0</field>
+            <field name="type">consu</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="uom_po_id" ref="product.product_uom_unit"/>
+        </record>
+
+    </data>
+</openerp>

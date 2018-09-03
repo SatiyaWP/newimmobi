@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>    
+
+
+<!-- view nama Asset Move -->
+
+	<!-- Menu Item -->
+		<!-- searching package -->
+        <record id="asset_move_search_form_view" model="ir.ui.view">
+            <field name="name">asset.move.search.form</field>
+            <field name="model">asset.move</field>
+            <field name="arch" type="xml">
+                <search string="Asset Move">
+                   <field name="name" string="Move Number" filter_domain="[('name','ilike',self)]"/>
+                   <field name="asset_id" />
+                   <group expand="0" string="Group By">
+                        <filter string="Asset" icon="terp-partner" domain="[]" context="{'group_by':'asset_id'}"/>
+                        <filter string="Employee" icon="terp-partner" domain="[]" context="{'group_by':'employee_id'}"/>
+                        <filter string="Location" icon="terp-partner" domain="[]" context="{'group_by':'location_id'}"/>
+                        <filter string="Date" icon="terp-partner" domain="[]" context="{'group_by':'date_move'}"/>
+                    </group>
+	       		</search>
+            </field>
+        </record>
+
+		<!-- Tampilan Form -->
+		<record model="ir.ui.view" id="asset_move_view_form">
+			<field name="name">asset.move.form</field>
+			<field name="model">asset.move</field>
+			<field eval="16" name="priority"/>
+			<field name="arch" type="xml">
+				<form string="Asset Move" version="7.0">
+					<header>
+						<button name="action_confirm" states="draft"  string="Confirm" class="oe_highlight"  type="object"/>
+					<!--	<button name="set_to_draft" states="confirm"  string="Set To Draft" class="oe_highlight"  type="object"/> -->
+	                     <field name="state" widget="statusbar" statusbar_visible="draft,confirm" statusbar_colors='{"draft":"blue","confirm":"blue"}' readonly="1"/>
+					</header>				
+					<sheet>
+                        <field name="image_asset" widget="image" class="oe_avatar oe_left"/>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+						<group>
+							<field name="asset_id"/>
+							<field name="serial" />
+							<field name="model" />
+							<field name="imei_id" />
+							<field name="color" />
+							<field name="date_move" />
+							<field name="employee_id" />
+							<field name="department_id" />
+							<field name="location_id" domain="[('usage','=','asset')]" />
+						</group>
+						<notebook>
+							<page string="Description">
+							<field name="description" nolabel="1" colspan="4"/>
+							</page>
+						</notebook>
+					</sheet>
+	                <div class="oe_chatter">
+	                    <field name="message_follower_ids" widget="mail_followers"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+	                </div>
+				</form>
+			</field>
+		</record>
+		
+		<!-- Tampilan list / tree -->
+		<record model="ir.ui.view" id="asset_move_view_tree">
+			<field name="name">asset.move.tree</field>
+			<field name="model">asset.move</field>
+			<field name="priority" eval="16"/>
+			<field name="arch" type="xml">
+				<tree string="Asset Move" version="7.0">
+							<field name="asset_id"/>
+							<field name="serial" />
+							<field name="model" />
+							<field name="imei_id" />
+							<field name="color" />
+							<field name="date_move" />
+							<field name="employee_id" />
+							<field name="department_id" />
+							<field name="location_id" />
+							<field name="state" />
+				</tree>
+			</field>
+		</record>				 			
+				
+
+				<!-- Fungsi Action -->
+		<record model="ir.actions.act_window" id="asset_move_list_action">
+			<field name="name">Asset Move</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">asset.move</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="asset_move_search_form_view"/>
+			<field name="view_id" ref="asset_move_view_tree"/>
+		<!-- 	<field name="context">{'search_default_my_courses':1}</field>
+			 --><field name="help" type="html">
+			<p class="oe_view_nocontent_create">
+					Asset Move
+				</p>				
+			</field>
+		</record>
+        <record id="open_view_asset_move_form1" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="asset_move_view_form"/>
+            <field name="act_window_id" ref="asset_move_list_action"/>
+        </record>
+        <record id="open_view_asset_move_tree1" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="asset_move_view_tree"/>
+            <field name="act_window_id" ref="asset_move_list_action"/>
+        </record>
+		<!-- Menu Action -->
+	
+		<menuitem id="asset_move" name="Asset Move" parent="asset.menu_maintenance_assets" action="asset_move_list_action" sequence="150"/>
+
+<!-- add view asset -->
+
+		<record id ="asset_ext_view" model="ir.ui.view">
+			<field name ="name">asset.ext.view</field>
+			<field name ="model">asset.asset</field>
+			<field name ="inherit_id" ref ="asset.assets_form_view"/>
+			<field name ="arch" type ="xml">
+					<xpath expr ="//field[@name='serial']" position ="after">
+						<field name="date_move"  />	
+<!--						<field name="asset_employee_id" />
+						<field name="asset_location_id" /> -->
+					</xpath>
+			</field>
+		</record> 
+      
+      
+    </data>
+</openerp>
+
+
+

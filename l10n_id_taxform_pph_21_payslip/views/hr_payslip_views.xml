@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 OpenSynergy Indonesia License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+	<data>
+
+		<record id="hr_payslip_view_form" model="ir.ui.view">
+			<field name="name">hr.payslip form</field>
+			<field name="model">hr.payslip</field>
+			<field name="inherit_id" ref="hr_payroll.view_hr_payslip_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='contract_id']" position="after">
+					<field name="tax_year_id" />
+				</xpath>
+				<xpath expr="//field[@name='number']" position="after">
+					<field name="tax_period_id" />
+				</xpath>
+				<xpath expr="//field[@name='struct_id']" position="after">
+					<field name="joining_tax_month" />
+				</xpath>
+			</field>
+		</record>
+
+		<record id="hr_payroll.view_hr_payslip_line_tree" model="ir.ui.view">
+			<field name="name">payslip.line.tree</field>
+			<field name="model">hr.payslip.line</field>
+			<field name="arch" type="xml">
+				<tree string="PPh" editable="bottom" colors="blue:total == 0">
+					<field name="employee_id" />
+					<field name="tax_period_id" />
+					<field name="name" />
+					<field name="code" invisible="1" />
+					<field name="amount" />
+					<field name="total" invisible="1" />
+					<field name="amount_select" invisible="1" />
+					<field name="register_id" invisible="1" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_hr_payslip_line_filter" model="ir.ui.view">
+			<field name="name">hr.payslip.line.select</field>
+            <field name="model">hr.payslip.line</field>
+			<field name="inherit_id"
+				ref="hr_payroll.view_hr_payslip_line_filter" />
+			<field name="arch" type="xml">
+				<filter name="employee_id" position="after">
+					<filter string="Period" name="tax_period_id" icon="terp-personal" context="{'group_by':'tax_period_id'}"/>
+				</filter>
+			</field>
+		</record>
+
+		<record id="action_payslip_line_pph" model="ir.actions.act_window">
+			<field name="name">hr.payslip.line</field>
+			<field name="res_model">hr.payslip.line</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form,calendar,graph</field>
+			<field eval="False" name="view_id" />
+			<field name="domain">[('code','=','PPh'),('state','=','done')]</field>
+			<field name="context">{}</field>
+			<!-- <field name="search_view_id" ref="account.view_account_invoice_filter" 
+				/> -->
+			<!-- <field name="help" type="html"></field> -->
+		</record>
+
+		<menuitem id="menu_payslip_line_pph" name="Payroll PPh"
+			sequence="100" parent="hr_payroll.menu_hr_root_payroll" action="action_payslip_line_pph" />
+
+	</data>
+</openerp>

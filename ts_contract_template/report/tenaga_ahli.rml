@@ -1,0 +1,4093 @@
+<?xml version="1.0"?>
+<document filename="Purchase Order.pdf">
+  <template title="Purchase Order" author="OpenERP S.A.(sales@openerp.com)" allowSplitting="20">
+    <pageTemplate id="first">
+      <frame id="first" x1="18.0" y1="42.0" width="535" height="758"/>
+  <pageGraphics>
+	 				<setFont name="Helvetica" size="8"/>
+   <drawCentredString x="10.5cm" y="0.4cm">Page: <pageNumber/> of</drawCentredString>
+   <drawCentredString x="11.3cm" y="0.4cm"><pageCount/></drawCentredString>
+
+   </pageGraphics>      
+    </pageTemplate>
+  </template>
+  <stylesheet>
+    <blockTableStyle id="Standard_Outline">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Tableau1">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Tableau2">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Header_Order_Reference_Tbl">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#FFFFFF" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="3,-1" stop="3,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Content_Order_Reference_Table">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#FFFFFF" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="3,-1" stop="3,-1"/>
+
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="4,0" stop="4,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#FFFFFF" start="4,0" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="4,0" stop="4,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="4,-1" stop="4,-1"/>
+
+    </blockTableStyle>
+    <blockTableStyle id="Content_Order_Reference_Table_blok_line">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="1,0" stop="1,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="2,0" stop="2,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#FFFFFF" start="3,0" stop="3,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="3,0" stop="3,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="3,-1" stop="3,-1"/>
+
+      <lineStyle kind="LINEBEFORE" colorName="#FFFFFF" start="4,0" stop="4,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#FFFFFF" start="4,0" stop="4,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#FFFFFF" start="4,0" stop="4,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="4,-1" stop="4,-1"/>
+
+    </blockTableStyle>
+
+    <blockTableStyle id="Table_Header_Pur_ord_Line">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="5,-1" stop="5,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table_Order_Pur_line_Content">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="5,-1" stop="5,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="2,-1" stop="2,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="3,-1" stop="3,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="4,-1" stop="4,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#FFFFFF" start="5,-1" stop="5,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table_All_Total_Detail">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEABOVE" colorName="#ffffff" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,0" stop="1,0"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,0" stop="2,0"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="1,2" stop="1,2"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="2,2" stop="2,2"/>
+    </blockTableStyle>
+    <blockTableStyle id="Table_Outer_Notes">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <initialize>
+      <paraStyle name="all" alignment="justify"/>
+    </initialize>
+    <paraStyle name="terp_header" fontSize="12.0" leading="15" alignment="LEFT" spaceBefore="12.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_tblheader_General" fontSize="8.0" leading="10" alignment="LEFT" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_default_8" fontSize="8.0" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_tblheader_General_Centre" fontSize="8.0" leading="10" alignment="CENTER" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_tblheader_General_Right" fontSize="8.0" leading="10" alignment="RIGHT" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="terp_default_Centre_8" fontSize="8.0" leading="10" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_9" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Bold_9" fontSize="9.0" leading="11" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Right_9" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Bold_9_Right" fontSize="9.0" leading="11" alignment="RIGHT" spaceBefore="0.0" spaceAfter="0.0"/>
+
+    <paraStyle name="terp_default_Centre_8x" fontSize="8.0" fontName="calibri"  leading="10" alignment="justify" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Centre_10" fontSize="10.0" fontName="Helvetica-Bold" leading="10" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_5" fontSize="5.0" leading="5" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+    <paraStyle name="terp_default_Centre_8_bold" fontSize="8.0" fontName="Helvetica-Bold" leading="10" alignment="LEFT" spaceBefore="0.0" spaceAfter="0.0"/>
+
+    <images/>
+  </stylesheet>
+  <story>
+  <pto>
+  <para style="terp_default_8">[[repeatIn(objects,'o')]]</para>
+    <para style="terp_default_9">
+      <font color="white">x </font>
+    </para>
+    <para style="terp_default_9">
+      <font color="white">x </font>
+    </para>
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>
+    <blockTable colWidths="36.0,43.0,392.0,9.0,50.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+
+          <para style="terp_default_Centre_10"><b>PERJANJIAN PELAYANAN JASA</b></para>
+    <para style="terp_default_5">
+      <font color="white"> x</font>
+    </para>            
+
+          <para style="terp_default_Centre_8">[[o.name]]</para>
+    <para style="terp_default_5">
+      <font color="white"> x</font>
+    </para>            
+
+          <para style="terp_default_Centre_8"><font color="red">Pribadi Dan Rahasia </font></para>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+
+          <para style="terp_default_Centre_8">antara</para>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+
+          <para style="terp_default_Centre_8"><b>[[o.create_uid.company_id.name]]</b></para>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+
+          <para style="terp_default_Centre_8">dan</para>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+
+          <para style="terp_default_Centre_8"><b>[[o.employee_id.name]]</b></para>
+          <para style="terp_default_Centre_8">([[o.job_id.name]])</para>
+
+        </td>
+        <td>
+		  <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+
+    <blockTable colWidths="36.0,9.0,415.0,9.0,36.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+
+          <para style="terp_default_Centre_10"><u>PERJANJIAN PELAYANAN JASA</u></para>
+    <para style="terp_default_5">
+      <font color="white"> x</font>
+    </para>            
+
+          <para style="terp_default_Centre_8">[[o.name]]</para>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+          
+          <para style="terp_default_Centre_8x">Perjanjian Pelayanan Jasa ini (untuk selanjutnya disebut "Perjanjian"), dibuat dan ditandatangani di Jakarta [[get_my_startdate(o.contract_date)]] oleh dan antara PIHAK-PIHAK sebagai berikut :</para>
+
+        </td>
+        <td>
+		  <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+
+    <blockTable colWidths="36.0,9.0,415.0,9.0,36.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">1. PT. IMMOBI SOLUSI PRIMA, berkedudukan di Gedung Tifa, lantai 8 suite 803, Jalan Kuningan Barat</para>
+
+        </td>
+        <td>
+		  <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,19.0,405.0,9.0,36.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">[[o.description_ta2]]</para>
+
+        </td>
+        <td>
+		  <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,9.0,145.0,279.0,36.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+
+          <para style="terp_default_8">2. Nama</para>
+
+        </td>
+        <td>
+		  <para style="terp_default_8">: [[o.employee_id.name]]</para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,20.0,134.0,279.0,36.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_8">Tempat dan Tanggal Lahir</para>
+          <para style="terp_default_8">Jenis Kelamin</para>
+          <para style="terp_default_8">Agama</para>
+          <para style="terp_default_8">Alamat</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>
+          <para style="terp_default_8">No.KTP</para>
+          <para style="terp_default_8">No.TLP</para>
+        </td>
+        <td>
+		  <para style="terp_default_8">: [[o.employee_id.place_of_birth]] / [[o.employee_id.birthday]]</para>
+		  <para style="terp_default_8">: [[o.employee_id.gender]]</para>
+		  <para style="terp_default_8">: [[o.employee_id.religion_id.name]]</para>
+		  <para style="terp_default_8">: [[o.employee_id.address_home_id.street]]</para>
+		  <para style="terp_default_8">: [[o.employee_id.address_home_id.street2]] [[o.employee_id.address_home_id.city]]</para>
+		  <para style="terp_default_8">: [[o.employee_id.identification_id]]</para>
+		  <para style="terp_default_8">: [[o.employee_id.mobile_phone]]</para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_8">[[o.description_ta3]]</para>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+          
+          <para style="terp_default_8">PERUSAHAAN dan KONSULTAN secara bersama-sama dapat disebut “PARA PIHAK”.</para>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+          <para style="terp_default_Centre_8">PASAL 1</para>
+          <para style="terp_default_Centre_8">LINGKUP PEKERJAAN</para>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+          <para style="terp_default_Centre_8x">(1) PIHAK PERTAMA akan menempatkan PIHAK KEDUA di lokasi kerja – [[o.employee_id.work_location]]</para>
+          <para style="terp_default_Centre_8x">(2) Tugas dan tanggung jawab (scope of work) PIHAK KEDUA sebagai [[o.job_id.name]]</para>
+          <para style="terp_default_Centre_8x">(3) PIHAK PERTAMA berdasarkan pertimbangan tertentu berhak menempatkan PIHAK KEDUA ke </para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">[[o.description_ta5]]</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8">PASAL 2</para>
+          <para style="terp_default_Centre_8">JANGKA WAKTU PERJANJIAN</para>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+          <para style="terp_default_Centre_8x">(1) Perjanjian ini berlaku selama <b>[[o.contract_duration]]</b>, terhitung sejak [[get_my_startdate(o.date_start)]] </para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">dan akan berakhir pada tanggal [[get_my_enddate(o.date_end)]]</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8">PASAL 3</para>
+          <para style="terp_default_Centre_8">HAK DAN KEWAJIBAN</para>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+          <para style="terp_default_Centre_8x">(1) Selama perjanjian ini berlangsung, PIHAK KEDUA berhak memperoleh:</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">a. biaya pelayanan jasa dari PIHAK<font color="white">x </font> PERTAMA<font color="white">x </font>sebagaimana<font color="white">x </font> ditetapkan<font color="white">x </font> pada <font color="white">x </font> Lampiran<font color="white">x </font> A </para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">[[o.description_ta7]] </para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">b. biaya-biaya <font color="white">x </font>penggantian <font color="white">x </font>terhadap setiap pengeluaran yang ditetapkan pada Lampiran A </para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">[[o.description_ta8]] </para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">c. akses terhadap fasilitas, data, dan informasi pada lingkungan<font color="white">x </font> perusahaan yang disesuaikan</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">dengan lingkup pekerjaan PIHAK KEDUA.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">(2) Selama perjanjian ini berlangsung, PIHAK KEDUA berkewajiban untuk:</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>    
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">a. melaksanakan <font color="white">x </font>dan<font color="white">x </font> menyelesaikan<font color="white">x </font> pekerjaan<font color="white">x </font> pelayanan jasa secara profesional dengan</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">terbaik dan standar keilmuan terkini atas lingkup pekerjaan yang ditetapkan dalam perjanjian ini;</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">b. menyerahkan<font color="white">x </font>progres<font color="white">x </font>maupun hasil pekerjaan dalam bentuk asli dan terbuka untuk setiap</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">waktu dilihat, digunakan, maupun dikuasai oleh PIHAK PERTAMA;</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">c. bertanggungjawab secara pribadi untuk setiap kerugian yang dialami PIHAK PERTAMA akibat </para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">menggunakan hasil pekerjaan PIHAK KEDUA;</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">d. melaksanakan kewajiban-kewajiban lain sebagaimana ditentukan dalam perjanjian ini.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">(3) PIHAK<font color="white">x </font>PERTAMA<font color="white">x </font>berhak<font color="white">x </font>untuk tidak membayar penggantian biaya-biaya pengeluaran PIHAK</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>    
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">KEDUA selain biaya-biaya yang telah ditetapkan pada Lampiran A Perjanjian ini, kecuali PIHAK PERTAMA telah menyetujui biaya-biaya tersebut terlebih dahulu secara tertulis.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">(4) PERUSAHAAN <font color="white">x </font>berhak<font color="white">x </font> mengadakan<font color="white">x </font> evaluasi terhadap kinerja dan realisasi dari pelaksanaan</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>    
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">dan tanggung jawab PIHAK KEDUA sebagaimana diatur dalam perjanjian ini.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">(5) Apabila<font color="white">x </font> berdasarkan<font color="white">x </font> hasil<font color="white">x </font> evaluasi<font color="white">x </font> tersebut<font color="white">x </font> PIHAK KEDUA dinyatakan tidak mampu untuk</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>    
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">pekerjaannya menurut Perjanjian ini, maka PIHAK PERTAMA dapat melakukan tindakan yang dianggap perlu untuk memberhentikan PIHAK KEDUA meskipun masa perjanjian belum berakhir.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">(6) Seluruh hasil<font color="white">x</font>pekerjaan PIHAK KEDUA yang lahir dalam rangka pelaksanaan perjanjian ini, yang</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>    
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">merupakan ruang lingkup dari Hak Cipta maupun Hak Atas Kekayaan Intelektual menurut hukum negara Republik Indonesia, termasuk hak ekonomi dan hak lainnya yang timbul daripadanya, merupakan milik PIHAK PERTAMA. Oleh karenanya PIHAK PERTAMA berlaku sebagai Pencipta dan Pemegang Hak Cipta, sekaligus Pemilik dari Hak Atas Kekayaan Intelektual.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8">PASAL 4</para>
+          <para style="terp_default_Centre_8">PENGALIHAN PEKERJAAN DAN SUBKONTRAK</para>
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+          <para style="terp_default_Centre_8x">(1) PIHAK<font color="white">x</font>KEDUA<font color="white">x</font> dilarang mengalihkan dan men-subkontrak dalam cara dan bentuk apapun, baik</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">sebagian maupun seluruh lingkup pekerjaan yang diatur dalam Perjanjian ini kepada pihak manapun juga, kecuali atas persetujuan tertulis dari PIHAK PERTAMA.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">(2) Adanya <font color="white">x</font>persetujuan<font color="white">x</font> tersebut<font color="white">x</font> tidak<font color="white">x</font>membebaskan PIHAK KEDUA dari seluruh kewajiban dan</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">jawabnya kepada PIHAK PERTAMA berdasarkan perjanjian ini. Begitupun juga PIHAK KEDUA bertanggung jawab penuh atas seluruh tindakan dan kelalaian, termasuk seluruh hasil pekerjaan dan turunannya yang dilaksanakan oleh subkontraktor maupun pihak yang menerima pengalihan dari PIHAK KEDUA.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">(3) PIHAK <font color="white">x</font>PERTAMA berhak mempekerjakan penasehat, ahli, konsultan dan spesialis lainnya guna</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">memberikan nasehat dan pelayanan lainnya secara independen kepada PIHAK PERTAMA terkait setiap kegiatan maupun pekerjaan pelayanan jasa yang dilaksanakan oleh PIHAK KEDUA.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8">PASAL 5</para>
+          <para style="terp_default_Centre_8">PERATURAN</para>
+          <para style="terp_default_Centre_8">DAN TATA TERTIB KERJA</para>
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+          <para style="terp_default_Centre_8x">(1) PIHAK<font color="white">x</font> KEDUA<font color="white">x</font>dengan ini setuju dan sepakat untuk mematuhi segala peraturan dan tata tertib</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">kerja yang berlaku, maupun yang akan ditetapkan dari waktu ke waktu oleh PIHAK PERTAMA, dan mentaati setiap ketentuan hukum yang berlaku di Negara Republik Indonesia.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>    
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">(2) PIHAK <font color="white">x</font>KEDUA<font color="white">x</font> tidak<font color="white">x</font>berhak dan dilarang keras mengungkapkan maupun menyebarkan setiap</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">data dan/atau informasi milik PIHAK PERTAMA maupun yang berkaitan dengan kepentingan PIHAK PERTAMA kepada siapapun juga tanpa ijin tertulis dari PIHAK PERTAMA, yang menurut sifat, hakekat maupun peruntukannya adalah rahasia atau tertutup atau sepatutnya tidak diketahui umum, yaitu dalam bentuk dan alasan apapun, diantaranya namun tidak terbatas pada : keterangan pelanggan, pemasok, formula, contoh barang, rencana kerja, metode dagang, dan rahasia dagang, yang diketahuinya baik secara langsung, maupun tidak langsung sehubungan dengan pekerjaannya, yang berlaku secara terus menerus selama Perjanjian ini berlangsung sampai dengan setelah berakhirnya Perjanjian ini.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>    
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8">PASAL 6</para>
+          <para style="terp_default_Centre_8">PELANGGARAN BERAT</para>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+          <para style="terp_default_Centre_8x">(1) Jenis<font color="white">x</font><font color="white">x</font> pelanggaran-pelanggaran<font color="white">x</font> di bawah<font color="white">x</font> ini<font color="white">x</font> termasuk<font color="white">x</font> pelanggaran <font color="white">x</font> berat<font color="white">x</font> dan<font color="white">x</font><font color="white">x</font> dapat</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">mengakibatkan PIHAK PERTAMA dapat secara sepihak mengakhiri perjanjian ini, yaitu :</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>    
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">a. PIHAK <font color="white">x</font>KEDUA<font color="white">x</font>meninggalkan<font color="white">x</font> pekerjaan<font color="white">x</font> selama<font color="white">x</font>5 (lima) hari berturut-turut tanpa adanya</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>    
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">pemberitahuan tertulis dan tanpa alasan yang dapat dipertanggungjawabkan.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">b. PIHAK<font color="white">x</font> KEDUA<font color="white">x</font>melakukan<font color="white">x</font><font color="white">x</font> penipuan, pencurian<font color="white">x</font> dan<font color="white">x</font> penggelapan<font color="white">x</font><font color="white">x</font> barang/uang<font color="white">x</font> milik</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>    
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">perusahaan atau milik rekan sekerja.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">c. PIHAK <font color="white">x</font>KEDUA<font color="white">x</font> memberi<font color="white">x</font> keterangan<font color="white">x</font> palsu dan memalsukan surat pada saat perjanjian ini</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>    
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">ditandatangani, atau yang mengakibatkan kerugian perusahaan.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">d. PIHAK<font color="white">x</font>KEDUA melakukan pelanggaran ringan namun tidak memperbaikinya, meskipun telah</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>    
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">diberikan 3 (tiga) kali surat peringatan.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">e. PIHAK<font color="white">x</font> KEDUA membujuk, mempengaruhi atau memprovokasi rekan sekerja untuk melawan</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>    
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">perintah atasan, membuat suasana di lingkungan kerja menjadi ricuh dan tidak kondusif atau untuk melakukan suatu perbuatan yang bertentangan dengan hukum dan kesusilaan.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">f. PIHAK<font color="white">x</font> KEDUA<font color="white">x</font> dengan<font color="white">x</font> ceroboh atau sengaja merusak, merugikan atau membiarkan dalam</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>    
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">keadaan bahaya barang milik perusahaan.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">g. PIHAK KEDUA memfitnah, menista atau mencemarkan nama baik perusahaan.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>    
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">h. PIHAK<font color="white">x</font> KEDUA<font color="white">x</font> mengungkapkan, menyebarkan, membongkar<font color="white">x</font> atau<font color="white">x</font> membocorkan<font color="white">x</font> dalam</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>    
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">bentuk dan cara apapun yaitu terhadap setiap data dan/atau informasi milik perusahaan atau yang berkaitan dengan kepentingan perusahaan atau yang tergolong rahasia perusahaan dan rahasia dagang milik perusahaan.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">(2) Akibat<font color="white">x</font> pengakhiran<font color="white">x</font> perjanjian<font color="white">x</font> karena<font color="white">x</font> pelanggaran<font color="white">x</font>berat, PIHAK PERTAMA dibebaskan dari</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">kewajiban, kompensasi maupun beban apapun terhadap PIHAK KEDUA.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>    
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8">PASAL 7</para>
+          <para style="terp_default_Centre_8">BERAKHIRNYA PERJANJIAN</para>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+          <para style="terp_default_Centre_8x">(1) Perjanjian<font color="white">x</font> ini berakhir dengan sendirinya pada saat masa berlaku Perjanjian telah selesai, atau</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">sekalipun diperpanjang dan berakhir pula masa berlakunya.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>    
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">(2) PIHAK PERTAMA berhak secara sepihak mengakhiri Perjanjian ini setiap waktu jika PIHAK KEDUA</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">melakukan pelanggaran berat sebagaimana diatur dalam Pasal 7 dan jika terjadi hal-hal sebagai berikut :</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>    
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">a. PIHAK <font color="white">x</font>KEDUA<font color="white">x</font> meninggal<font color="white">x</font> dunia, atau<font color="white">x</font> mengalami<font color="white">x</font> gangguan<font color="white">x</font> kesehatan kronis dan/atau</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>    
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">berada dalam penanganan dokter karena gangguan kesehatan kronis.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">b. PIHAK <font color="white">x</font>KEDUA<font color="white">x</font> tidak<font color="white">x</font> mampu melakukan pekerjaan dan melaksanakan tanggung jawabnya</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>    
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">walaupun sudah diberi peringatan.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">c. PIHAK KEDUA menolak mentaati perintah maupun penugasan yang layak dari perusahaan.</para>
+          <para style="terp_default_Centre_8x">d. Terjadi <font color="white">x</font>peristiwa force majeure (keadaan memaksa) yang mengakibatkan perusahaan tutup</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>    
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">atau tidak mampu lagi untuk mengadakan hubungan kerja dengan PIHAK KEDUA.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">(3) Perjanjian<font color="white">x</font> ini<font color="white">x</font> dapat<font color="white">x</font> pula<font color="white">x</font> berakhir<font color="white">x</font> karena<font color="white">x</font>pengunduran diri PIHAK KEDUA, untuk itu PIHAK</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">KEDUA wajib terlebih dahulu mengajukan permohonan tertulis selambat-lambatnya 30 (tiga puluh) hari sebelumnya untuk mendapat pengesahan berupa persetujuan tertulis dan tanda tangan dari atasan langsung.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>    
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">(4) Pada saat Perjanjian ini berakhir, PIHAK KEDUA wajib :</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">a. mengembalikan<font color="white">x</font> seluruh<font color="white">x</font> fasilitas<font color="white">x</font> dan<font color="white">x</font> sarana<font color="white">x</font>penunjang yang diberikan oleh perusahaan</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>    
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">sebagaimana disebutkan pada Lampiran 1 Perjanjian ini;</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">b. menyerahkan<font color="white">x</font> seluruh<font color="white">x</font> catatan, memorandum, surat-menyurat, dokumen lain serta seluruh</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>    
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">inventaris milik perusahaan yang ada padanya, baik secara fisik maupun dalam bentuk data digital dan dokumen elektronik;</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">c. dilarang<font color="white">x</font> menyimpan<font color="white">x</font> salinan<font color="white">x</font> dari<font color="white">x</font> dokumen-dokumen<font color="white">x</font> milik perusahaan serta tidak akan</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+       
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">mempergunakannya untuk kepentingan diri sendiri dan/atau untuk orang/pihak lain;</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">d. melunasi<font color="white">x</font> (bilamana ada)<font color="white">x</font> seluruh<font color="white">x</font> utang<font color="white">x</font> maupun<font color="white">x</font> kewajiban<font color="white">x</font>administrasi dan keuangan</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">kepada perusahaan; dan</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">e. membebaskan perusahaan dari segala tuntutan, klaim, gugatan dan ganti rugi dalam bentuk</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">apapun.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8">PASAL 8</para>
+          <para style="terp_default_Centre_8">WANPRESTASI</para>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+          <para style="terp_default_Centre_8x">(1) Hal<font color="white">x</font> hal<font color="white">x</font>tersebut dibawah ini digolongkan sebagai tindakan Wanprestasi / Cidera Janji terhadap</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">perjanjian ini jika PIHAK KEDUA :</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">a. melakukan <font color="white">x</font>penundaan<font color="white">x</font> pekerjaan, pengurangan<font color="white">x</font> kualitas<font color="white">x</font><font color="white">x</font>pekerjaan<font color="white">x</font> <font color="white">x</font>atau<font color="white">x</font><font color="white">x</font> perbuatan</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">perbuatan lainnya yang menghambat pekerjaan pelayanan jasa yang dilakukan.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">b. tidak<font color="white">x</font> melaksanakan<font color="white">x</font> pekerjaan<font color="white">x</font> Pelayanan<font color="white">x</font> Jasa<font color="white">x</font> yang<font color="white">x</font>telah diatur di dalam perjanjian ini</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">sebagaimana mestinya.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">c. melanggar peraturan yang telah dibuat oleh perusahaan.</para>
+          <para style="terp_default_Centre_8x">d. tidak<font color="white">x</font> melaksanakan<font color="white">x</font> seluruh<font color="white">x</font> kewajiban, <font color="white">x</font>persyaratan<font color="white">x</font>,<font color="white">x</font>kondisi<font color="white">x</font> atau<font color="white">x</font> ketentuan<font color="white">x</font> dalam</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">perjanjian ini.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">(2) Atas wanprestasi yang dilakukan oleh PIHAK KEDUA tersebut, PIHAK PERTAMA dapat melakukan</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">segala tindakan sebagai berikut :</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">a. memerintahkan PIHAK KEDUA untuk menyelesaikan pelayanan jasa yang tertunda.</para>
+          <para style="terp_default_Centre_8x">b. menunda<font color="white">x</font>seluruh<font color="white">x</font><font color="white">x</font>pembayaran<font color="white">x</font><font color="white">x</font> atas<font color="white">x</font> pemakaian<font color="white">x</font> jasa<font color="white">x</font> PIHAK<font color="white">x</font> KEDUA<font color="white">x</font> sebagai<font color="white">x</font> akibat</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">wanprestasi tersebut.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">c. mengambil alih pekerjaan yang dilakukan oleh PIHAK KEDUA.</para>
+          <para style="terp_default_Centre_8x">d. membatalkan<font color="white">x</font> pelaksanaan<font color="white">x</font> perjanjian<font color="white">x</font> ini dengan<font color="white">x</font>diikuti pemutusan kontrak pelaksanaan</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">jasa terhadap PIHAK KEDUA yang melakukan wanprestasi.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8">PASAL 9</para>
+          <para style="terp_default_Centre_8">KEADAAN MEMAKSA (FORCE MAJEURE)</para>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+          <para style="terp_default_Centre_8x">(1) Yang dapat dianggap sebagai keadaan memaksa (force majeure) adalah semua kejadian di luar</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">kemampuan PARA PIHAK yang mempengaruhi jalannya pelaksanaan pekerjaan menurut perjanjian ini yaitu :</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">a. Bencana alam : gempa bumi, angin topan, banjir, tanah longsor, epidemi, kebakaran hutan;</para>
+          <para style="terp_default_Centre_8x">b. Peperangan, pemberontakan, huru hara dan blokade;</para>
+          <para style="terp_default_Centre_8x">c. Perubahan<font color="white">x</font> kebijakan<font color="white">x</font> di bidang<font color="white">x</font> hukum<font color="white">x</font> dan<font color="white">x</font>moneter yang secara resmi diumumkan oleh</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,45.0,388.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">pemerintah Republik Indonesia dan Malaysia.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">(2) Pihak<font color="white">x</font> yang<font color="white">x</font> berada<font color="white">x</font> dalam<font color="white">x</font> keadaan<font color="white">x</font>memaksa wajib memberitahukan kepada PIHAK lainnya</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">secara tertulis, selambat-lambatnya 3 (tiga) hari kalender setelah dialaminya keadaan memaksa itu, yang menjelaskan sebab dan akibatnya serta langkah-langkah yang perlu di ambil untuk mengatasinya. PARA PIHAK akan berusaha secara wajar untuk melakukan tindakan yang ada dalam kekuasaannya untuk mengatasi akibat dari keadaan memaksa itu. Apabila tidak ada pemberitahuan tertulis dalam waktu yang ditentukan berakibat keadaan memaksa dianggap tidak pernah terjadi.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">(3) Pemberitahuan<font color="white">x</font> tentang<font color="white">x</font> adanya<font color="white">x</font> keadaan<font color="white">x</font> memaksa sebagaimana yang diatur pada ayat (2)</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">pasal ini harus dikuatkan dengan keterangan tertulis dari instansi yang berwenang.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8">PASAL 10</para>
+          <para style="terp_default_Centre_8">PERNYATAAN DAN JAMINAN</para>
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+          <para style="terp_default_Centre_8x">(1) PIHAK<font color="white">x</font> KEDUA<font color="white">x</font> menjamin<font color="white">x</font>bahwa dalam rangka pelaksanaan pekerjaan pelayanan jasa kepada</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">PIHAK PERTAMA, PIHAK KEDUA baik secara langsung maupun tidak langsung, tidak akan melakukan, menawarkan ataupun menjanjikan sesuatu apapun yang melawan hukum kepada pejabat pemerintah, pihak ketiga atau karyawan perusahaan.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">(2) PIHAK<font color="white">x</font> KEDUA menjamin akan mematuhi seluruh peraturan perundang-undangan yang berlaku</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">di negara Republik Indonesia.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">(3) Perjanjian<font color="white">x</font> ini<font color="white">x</font> tidak dapat diubah atau dimodifikasi, kecuali atas persetujuan tertulis dari PARA</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">PIHAK.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">(4) Kecuali<font color="white">x</font> disetujui<font color="white">x</font> secara<font color="white">x</font> tegas<font color="white">x</font>dalam<font color="white">x</font> suatu dokumen terpisah, Perjanjian ini menggantikan</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">semua perjanjian dan kesepakatan lain yang ada dan atau telah dibuat sebelum tanggal perjanjian ini, baik tertulis maupun tidak tertulis, yang sebelumnya pernah dibuat oleh PARA PIHAK mengenai pokok masalah yang sama.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">(5) Jika<font color="white">x</font> ada<font color="white">x</font> salah<font color="white">x</font> satu atau lebih ketentuan Perjanjian ini dinyatakan tidak sah atau tidak dapat</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">dilaksanakan, maka ketidak absahnya atau tidak dapat dilaksanakannya ketentuan-ketentuan tersebut tidak akan mempengaruhi keabsahan Perjanjian ini secara keseluruhan.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">(6) Judul<font color="white">x</font> Perjanjian<font color="white">x</font> ini dan setiap pasal-pasal yang terkandung di dalamnya dinyatakan demikian</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">untuk maksud kemudahan saja dan tidak akan mempengaruhi penafsiran dari perjanjian dan masing-masing pasal yang bersangkutan.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8">PASAL 11</para>
+          <para style="terp_default_Centre_8">KORESPONDENSI</para>
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+          <para style="terp_default_Centre_8x">(1) Setiap<font color="white">x</font> pemberitahuan atau komunikasi yang menyangkut Perjanjian ini wajib dilakukan secara</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">tertulis dalam bahasa Indonesia dan diserahkan langsung kepada:</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,65.0,368.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_8"><u>PIHAK PERTAMA</u></para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,65.0,100.0,277.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_8">Nama</para>
+          <para style="terp_default_8">Alamat</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>          
+          <para style="terp_default_8">Telepon</para>
+          <para style="terp_default_8">Fax</para>
+          <para style="terp_default_8">Email</para>
+        </td>
+        <td>
+		  <para style="terp_default_8">: Asiyah</para>
+		  <para style="terp_default_8">: Gedung Tifa Lantai 8,</para>
+		  <para style="terp_default_8">: Jln. Kuningan Barat No.26 Jakarta Selatan - 12710</para>
+		  <para style="terp_default_8">: 021-27510487</para>
+		  <para style="terp_default_8">: 021-27510489</para>
+		  <para style="terp_default_8">: asiyah@immobisp.com</para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,65.0,368.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_8"><u>PIHAK KEDUA</u></para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,65.0,100.0,277.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_8">Nama</para>
+          <para style="terp_default_8">Alamat</para>
+          <para style="terp_default_Centre_8x"><font color="white">x </font></para>          
+          <para style="terp_default_8">Telepon</para>
+          <para style="terp_default_8">Email</para>
+        </td>
+        <td>
+		  <para style="terp_default_8">: [[o.employee_id.name]]</para>
+		  <para style="terp_default_8">: [[o.employee_id.address_home_id.street]]</para>
+		  <para style="terp_default_8">: [[o.employee_id.address_home_id.street2]] [[o.employee_id.address_home_id.city]]</para>
+		  <para style="terp_default_8">: [[o.employee_id.mobile_phone]]</para>
+		  <para style="terp_default_8">: [[o.employee_id.work_email]]</para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">Setiap perubahan alamat, telepon, dan email yang tercantum dalam ayat (1) wajib diberitahukan kepada PIHAK lainnya dalam waktu 7 (tujuh) hari kerja setelah perubahan tersebut efektif.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8">PASAL 12</para>
+          <para style="terp_default_Centre_8">PILIHAN HUKUM DAN</para>
+          <para style="terp_default_Centre_8">PENYELESAIAN PERSELISIHAN</para>
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+          <para style="terp_default_Centre_8x">(1) Perjanjian<font color="white">x</font> ini<font color="white">x</font> ditafsirkan, tunduk<font color="white">x</font> dan<font color="white">x</font> diatur, serta<font color="white">x</font> dilaksanakan<font color="white">x</font> menurut<font color="white">x</font>Hukum Negara</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">Republik Indonesia.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">(2) Setiap perselisihan, pertentangan<font color="white">x</font>dan<font color="white">x</font> perbedaan pendapat yang mungkin timbul sehubungan</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">dengan pelaksanaan Perjanjian ini akan diselesaikan terlebih dahulu oleh PARA PIHAK secara bipartit dengan cara musyawarah mufakat.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">(3) Apabila<font color="white">x</font> musyawarah<font color="white">x</font> mufakat<font color="white">x</font> tidak<font color="white">x</font>tercapai, setiap PIHAK dapat menyelesaikannya melalui</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">Pengadilan Negeri Jakarta Selatan berdasarkan ketentuan perundang-undangan yang berlaku.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8">PASAL 13</para>
+          <para style="terp_default_Centre_8">PENUTUP</para>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+          <para style="terp_default_Centre_8x">(1) Demikianlah<font color="white">x</font> perjanjian<font color="white">x</font> ini<font color="white">x</font> dibuat, disetujui<font color="white">x</font> dan<font color="white">x</font> ditandatangani<font color="white">x</font> oleh<font color="white">x</font> PARA<font color="white">x</font>PIHAK dalam</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">keadaan sehat jasmani dan rohani, tanpa adanya paksaan, tekanan maupun ancaman dari pihak manapun juga.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,20.0,413.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+          <para style="terp_default_Centre_8x">(2) Perjanjian<font color="white">x</font> ini<font color="white">x</font>dibuat dalam dua rangkap dan masing-masing dibubuhi materai cukup sehingga</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+	
+    <blockTable colWidths="36.0,35.0,398.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">memiliki kekuatan hukum yang sama. Satu dipegang oleh PERUSAHAAN dan lainnya dipegang oleh KONSULTAN.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+	
+    <blockTable colWidths="36.0,219.0,213.0,36.0" style="Content_Order_Reference_Table_blok_line">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8">[[o.create_uid.company_id.name]]</para>
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+
+        </td>
+        <td>
+		  <para style="terp_default_Centre_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,219.0,213.0,36.0" style="Content_Order_Reference_Table_blok_line">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><u>Asiyah</u></para>
+          <para style="terp_default_Centre_8">Head Of HR / GA</para>
+
+        </td>
+        <td>
+		  <para style="terp_default_Centre_8"><u>[[o.employee_id.name]]</u></para>
+		  <para style="terp_default_Centre_8">[[o.job_id.name]]</para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white">x </font>
+    </para>            
+    <para style="terp_default_8">
+      <font color="white"> x</font>
+    </para>            
+
+    <blockTable colWidths="36.0,9.0,415.0,9.0,36.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_left_8_bold"><u>LAMPIRAN A</u></para>
+
+        </td>
+        <td>
+		  <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,9.0,415.0,9.0,36.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_8"><b>1. Biaya Jasa</b></para>
+
+        </td>
+        <td>
+		  <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+
+    <blockTable colWidths="36.0,19.0,414.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">- Perusahaan setuju untuk membayar imbalan jasa sebagaimana berikut :</para>
+          <para style="terp_default_Centre_8x">- PERUSAHAAN akan membayarkan biaya jasa sebesar Rp [[o.wage]] (Nett) per bulan</para>
+          <para style="terp_default_Centre_8x">- Imbalan<font color="white">x</font>jasa<font color="white">x</font> tersebut<font color="white">x</font> sudah termasuk di dalamnya, akomodasi, makan dan transportasi. Pajak</para>
+
+        </td>
+        <td>
+		  <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,25.0,408.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">yang dibayarkan oleh PT. Immobi Solusi Prima adalah pajak sebagai konsultan atas pembayaran jasa  pekerjaan terhadap PT. Immobi Solusi Prima. Jika konsultan memiliki penghasilan lain di luar pekerjaan di PT. Immobi Solusi Prima, maka pembayaran pajak tersebut menjadi tanggung jawab konsultan.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,19.0,414.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">- Pembayaran biaya jasa dilakukan pada setiap tanggal 1 bulan berjalan ke rekening Konsultan di :</para>
+
+        </td>
+        <td>
+		  <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,39.0,100.0,303.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_8">Bank</para>
+          <para style="terp_default_8">Cabang</para>
+          <para style="terp_default_8">Nomor Rekening</para>
+          <para style="terp_default_8">Atas Nama</para>
+
+        </td>
+        <td>
+		  <para style="terp_default_8">: [[o.employee_id.bank_account_id.bank_name]]</para>
+		  <para style="terp_default_8">: [[o.employee_id.bank_account_id.bank.street]]</para>
+		  <para style="terp_default_8">: [[o.employee_id.bank_account_id.acc_number]]</para>
+		  <para style="terp_default_8">: [[o.employee_id.bank_account_id.partner_id.name]]</para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,9.0,415.0,9.0,36.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_8"><b>1. Jam Kerja</b></para>
+
+        </td>
+        <td>
+		  <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,19.0,414.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">- Jam<font color="white">x</font> kerja<font color="white">x</font> ditetapkan<font color="white">x</font> berdasarkan<font color="white">x</font> kepentingan operasional dan tata tertib kerja di lingkungan</para>
+
+        </td>
+        <td>
+		  <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,25.0,408.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">PERUSAHAAN. Sebagai seorang profesional, Konsultan diharapkan bekerja di luar jam kerja yang berlaku umum untuk kepentingan operasional yang diperlukan. Konsultan tidak berhak untuk mendapatkan biaya jasa untuk waktu kerja lembur.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,9.0,415.0,9.0,36.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_8"><b>3. Biaya-Biaya yang menjadi tanggungan PERUSAHAAN</b></para>
+
+        </td>
+        <td>
+		  <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,19.0,414.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">a) Perjalanan Dinas</para>
+
+        </td>
+        <td>
+		  <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,30.0,403.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">PERUSAHAAN akan memberikan penggantian biaya-biaya yang timbul, termasuk biaya akomodasi untuk perjalanan dinas di dalam wilayah Indonesia, termasuk biaya pesawat, dengan ketentuan bahwa perjalanan dinas tersebut telah mendapatkan persetujuan sebelumnya dari Atasan sebelum melakukan perjalanan dinas.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,19.0,414.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">b) Transportasi</para>
+
+        </td>
+        <td>
+		  <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,30.0,403.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">PERUSAHAAN akan menanggung biaya transportasi lokal untuk kepentingan pekerjaan, yang disertai dengan bukti-bukti yang sah, termasuk perjalanan dari rumah ke kantor dan sebaliknya. Kendaraan PERUSAHAAN akan tersedia hanya berdasarkan permintaan untuk kepentingan pekerjaan.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,19.0,414.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">c) Biaya biaya Bank</para>
+
+        </td>
+        <td>
+		  <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,30.0,403.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">Perusahan telah menunjuk salah satu Bank untuk pembayaran gaji, jika konsultan menggunakan Bank lain, maka biaya transfer akan ditanggung oleh pihak Konsultan.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+    <blockTable colWidths="36.0,19.0,414.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">Biaya-biaya yang menjadi tanggungan perusahaan, jika tidak dinyatakan sebaliknya, hanya akan dibayarkan terhadap setiap pengeluaran Konsultan berdasarkan sistem reimbursement atas dasar bukti-bukti pembayaran asli dan resmi.</para>
+
+        </td>
+        <td>
+		  <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,9.0,415.0,9.0,36.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_8"><b>4. Lain-lain</b></para>
+
+        </td>
+        <td>
+		  <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,19.0,414.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">- PERUSAHAAN<font color="white">x</font> dapat<font color="white">x</font> setiap<font color="white">x</font> waktu<font color="white">x</font> menyediakan<font color="white">x</font> fasilitas<font color="white">x</font> maupun<font color="white">x</font> sarana pendukung untuk</para>
+        </td>
+        <td>
+		  <para style="terp_default_Centre_8"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable>
+    <blockTable colWidths="36.0,25.0,408.0,9.0,27.0" style="Content_Order_Reference_Table">
+      <tr>
+        <td>
+          <para style="terp_default_Centre_8x"></para>
+        </td>
+        <td>
+          <para style="terp_default_Centre_8"><b></b></para>
+
+        </td>
+        <td>
+         
+          <para style="terp_default_Centre_8x">menunjang lingkup pekerjaan KONSULTAN.</para>
+        </td>
+        <td>
+		  <para style="terp_default_8"></para>
+       </td>
+        <td>
+          <para style="terp_default_Centre_8"></para>
+        </td>
+      </tr>
+    </blockTable> 
+
+    <para style="terp_default_9">
+      <font color="white"> </font>
+    </para>
+    <para style="terp_default_9">
+      <font color="white"> </font>
+    </para>
+  </pto>
+  </story>
+</document>

@@ -1,0 +1,107 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data>
+
+		<record id="res_partner_code_form" model="ir.ui.view">
+			<field name="name">res.partner.code.form</field>
+			<field name="model">res.partner.code</field>
+			<field name="arch" type="xml">
+				<form string="Partner's Code">
+					<sheet>
+						<div class="oe_title">
+							<label for="name" class="oe_edit_only" />
+							<h1>
+								<field name="name" attrs="{'readonly': [('is_created', '=', True)]}" />
+							</h1>
+						</div>
+						<group>
+							<group>
+								<field name="is_created" invisible="1" />
+								<field name="prefix" attrs="{'readonly': [('is_created', '=', True)]}" />
+								<field name="suffix" attrs="{'readonly': [('is_created', '=', True)]}" />
+								<field name="padding" attrs="{'readonly': [('is_created', '=', True)]}" />
+								<field name="sequence_id" />
+							</group>
+							<group>
+							</group>
+						</group>
+						<notebook>
+							<page string="Description">
+								<field name='note' />
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="res_partner_code_tree" model="ir.ui.view">
+			<field name="name">res.partner.code.tree</field>
+			<field name="model">res.partner.code</field>
+			<field name="arch" type="xml">
+				<tree string="Partner's Code">
+					<field name="name" />
+					<field name="sequence_id" />
+					<field name="note" />
+				</tree>
+			</field>
+		</record>
+
+
+		<record id="action_res_partner_code" model="ir.actions.act_window">
+			<field name="name">Partner Code</field>
+			<field name="res_model">res.partner.code</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Click to add prefix code to partners.
+				</p>
+				<p>
+					Giving code can be now so easy.
+				</p>
+			</field>
+		</record>
+
+		<record id="action_partner_contacts" model="ir.actions.act_window">
+			<field name="name">Partners</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">res.partner</field>
+			<field name="view_type">form</field>
+			<field name="domain">[]</field>
+			<field name="view_mode">kanban,tree,form</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Click to add a Partner Code.
+				</p>
+			</field>
+		</record>
+
+		<menuitem id="menu_contact" sequence="10" name="Contacts" />
+
+		<menuitem id="submenu_contact" sequence="5" name="Contacts"
+			parent="menu_contact" />
+
+		<menuitem name="Contacts" action="action_partner_contacts"
+			id="menu_action_res_partner" parent="submenu_contact" sequence="1" />
+
+		<menuitem name="Partner Code" action="action_res_partner_code"
+			id="menu_action_res_partner_code" parent="submenu_contact" sequence="2"
+			groups="base.group_user" />
+
+		<!-- INHERTI RES PARTNER TO ADD SEQUENCE -->
+		<record id="view_partner_form" model="ir.ui.view">
+			<field name="name">res.partner.form.inherit</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_form" />
+			<field name="arch" type="xml">
+				<field name="ref" position="replace">
+					<field name="is_generate_code" invisible="1"/>
+					<field name="partner_code_id" attrs="{'invisible': [('is_generate_code', '=', True)]}"/>
+					<field name="ref" readonly="1" attrs="{'invisible': [('is_generate_code', '=', False)]}"/>
+				</field>
+			</field>
+		</record>
+
+	</data>
+</openerp>

@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<report id="action_report_crossovered_budget" model="crossovered.budget"
+			string="Budgets" report_type="qweb-pdf"
+			name="account_reserved_budget.report_crossoveredbudget" file="account_reserved_budget.report_crossoveredbudget"
+			menu="False" />
+
+		<record model="workflow.activity" id="account_budget.act_draft">
+			<field name="action">budget_draft()</field>
+		</record>
+
+		<!-- accoount budget -->
+		<record model="ir.ui.view" id="crossovered_budget_view_form_1">
+			<field name="name">crossovered.budget.view.form</field>
+			<field name="model">crossovered.budget</field>
+			<field name="inherit_id" ref="account_budget.crossovered_budget_view_form" />
+			<field name="arch" type="xml">
+				<button name="confirm" position="after">
+					<button name="budget_switch" string="Switch" states="validate"
+						type="object" class="oe_highlight" />
+					<button string="Approve" name="budget_validate" states="switch"
+						type="object" class="oe_highlight" groups="account.group_account_manager" />
+				</button>
+
+				<div class="oe_title" position="after">
+					<div class="oe_right oe_button_box oe_inline" name="buttons">
+
+						<button name="budget_view" type="object" class="oe_stat_button"
+							icon="fa-shopping-cart">
+							<field name="total_lines" widget="statinfo" string="Budget Lines"
+								help="Budget LInes" />
+						</button>
+					</div>
+				</div>
+				<button name="validate" position="replace">
+					<button string="Approve" name="validate" states="confirm"
+						type="workflow" class="oe_highlight" group="account.group_account_manager" />
+				</button>
+				<field name="company_id" position="before">
+					<field name="total_amount" states="validate,switch,done" />
+				</field>
+				<xpath
+					expr="//form/sheet/notebook/page[@string='Budget Lines']/field[@name='crossovered_budget_line']"
+					position="replace">
+					<field name="crossovered_budget_line" colspan="4" nolabel="1"
+						attrs="{'readonly': [('state', 'not in', ('draft','confirm','switch'))]}">
+						<tree string="Budget Lines">
+							<field name="crossovered_budget_id" invisible="1" />
+							<field name="state_related" invisible="1" />
+							<field name="analytic_account_id" groups="analytic.group_analytic_accounting" />
+							<field name="general_budget_id" />
+							<field name="date_from" />
+							<field name="date_to" />
+							<field name="planned_amount" />
+							<field name="state" />
+						</tree>
+						<form string="Budget Lines">
+							<header>
+								<button name="button_confirm" states="draft" icon="STOCK_APPLY"
+									type="object" string="Confirm" />
+								<button name="button_validate" states="confirm" icon="STOCK_APPLY"
+									type="object" string="Approve" />
+								<button name="button_draft" states="confirm,cancel" icon="STOCK_REFRESH"
+									type="object" string="Reset to Draft" />
+								<button name="button_cancel" states="confirm,validate"
+									icon="STOCK_CANCEL" type="object" string="Cancel Budget" />
+								<field name="state" widget="statusbar" statusbar_visible="draft,confirm,validate" />
+							</header>
+							<group>
+								<group>
+									<field name="analytic_account_id" groups="analytic.group_analytic_accounting"
+										attrs="{'readonly': [('state', 'in', ('cancel'))]}" />
+									<field name="general_budget_id" attrs="{'readonly': [('state', 'in', ('cancel'))]}" />
+									<field name="planned_amount" attrs="{'readonly': [('state', 'in', ('cancel'))]}" />
+								</group>
+								<group>
+									<label for="date_from" string="Duration" />
+									<div>
+										<field name="date_from" class="oe_inline"
+											attrs="{'readonly': [('state', 'in', ('cancel'))]}" />
+										-
+										<field name="date_to" class="oe_inline"
+											attrs="{'readonly': [('state', 'in', ('cancel'))]}" />
+									</div>
+									<field name="company_id" widget="selection"
+										groups="base.group_multi_company" attrs="{'readonly': [('state', 'not in', ('cancel'))]}" />
+								</group>
+							</group>
+						</form>
+					</field>
+				</xpath>
+			</field>
+		</record>
+
+		<!-- ANALYTIC -->
+		<record model="ir.ui.view" id="view_analytic_account_reserve_budget">
+			<field name="name">account.analytic.account.form.inherit.budget
+			</field>
+			<field name="model">account.analytic.account</field>
+			<field name="inherit_id"
+				ref="account_budget.view_account_analytic_account_form_inherit_budget" />
+			<field name="arch" type="xml">
+				<field name="crossovered_budget_line" position="replace">
+					<field name="crossovered_budget_line" widget="one2many_list"
+						colspan="4" nolabel="1" readonly="1" mode="tree">
+						<tree string="Budget Lines">
+							<field name="crossovered_budget_id" />
+							<field name="general_budget_id" />
+							<field name="date_from" />
+							<field name="date_to" />
+							<field name="planned_amount" />
+						</tree>
+					</field>
+				</field>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_crossovered_budget_line_tree_switch">
+			<field name="name">crossovered.budget.lines.tree</field>
+			<field name="model">crossovered.budget.lines</field>
+			<field name="arch" type="xml">
+				<tree
+					colors="blue:state == 'draft';gray:state in ('done','cancel');black:state in ('confirm','validate')"
+					version='7.0' string="Budget Lines" editable="bottom">
+					<field name="analytic_account_id" groups="analytic.group_analytic_accounting"
+						attrs="{'readonly': [('state', 'in', ('done', 'validate','cancel')), ('state_related', 'in', ('cancel', 'validate','done'))]}" />
+					<field name="crossovered_budget_id" invisible="1" />
+					<field name="state_related" invisible="1" />
+					<field name="general_budget_id"
+						attrs="{'readonly': [('state', 'in', ('done', 'validate','cancel')), ('state_related', 'in', ('cancel', 'validate','done'))]}" />
+					<field name="date_from"
+						attrs="{'readonly': [('state', 'in', ('done', 'validate','cancel')), ('state_related', 'in', ('cancel', 'validate','done'))]}" />
+					<field name="date_to"
+						attrs="{'readonly': [('state', 'in', ('done', 'validate','cancel')), ('state_related', 'in', ('cancel', 'validate','done'))]}" />
+					<field name="planned_amount"
+						attrs="{'readonly': [('state', 'in', ('done', 'validate','cancel')), ('state_related', 'in', ('cancel', 'validate','done'))]}" />
+					<field name="state" />
+					<button name="button_cancel" states="validate" icon="STOCK_CANCEL"
+						type="object" string="Cancel Budget" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_crossovered_budget_line_tree">
+			<field name="name">crossovered.budget.lines.tree</field>
+			<field name="model">crossovered.budget.lines</field>
+			<field name="arch" type="xml">
+				<tree version='7.0' string="Budget Lines" editable="bottom"
+					create="false">
+					<field name="analytic_account_id" groups="analytic.group_analytic_accounting"
+						readonly="1" />
+					<field name="crossovered_budget_id" invisible="1" />
+					<field name="state_related" invisible="1" />
+					<field name="general_budget_id" attrs="{'readonly': [('state', 'not in', ('draft'))]}" />
+					<field name="date_from" attrs="{'readonly': [('state', 'not in', ('draft'))]}" />
+					<field name="date_to" attrs="{'readonly': [('state', 'not in', ('draft'))]}" />
+					<field name="planned_amount" attrs="{'readonly': [('state', 'not in', ('draft'))]}" />
+					<field name="state" />
+					<button name="button_confirm" states="draft" icon="STOCK_APPLY"
+						type="object" string="Confirm" />
+					<button name="button_draft" states="confirm" icon="STOCK_REFRESH"
+						type="object" string="Reset to Draft" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_crossovered_budget_line_tree_available">
+			<field name="name">crossovered.budget.lines.tree</field>
+			<field name="model">crossovered.budget.lines</field>
+			<field name="arch" type="xml">
+				<tree version='7.0' string="Budget Lines" editable="bottom"
+					create="false">
+					<field name="analytic_account_id" groups="analytic.group_analytic_accounting"
+						readonly="1" />
+					<field name="crossovered_budget_id" invisible="1" />
+					<field name="state_related" invisible="1" />
+					<field name="general_budget_id" readonly="1" />
+					<field name="date_from" readonly="1" />
+					<field name="date_to" readonly="1" />
+					<field name="planned_amount" readonly="1" />
+					<field name="reserved_amount" readonly="1" />
+					<field name="remaining_amount" readonly="1" />
+					<field name="practical_amount" readonly="1" />
+					<field name="theoritical_amount" readonly="1" />
+					<field name="percentage" readonly="1" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_budget_line_graph" model="ir.ui.view">
+			<field name="name">crossovered.budget.lines.graph</field>
+			<field name="model">crossovered.budget.lines</field>
+			<field name="arch" type="xml">
+				<graph string="Budget Lines" type="pivot">
+					<field name="general_budget_id" type="row" />
+					<field name="analytic_account_id" type="row" />
+					<field name="date_from" type="col" />
+					<field name="planned_amount" type="measure" />
+				</graph>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_crossovered_budget_line_search">
+			<field name="name">crossovered.budget.lines.search</field>
+			<field name="model">crossovered.budget.lines</field>
+			<field name="arch" type="xml">
+				<search string="Budget Analysis">
+					<field name="general_budget_id" />
+					<field name="analytic_account_id" operator="child_of" />
+					<field name="crossovered_budget_id" string="Reference" />
+					<filter string="Running" name="running" icon="terp-check"
+						domain="[('state','=','validate')]" help="Running" />
+					<filter string="Done" name="done" icon="terp-check"
+						domain="[('state','=','done')]" help="Closed" />
+					<separator />
+					<group expand="1" string="Group By">
+						<filter string="Analytic Account" name="group_analytic_account"
+							icon="terp-partner" context="{'group_by':'analytic_account_id'}" />
+						<filter name="group_budget" string="Budget"
+							icon="terp-stock_symbol-selection" context="{'group_by':'crossovered_budget_id'}" />
+						<filter name="group_budget_post" string="Budget Position"
+							icon="terp-accessories-archiver" context="{'group_by':'general_budget_id'}" />
+						<filter string="Status" icon="terp-stock_effects-object-colorize"
+							context="{'group_by':'state'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_budget_lines">
+			<field name="name">Budget Lines</field>
+			<field name="res_model">crossovered.budget.lines</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,graph</field>
+			<field name="context">{'group_by_group_budget': 1, 'group_by_group_analytic_account': 1}
+			</field>
+			<field name="view_id" ref="view_crossovered_budget_line_tree_switch" />
+			<field name="search_view_id" ref="view_crossovered_budget_line_search" />
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Click to create a new budget.
+				</p>
+				<p>
+					A budget is a forecast of your company's income and/or expenses
+					expected for a period in the future. A budget is defined on some
+					financial accounts and/or analytic accounts (that may represent
+					projects, departments, categories of products, etc.)
+				</p>
+				<p>
+					By keeping track of where your money goes, you may be less
+					likely
+					to overspend, and more likely to meet your financial
+					goals. Forecast
+					a budget by detailing the expected revenue
+					per analytic account and
+					monitor its evolution based on the
+					actuals realised during that
+					period.
+				</p>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_budget_request">
+			<field name="name">Budget Lines</field>
+			<field name="res_model">crossovered.budget.lines</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+			<field name="domain">[('analytic_account_id.user_ids','in',uid),
+				('crossovered_budget_id.state','in',('confirm',
+				'validate','switch'))]
+			</field>
+			<field name="context">{'request' : True}</field>
+			<field name="view_id" ref="view_crossovered_budget_line_tree" />
+			<field name="search_view_id" ref="view_crossovered_budget_line_search" />
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Click to create a new budget.
+				</p>
+				<p>
+					A budget is a forecast of your company's income and/or expenses
+					expected for a period in the future. A budget is defined on some
+					financial accounts and/or analytic accounts (that may represent
+					projects, departments, categories of products, etc.)
+				</p>
+				<p>
+					By keeping track of where your money goes, you may be less
+					likely
+					to overspend, and more likely to meet your financial
+					goals. Forecast
+					a budget by detailing the expected revenue
+					per analytic account and
+					monitor its evolution based on the
+					actuals realised during that
+					period.
+				</p>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_budget_available">
+			<field name="name">Budget Lines</field>
+			<field name="res_model">crossovered.budget.lines</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+			<field name="domain">[]</field>
+			<field name="view_id" ref="view_crossovered_budget_line_tree_available" />
+			<field name="search_view_id" ref="view_crossovered_budget_line_search" />
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Click to create a new budget.
+				</p>
+				<p>
+					A budget is a forecast of your company's income and/or expenses
+					expected for a period in the future. A budget is defined on some
+					financial accounts and/or analytic accounts (that may represent
+					projects, departments, categories of products, etc.)
+				</p>
+				<p>
+					By keeping track of where your money goes, you may be less
+					likely
+					to overspend, and more likely to meet your financial
+					goals. Forecast
+					a budget by detailing the expected revenue
+					per analytic account and
+					monitor its evolution based on the
+					actuals realised during that
+					period.
+				</p>
+			</field>
+		</record>
+
+		<menuitem id="menu_budget_lines" name="Budget Lines"
+			parent="account_budget.next_id_31" action="action_budget_available" />
+
+		<!-- <menuitem id="menu_budget_request" name="Budget Request" -->
+		<!-- parent="account_supplier_adv.menu_finance_request" action="action_budget_request" 
+			/> -->
+
+		<!-- <menuitem id="menu_budget_status" name="Budget Available" -->
+		<!-- parent="account_supplier_adv.menu_finance_request" action="action_budget_available" 
+			/> -->
+
+		<record model="ir.ui.view" id="crossovered_budget_lines_view_approval">
+			<field name="name">crossovered.budget.lines.approve.view.form</field>
+			<field name="model">crossovered.budget.lines.approve</field>
+			<field name="arch" type="xml">
+				<form string="Approve Budget Lines">
+					<p class="oe_grey">
+						Approve all budget lines ?
+					</p>
+					<footer>
+						<button string="Approve Budget" name="button_validate"
+							type="object" default_focus="1" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_budget_approve">
+			<field name="name">Approve Budget Lines</field>
+			<field name="res_model">crossovered.budget.lines.approve</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+			<field name="view_id" ref="crossovered_budget_lines_view_approval" />
+		</record>
+
+		<record model="ir.values" id="action_budget_approve_binding">
+			<field name="name">action_budget_approve</field>
+			<field name="key2">client_action_multi</field>
+			<field name="value"
+				eval="'ir.actions.act_window,' +str(ref('action_budget_approve'))" />
+			<field name="model">crossovered.budget.lines</field>
+			<field name="groups">account.group_account_invoice</field>
+		</record>
+
+		<record model="ir.ui.view" id="crossovered_budget_lines_view_confirmation">
+			<field name="name">crossovered.budget.lines.approve.view.form</field>
+			<field name="model">crossovered.budget.lines.approve</field>
+			<field name="arch" type="xml">
+				<form string="Confirm Budget Lines">
+					<p class="oe_grey">
+						Confirm all budget lines ?
+					</p>
+					<footer>
+						<button string="Confirm Budget" name="button_confirm" type="object"
+							default_focus="1" class="oe_highlight" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_budget_confirm">
+			<field name="name">Confirm Budget Lines</field>
+			<field name="res_model">crossovered.budget.lines.approve</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+			<field name="view_id" ref="crossovered_budget_lines_view_confirmation" />
+		</record>
+
+		<record model="ir.values" id="action_budget_confirm_binding">
+			<field name="name">action_budget_confirm</field>
+			<field name="key2">client_action_multi</field>
+			<field name="value"
+				eval="'ir.actions.act_window,' +str(ref('action_budget_confirm'))" />
+			<field name="model">crossovered.budget.lines</field>
+		</record>
+	</data>
+</openerp>

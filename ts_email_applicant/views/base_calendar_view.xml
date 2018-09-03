@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>    
+
+
+
+		<record id ="calendar_event_ext_view" model="ir.ui.view">
+			<field name ="name">calendar.event.ext.view</field>
+			<field name ="model">calendar.event</field>
+			<field name ="inherit_id" ref ="calendar.view_calendar_event_form"/>
+			<field name ="arch" type ="xml">
+					<xpath expr ="//field[@name='location']" position ="after">
+						<field name="partner_name"  />	
+						<field name="email_applicant" />
+						<field name="job_position" />
+					</xpath>
+			</field>
+		</record> 
+      
+		<record id ="hr_applicant_ext_view" model="ir.ui.view">
+			<field name ="name">hr.applicant.ext.view</field>
+			<field name ="model">hr.applicant</field>
+			<field name ="inherit_id" ref ="hr_recruitment.crm_case_form_view_job"/>
+			<field name ="arch" type ="xml">
+		        <field name="email_from" position = "attributes">
+		         	    <attribute name = "required">1</attribute>		    
+				</field>		
+			</field>
+		</record> 
+      
+    </data>
+</openerp>
+
+
+

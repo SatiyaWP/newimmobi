@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>    
+
+<!-- add view asset -->
+
+		<record id ="depresiasi_asset_ext_view" model="ir.ui.view">
+			<field name ="name">depresiasi.asset.ext.view</field>
+			<field name ="model">account.asset.asset</field>
+			<field name ="inherit_id" ref ="account_asset.view_account_asset_asset_form"/>
+			<field name ="arch" type ="xml">
+					<xpath expr ="//field[@name='purchase_date']" position ="after">
+						<field name="asset_usage_date"  />	
+					</xpath>
+			</field>
+		</record> 
+      
+      
+    </data>
+</openerp>
+
+
+

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+		
+		<record id="dos_view_partner_form" model="ir.ui.view">
+        	<field name="name">dos.res.partner.custom</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_form" />
+			<field name="arch" type="xml">
+				<xpath expr="/form/sheet/group/group[2]/field[@name='title']" position="after">
+					<field name="kode_transaksi"/>
+					<field name="npwp" placeholder="00.000.000.0-000.000"/>
+				</xpath>
+				<field name="street2" position="replace">      
+					<div class="address_format">
+						<field name="street2" placeholder="Street2..." style="width: 50%%" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+	                    <field name="rt" placeholder="RT" style="width: 20%%" attrs="{'readonly': [('use_parent_address','=',True)]}"/>/
+	                    <field name="rw" placeholder="RW" style="width: 20%%" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+	                </div>
+	                <div class="address_additional_format">
+                        <field name="kelurahan_id" on_change="onchange_kelurahan_id(kelurahan_id)" options='{"no_open": True, "no_create_edit": True}' placeholder="Kelurahan" style="width: 33%%" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                        <field name="kecamatan_id" on_change="onchange_kecamatan_id(kecamatan_id)" options='{"no_open": True, "no_create_edit": True}' placeholder="Kecamatan" style="width: 33%%" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                        <field name="kabupaten_id" on_change="onchange_kabupaten_id(kabupaten_id)" options='{"no_open": True, "no_create_edit": True}' class="oe_no_button" placeholder="Kabupaten" style="width: 32%%" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                    </div>
+	           	</field>
+                <field name="state_id" position="attributes">
+                	<attribute name="options">{"no_open": True, "no_create_edit": True}</attribute>
+                	<attribute name="string">Province</attribute>
+                </field>
+			</field>
+		</record>
+		
+	</data>
+</openerp>

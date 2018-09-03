@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<!--ACC INVOICE -->
+		<record model="ir.ui.view" id="inherit2_view_invoice_form">
+			<field name="name">inherit2.account.invoice.form</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="account.invoice_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//button[@string='Print']" position="replace">
+					<button name="print_invoice_immobi" string="Print" type="object"
+						icon="gtk-print" states='open,proforma2,proforma' class="oe_highlight"
+						groups="base.group_user" />
+				</xpath>
+				<xpath expr="//button[@string='Print Invoice']" position="replace">
+					<button name="print_invoice_immobi" string="Print Invoice"
+						type="object" icon="gtk-print" states='draft' groups="base.group_user" />
+				</xpath>
+			</field>
+		</record>
+
+		<!--Invoice Report -->
+		<!--<report auto="False" id="cetak_invoice_immobi_pdf" model="account.invoice" -->
+		<!--name="cetak.acc.inv.immobi.pdf" rml="ib_immobi_reports/report/invoice.jrxml" -->
+		<!--string="Print Invoice"/> -->
+		<record id="cetak_acc_invoice_immobi_pdf" model="ir.actions.report.xml">
+			<field name="name">Print Invoice</field>
+			<field name="type">ir.actions.report.xml</field>
+			<field name="model">account.invoice</field>
+			<field name="report_name">acc.invoice.pdf</field>
+			<field name="report_rml">ib_immobi_reports/report/invoice.jrxml</field>
+			<field name="report_type">pdf</field>
+			<field name="jasper_report">True</field>
+			<field name="jasper_output">pdf</field>
+		</record>
+
+		<record model="ir.ui.view" id="inherit2_view_invoice_supplier_form">
+			<field name="name">inherit2.account.invoice.supplier.form</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id"
+				ref="account_supplier_adv.invoice_supplier_form_request" />
+			<field name="arch" type="xml">
+				<xpath expr="//button[@name='invoice_open']" position="after">
+					<button name="print_request_report" string="Print Cash Adv."
+						type="object" attrs="{'invisible': [('advance_type','!=','request')]}"
+						context="{'report_type': 'acc.cash.advance.pdf'}"
+						groups="base.group_user" />
+					<button name="print_request_report" string="Print LPJ" type="object"
+						attrs="{'invisible':['|','|','|',('advance_type','!=','settlement'),
+							('medical','=',True),('reimburse','=',True)]}"
+						context="{'report_type': 'acc.lpj.pdf'}"
+						groups="base.group_user" />
+					<button name="print_request_report" string="Print Reimburse" type="object"
+						attrs="{'invisible':['|',('reimburse','=',False),('advance_type','!=','settlement')]}"
+						context="{'report_type': 'acc.reimbursement.pdf'}"
+						groups="base.group_user" />
+				</xpath>
+                <xpath expr="//field[@name='user_id']" position="attributes">
+                	<attribute name="string">Prepared by</attribute>
+                </xpath>
+				<xpath expr="//field[@name='payment_term']" position="after">
+					<field name="checked_by" groups="base.group_user"/>
+					<field name="verified_by" groups="base.group_user"/>
+					<field name="approved_by" groups="base.group_user"/>
+				</xpath>
+			</field>
+		</record>
+		<!-- Medical -->
+		<record model="ir.ui.view" id="inherit_view_medical_form">
+			<field name="name">inherit2.account.invoice.supplier.form</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id"
+				ref="hr_reimburse.medical_form_request" />
+			<field name="arch" type="xml">
+				<xpath expr="//button[@name='invoice_open']" position="after">
+					<button name="print_request_report" string="Print Medical Claim"
+						attrs="{'invisible':['|',('medical','=',False),('advance_type','!=','settlement')]}"
+						context="{'report_type': 'acc.medical.exp.pdf'}"
+						type="object" groups="base.group_user" />
+				</xpath>
+                <xpath expr="//field[@name='user_id']" position="attributes">
+                	<attribute name="string">Submitted by</attribute>
+                </xpath>
+				<xpath expr="//field[@name='payment_term']" position="after">
+					<field name="checked_by" groups="base.group_user"/>
+					<field name="verified_by" groups="base.group_user"/>
+					<field name="approved_by" groups="base.group_user"/>
+				</xpath>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="inherit1_invoice_supplier_request_tree">
+			<field name="name">inherit1.account.invoice.tree2.request</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id"
+				ref="account_supplier_adv.invoice_supplier_request_tree" />
+			<field name="arch" type="xml">
+                <!-- <xpath expr="//field[@name='user_id']" position="after">
+					<field name="checked_by" groups="base.group_user"/>
+					<field name="verified_by" groups="base.group_user"/>
+                </xpath> -->
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+                	<attribute name="string">Employee</attribute>
+                </xpath>
+			</field>
+		</record>
+
+		<record id="print_cash_advance_pdf" model="ir.actions.report.xml">
+			<field name="name">Cash Advance</field>
+			<field name="type">ir.actions.report.xml</field>
+			<field name="model">account.invoice</field>
+			<field name="report_name">acc.cash.advance.pdf</field>
+			<field name="report_rml">ib_immobi_reports/report/cash_advance.jrxml</field>
+			<field name="report_type">pdf</field>
+			<field name="jasper_report">True</field>
+			<field name="jasper_output">pdf</field>
+		</record>
+		<record id="print_reimbursement_pdf" model="ir.actions.report.xml">
+			<field name="name">Reimbursement</field>
+			<field name="type">ir.actions.report.xml</field>
+			<field name="model">account.invoice</field>
+			<field name="report_name">acc.reimbursement.pdf</field>
+			<field name="report_rml">ib_immobi_reports/report/reimbursement.jrxml</field>
+			<field name="report_type">pdf</field>
+			<field name="jasper_report">True</field>
+			<field name="jasper_output">pdf</field>
+		</record>
+        <record id="print_lpj_pdf" model="ir.actions.report.xml">
+			<field name="name">LPJ</field>
+			<field name="type">ir.actions.report.xml</field>
+			<field name="model">account.invoice</field>
+			<field name="report_name">acc.lpj.pdf</field>
+			<field name="report_rml">ib_immobi_reports/report/lpj.jrxml</field>
+			<field name="report_type">pdf</field>
+			<field name="jasper_report">True</field>
+			<field name="jasper_output">pdf</field>
+		</record>
+        <record id="print_medical_exp_pdf" model="ir.actions.report.xml">
+			<field name="name">Medical Expense</field>
+			<field name="type">ir.actions.report.xml</field>
+			<field name="model">account.invoice</field>
+			<field name="report_name">acc.medical.exp.pdf</field>
+			<field name="report_rml">ib_immobi_reports/report/exp_medical.jrxml</field>
+			<field name="report_type">pdf</field>
+			<field name="jasper_report">True</field>
+			<field name="jasper_output">pdf</field>
+		</record>
+
+
+		<record model="ir.ui.view" id="discount_in_supplier_invoice_form">
+			<field name="name">discount.account.invoice.supplier.form</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="account.invoice_supplier_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='invoice_line']/tree/field[@name='price_unit']" position="after">
+					<field name="discount_method" on_change="onchange_discount()"/>
+					<field name="discount"/>
+				</xpath>
+				<xpath expr="//field[@name='price_subtotal']" position="replace">
+					<field name="subtotal_without_disc" groups="base.group_user" string="Amount"/>
+					<field name="price_subtotal" invisible="1"/>
+					<field name="discount_subtotal" invisible="1"/>
+				</xpath>
+		        <xpath expr="//field[@name='amount_untaxed']" position="replace">
+		            <field name="amount_without_discount" widget="monetary" options="{'currency_field': 'currency_id'}"
+						   string="Subtotal I" help="Subtotal Before Discount"/>
+		            <field name="amount_discount" widget="monetary" options="{'currency_field': 'currency_id'}"
+						   string="Discount" help="Total Discount"/>
+		        	<field name="amount_untaxed" widget="monetary" options="{'currency_field': 'currency_id'}"
+						   string="Subtotal II" help="Subtotal After Discount"/>
+		        </xpath>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="amount_discount_account_invoice_tree">
+			<field name="name">amount.discount.account.invoice.tree</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="account.invoice_tree"/>
+			<field name="arch" type="xml">
+				<field name="amount_untaxed" position="replace">
+					<field name="amount_without_discount" sum="Subtotal Before Discount" string="Subtotal I"/>
+					<field name="amount_discount" sum="Total Discount" string="Discount"/>
+					<field name="amount_untaxed" sum="Subtotal After Discount" string="Subtotal II"/>
+				</field>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="discount_line_view_invoice_line_form">
+			<field name="name">discount.line.account.invoice.line.form</field>
+			<field name="model">account.invoice.line</field>
+			<field name="inherit_id" ref="account.view_invoice_line_form"/>
+			<field name="arch" type="xml">
+				<field name="price_unit" position="after">
+					<label for="discount" groups="product.group_purchase_pricelist,purchase.group_purchase_user"/>
+					<div groups="product.group_purchase_pricelist,purchase.group_purchase_user">
+						<field name="discount_method" class="oe_inline" on_change="onchange_discount()"/>
+						<label string="Rp" class="oe_inline" attrs="{'invisible':[('discount_method','!=','fixed')]}" />
+						<field name="discount" class="oe_inline"/>
+						<label string="%%" class="oe_inline" attrs="{'invisible':[('discount_method','!=','percent')]}" />
+					</div>
+				</field>
+			</field>
+		</record>
+		<!--<record model="ir.ui.view" id="discount2_view_invoice_line_tree">
+			<field name="name">discount2.account.invoice.line.tree</field>
+			<field name="model">account.invoice.line</field>
+			<field name="inherit_id" ref="account.view_invoice_line_tree"/>
+			<field name="arch" type="xml">
+				<field name="price_subtotal" position="before">
+					<field name="discount_method" on_change="onchange_discount()"/>
+					<field name="discount"/>
+				</field>
+			</field>
+		</record>-->
+
+	</data>
+</openerp>

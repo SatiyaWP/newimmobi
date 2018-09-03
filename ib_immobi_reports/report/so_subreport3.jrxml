@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="so_subreport3" pageWidth="288" pageHeight="802" columnWidth="288" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="5c0ea61c-d3da-4f4a-8c08-e9ecfb394658">
+	<property name="ireport.zoom" value="2.3579476910000023"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="order_id" class="java.lang.Integer"/>
+	<parameter name="currency" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select name, amount from sale_order_tax_line where order_id=$P{order_id}]]>
+	</queryString>
+	<field name="name" class="java.lang.String"/>
+	<field name="amount" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[Amount]]></fieldDescription>
+	</field>
+	<columnHeader>
+		<band height="14" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="61185b84-9d0d-43c0-ab05-0fedf0ba77de" x="0" y="0" width="240" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Tax Details :]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="48a69827-3b82-4588-b715-ed7ebdb3ee14" positionType="Float" stretchType="RelativeToTallestObject" x="130" y="0" width="100" height="16"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<paragraph leftIndent="1" rightIndent="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00;(#,##0.00)").format($F{amount})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="976e062a-a72f-457d-8801-e44480dd73f7" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="100" height="16"/>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="37c58f8a-6b88-4ee4-a347-a911e00a1525" positionType="Float" stretchType="RelativeToTallestObject" x="100" y="0" width="30" height="16"/>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="1" spacingBefore="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($P{currency}.isEmpty() ? null : $P{currency})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

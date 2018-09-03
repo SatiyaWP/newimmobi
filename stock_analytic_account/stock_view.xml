@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	    <!-- STOCK MOVE di STOCK PICKING -->
+	    <record model="ir.ui.view" id="view_move_form_saa">
+            <field name="name">stock.move.form</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_form" />
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="analytic_account_id" />
+                </field>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="view_move_picking_tree_saa">
+            <field name="name">stock.move.tree</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_picking_tree" />
+            <field name="arch" type="xml">
+                <field name="location_dest_id" position="after">
+                    <field name="analytic_account_id" />
+                </field>
+            </field>
+        </record>
+        
+        
+        <!-- STOCK MOVE di STOCK MOVE  -->
+        <record model="ir.ui.view" id="view_move_tree_saa">
+            <field name="name">stock.move.tree</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_tree" />
+            <field name="arch" type="xml">
+                <field name="location_dest_id" position="after">
+                    <field name="analytic_account_id" />
+                </field>
+            </field>
+        </record>
+	</data>
+</openerp>

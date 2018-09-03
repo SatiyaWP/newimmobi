@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_wizard_payroll_bpjs,wizard.payroll.bpjs,model_wizard_payroll_bpjs,base.group_hr_user,1,1,1,1
+access_payroll_bpjs,payroll.bpjs,model_payroll_bpjs,base.group_hr_user,1,1,1,1

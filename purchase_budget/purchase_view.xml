@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<!-- <record model="ir.ui.view" id="purchase_order_form_1">
+			<field name="name">purchase.order.form</field>
+			<field name="model">purchase.order</field>
+			<field name="inherit_id" ref="purchase.purchase_order_form" />
+			<field name="arch" type="xml">
+				<field name="price_subtotal" position="after">
+					<field name="budget_remaining" />
+				</field>
+			</field>
+		</record> -->
+		<!-- filter To Approve -->
+<!-- 		<record model="ir.ui.view" id="purchase_order_search_inherit_1"> -->
+<!-- 			<field name="name">purchase.order.list.select.inherit</field> -->
+<!-- 			<field name="model">purchase.order</field> -->
+<!-- 			<field name="inherit_id" -->
+<!-- 				ref="purchase_double_validation.purchase_order_search_inherit" /> -->
+<!-- 			<field name="arch" type="xml"> -->
+<!-- 				<xpath expr="//filter[@name='to_approve']" position="replace"> -->
+<!-- 					<filter icon="terp-gtk-jump-to-ltr" name="approve" string="To Approve SCM" -->
+<!-- 						domain="[('state','in',('wait','scm'))]" help="Purchase orders which are not approved yet." -->
+<!-- 						groups="purchase.group_purchase_manager" /> -->
+<!-- 					<filter icon="terp-gtk-jump-to-ltr" name="approve" string="To Approve FSM" -->
+<!-- 						domain="[('state','in',('wait','fsm'))]" help="Purchase orders which are not approved yet." -->
+<!-- 						groups="purchase_loa.group_senior_finance_manager" /> -->
+<!-- 					<filter icon="terp-gtk-jump-to-ltr" name="approve" string="To Approve BoD" -->
+<!-- 						domain="[('state','in',('wait','confirmed'))]" help="Purchase orders which are not approved yet." -->
+<!-- 						groups="purchase_loa.group_budget_of_director" /> -->
+<!-- 					<filter icon="terp-gtk-jump-to-ltr" name="po_open" string="PO Open" -->
+<!-- 						domain="[('state','in',('approved','except_picking','except_invoice'))]" -->
+<!-- 						help="Purchase orders which are still open." /> -->
+
+<!-- 				</xpath> -->
+<!-- 				<xpath expr="//group/filter[@string='Expected Month']" -->
+<!-- 					position="after"> -->
+<!-- 					<filter string="Status" icon="terp-go-month" domain="[]" -->
+<!-- 						context="{'group_by':'state'}" /> -->
+<!-- 				</xpath> -->
+<!-- 			</field> -->
+<!-- 		</record> -->
+
+		<!-- domain state RFQ and PO -->
+		<record id="purchase.purchase_rfq" model="ir.actions.act_window">
+			<field name="name">Requests for Quotation</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">purchase.order</field>
+			<field name="context">{}</field>
+			<field name="domain">[('state','in',('draft','sent','bid','cancel'))]
+			</field>
+			<field name="view_mode">tree,form,graph,calendar</field>
+			<field name="search_view_id" ref="purchase.view_purchase_order_filter" />
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Click to create a request for quotation.
+				</p>
+				<p>
+					The quotation contains the history of the discussion/negotiation
+					you had with your supplier. Once confirmed, a request for
+					quotation
+					is converted into a purchase order.
+				</p>
+				<p>
+					Most propositions of purchase orders are created automatically
+					by
+					Odoo based on inventory needs.
+				</p>
+			</field>
+		</record>
+
+		<record id="purchase.purchase_form_action" model="ir.actions.act_window">
+			<field name="name">Purchase Orders</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">purchase.order</field>
+			<field name="view_mode">tree,form,graph,calendar</field>
+			<field name="context">{}</field>
+			<field name="domain">[('state','not in',('draft','sent','bid'))]</field>
+			<field name="search_view_id" ref="purchase.view_purchase_order_filter" />
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Click to create a quotation that will be converted into a
+					purchase
+					order.
+				</p>
+				<p>
+					Use this menu to search within your purchase orders by
+					references, supplier, products, etc. For each purchase order,
+					you
+					can track the related discussion with the supplier, control
+					the
+					products received and control the supplier invoices.
+				</p>
+			</field>
+		</record>
+
+		<!-- outstanding po line tambahan anif -->
+		<!-- PR TREE -->
+		<record model="ir.ui.view" id="pol_view_tree">
+			<field name="name">purchase.order.line.tree</field>
+			<field name="model">purchase.order.line</field>
+			<field name="arch" type="xml">
+				<tree string="Purchase Order Line" version="7.0" create="false">
+					<field name="order_id" />
+					<field name="coa_id" />
+					<field name="account_analytic_id" />
+					<field name="name" />
+					<field name="price_unit" />
+					<field name="product_qty" />
+					<field name="qty_os" />
+					<field name="amount_os" />
+				</tree>
+			</field>
+		</record>
+		<!-- Munculin PO di PO Line -->
+		<record model="ir.ui.view" id="purchase_order_line_form_1">
+			<field name="name">purchase.order.line.form</field>
+			<field name="model">purchase.order.line</field>
+			<field name="inherit_id" ref="purchase.purchase_order_line_form" />
+			<field name="arch" type="xml">
+				<field name="product_id" position="before">
+					<field name="order_id" />
+				</field>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="pol_action">
+			<field name="name">Purchase Order Lines</field>
+			<field name="res_model">purchase.order.line</field>
+			<field name="view_id" ref="pol_view_tree" />
+			<field name="view_mode">tree,form</field>
+			<field name="context">{}</field>
+			<field name="domain">[('order_id.state','in',('approved','except_picking','except_invoice'))]
+			</field>
+		</record>
+
+		<menuitem id="subsubmenu_out_pol" parent="account.menu_finance_reporting"
+			name="Open Purchase Order" action="pol_action" />
+	</data>
+</openerp>

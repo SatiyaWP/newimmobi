@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <template id="contract_tmpl_int_css" inherit_id="report.minimal_layout">
+            <xpath expr="//head" position="inside">
+                <link
+                        href="/ib_immobi_reports/static/src/css/contract_style.css"
+                        rel="stylesheet"/>
+            </xpath>
+        </template>
+
+        <template id="contract_template_internal">
+            <t t-name="ib_immobi_reports.contract_template_internal">
+                <t t-call="report.html_container">
+                    <t t-foreach="docs" t-as="o">
+                        <!-- Report Title -->
+                        <!--<t t-if="o.contract_template_report_id.contract_title">-->
+                            <div class="title">
+                                <span t-raw="compute_template_variables(o, o.contract_template_report_id.contract_title)"/>
+                            </div>
+                        <!--</t>-->
+                        <!-- Report Header -->
+                        <!--<t t-if="o.contract_template_report_id.contract_header">-->
+                            <div class="row"> <!--header-->
+                                <span t-raw="compute_template_variables(o, o.contract_template_report_id.contract_header)"/>
+                            </div>
+                        <!--</t>-->
+                        <!-- Report Body -->
+                        <div class="page">
+                            <div class="row">
+                                <span t-raw="compute_template_variables(o, o.contract_template_report_id.contract_body)"/>
+                            </div>
+                        </div>
+                        <!-- Report Footer -->
+                        <!--<t t-if="o.contract_template_report_id.contract_footer">-->
+                            <div class="footer">
+                                <span t-raw="compute_template_variables(o, o.contract_template_report_id.contract_footer)"/>
+                            </div>
+                        <!--</t>-->
+                    </t>
+                </t>
+            </t>
+
+        </template>
+
+    </data>
+</openerp>

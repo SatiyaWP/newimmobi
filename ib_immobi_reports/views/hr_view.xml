@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!--HR-CONTRACT-->
+    	<record model="ir.ui.view" id="hr_contract_view_form_inherit">
+			<field name="name">hr.contract.view.form.inherit</field>
+			<field name="model">hr.contract</field>
+			<field name="inherit_id" ref="hr_contract.hr_contract_view_form" />
+			<field name="arch" type="xml">
+                <xpath expr="//field[@name='type_id']" position="after">
+                    <field name="contract_date"/>
+                </xpath>
+                <xpath expr="//field[@name='trial_date_end']" position="after">
+                    <field name="trial_duration" class="oe_inline" nolabel="True"/>
+                </xpath>
+                <xpath expr="//field[@name='date_end']" position="after">
+                    <field name="contract_duration" class="oe_inline" nolabel="True"/>
+                </xpath>
+			</field>
+		</record>
+        <record id="hr_contract_form_inherit2" model="ir.ui.view">
+            <field name="name">hr.contract.view.form.inherit2</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_payroll.hr_contract_form_inherit"/>
+            <field name="arch" type="xml">
+            <data>
+                 <xpath expr="//field[@name='schedule_pay']" position="after">
+                    <field name="total_duration"/>
+                </xpath>
+            </data>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_hr_payslip_tree_inherit">
+			<field name="name">hr.payslip.tree.inherit</field>
+			<field name="model">hr.payslip</field>
+			<field name="inherit_id" ref="hr_payroll.view_hr_payslip_tree" />
+			<field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position="before">
+                    <field name="detail_fee"/>
+                    <field name="currency_id" />
+                    <field name="salary_subtotal" sum="Total"/>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_hr_payslip_form_inherit">
+			<field name="name">hr.payslip.form.inherit</field>
+			<field name="model">hr.payslip</field>
+			<field name="inherit_id" ref="hr_payroll.view_hr_payslip_form" />
+			<field name="arch" type="xml">
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="currency_id"/>
+                </xpath>
+                <xpath expr="//field[@name='line_ids']" position="after">
+                    <group class="oe_subtotal_footer oe_right">
+                        <field name="salary_subtotal" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                    </group>
+                </xpath>
+                <xpath expr="//button[@name='cancel_sheet']" position="before">
+                    <button name="print_payslip" string="Print Payslip"
+						type="object" states="confirm,done" groups="base.group_user" />
+                </xpath>
+            </field>
+        </record>
+
+		<record id="print_payslip_pdf" model="ir.actions.report.xml">
+			<field name="name">Payslip</field>
+			<field name="type">ir.actions.report.xml</field>
+			<field name="model">hr.payslip</field>
+			<field name="report_name">hr.payslip.pdf</field>
+			<field name="report_rml">ib_immobi_reports/report/payslip.jrxml</field>
+			<field name="report_type">pdf</field>
+			<field name="jasper_report">True</field>
+			<field name="jasper_output">pdf</field>
+		</record>
+
+
+	</data>
+</openerp>

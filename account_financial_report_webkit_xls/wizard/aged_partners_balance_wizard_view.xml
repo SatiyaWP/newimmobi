@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record id="account_aged_trial_balance_webkit_xls" model="ir.ui.view">
+			<field name="name">Aged Partner Balance Report Excel</field>
+			<field name="model">account.aged.trial.balance.webkit</field>
+			<field name="inherit_id" ref="account.account_common_report_view" />
+			<field name="arch" type="xml">
+				<button string="Print" position="replace">
+					<button name="check_report" string="Print" type="object"
+						default_focus="1" class="oe_highlight"
+						groups="account_financial_report_webkit_xls.group_finance_report_pdf" />
+					<button icon="gtk-execute" name="xls_export" context="{'xls_export':1}"
+						string="Export" type="object" colspan="2" />
+					or
+				</button>
+				<separator string="Clearance Analysis Options" position="replace">
+					<separator string="Clearance Analysis Options" colspan="4" invisible="1"/>
+				</separator>				
+                <field name="until_date" position="replace">
+                    <field name="until_date" invisible="1" />
+                </field>				
+			</field>
+		</record>
+
+	</data>
+</openerp>

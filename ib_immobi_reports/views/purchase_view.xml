@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="inherit1_purchase_order_form">
+            <field name="name">inherit1.purchase.order.form</field>
+            <field name="model">purchase.order</field>
+			<field name="inherit_id" ref="purchase.purchase_order_form" />
+			<field name="arch" type="xml">
+                <xpath expr="//button[@name='purchase_approve']" position="attributes">
+                    <attribute name="groups">purchase.group_purchase_bod</attribute>
+                </xpath>
+                <button name="print_quotation" string="Print RFQ" states="draft" position="replace">
+					<button name="print_po_immobi" string="Print RFQ" type="object" states="draft"
+							groups="base.group_user" />
+				</button>
+                <button name="print_quotation" string="Re-Print RFQ" states="sent" position="replace">
+                	<button name="print_po_immobi" string="Print PO" type="object" states="approved"
+                		groups="base.group_user" />
+                </button>
+				<xpath expr="//field[@name='bid_validity']" position="after">
+					<field name="item_number" readonly="True"/>
+				</xpath>
+				<xpath expr="//field[@name='notes']" position="after">
+					<field name="amount_to_text" nolabel="True" class="oe_inline" placeholder="Say [Terbilang]..."/>
+				</xpath>
+				<xpath expr="//field[@name='price_unit']" position="after">
+					<field name="discount_method" on_change="onchange_discount()"/>
+					<field name="discount"/>
+				</xpath>
+				<xpath expr="//field[@name='price_subtotal']" position="replace">
+					<field name="subtotal_without_disc" groups="base.group_user" string="Amount"/>
+					<field name="price_subtotal" invisible="True"/>
+					<field name="discount_subtotal" invisible="True"/>
+				</xpath>
+		        <xpath expr="//field[@name='amount_untaxed']" position="replace">
+		            <field name="amount_without_discount" widget="monetary" options="{'currency_field': 'currency_id'}"
+						   string="Subtotal I"/>
+		            <field name="amount_discount" widget="monetary" options="{'currency_field': 'currency_id'}"
+						   string="Discount"/>
+		        	<field name="amount_untaxed" widget="monetary" options="{'currency_field': 'currency_id'}"
+						   string="Subtotal II"/>
+		        </xpath>
+            </field>
+        </record>
+
+		<record model="ir.ui.view" id="amount_discount_purchase_order_tree">
+			<field name="name">amount.discount.purchase.order.tree</field>
+			<field name="model">purchase.order</field>
+			<field name="inherit_id" ref="purchase.purchase_order_tree"/>
+			<field name="arch" type="xml">
+				<field name="amount_untaxed" position="replace">
+					<field name="amount_without_discount" sum="Subtotal Before Discount" string="Subtotal I"/>
+					<field name="amount_discount" sum="Total Discount" string="Discount"/>
+					<field name="amount_untaxed" sum="Subtotal After Discount" string="Subtotal II"/>
+				</field>
+			</field>
+		</record>
+
+        <record id="report_purchase_order_pdf" model="ir.actions.report.xml">
+	        <field name="name">Purchase Order</field>
+	        <field name="type">ir.actions.report.xml</field>
+	        <field name="model">purchase.order</field>
+	        <field name="report_name">purchase.order.pdf</field>
+	        <field name="report_rml">ib_immobi_reports/report/po.jrxml</field>
+	        <field name="report_type">pdf</field>
+	        <field name="jasper_report">True</field>
+	        <field name="jasper_output">pdf</field>
+	    </record>
+
+		<record model="ir.ui.view" id="purchase_discount_order_line_form">
+			<field name="name">purchase_discount.order.line.form</field>
+			<field name="model">purchase.order.line</field>
+			<field name="inherit_id" ref="purchase.purchase_order_line_form"/>
+			<field name="arch" type="xml">
+				<field name="price_unit" position="after">
+					<label for="discount" groups="base.group_user"/>
+					<div groups="base.group_user">
+						<field name="discount_method" class="oe_inline" nolabel="1" on_change="onchange_discount()"/>
+						<label string="Rp" class="oe_inline" attrs="{'invisible':[('discount_method','!=','fixed')]}" />
+						<field name="discount" class="oe_inline" nolabel="1"/>
+						<label string="%%" class="oe_inline" attrs="{'invisible':[('discount_method','!=','percent')]}" />
+					</div>
+				</field>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="purchase_discount_order_line_tree">
+			<field name="name">purchase.disc.order.line.tree</field>
+			<field name="model">purchase.order.line</field>
+			<field name="inherit_id" ref="purchase.purchase_order_line_tree"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='price_unit']" position="after">
+					<field name="discount_method" on_change="onchange_discount()"/>
+					<field name="discount"/>
+				</xpath>
+				<xpath expr="//field[@name='price_subtotal']" position="replace">
+					<field name="subtotal_without_disc" groups="base.group_user" string="Amount"/>
+					<field name="price_subtotal" invisible="True"/>
+					<field name="discount_subtotal" invisible="True"/>
+				</xpath>
+			</field>
+		</record>
+
+
+	</data>
+</openerp>

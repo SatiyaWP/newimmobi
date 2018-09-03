@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sale_order_subreport1" pageWidth="575" pageHeight="802" columnWidth="575" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="913a82ce-25e4-45d4-845a-f0dba7f5697a">
+	<property name="ireport.zoom" value="1.9487171000000092"/>
+	<property name="ireport.x" value="76"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="order_id" class="java.lang.Integer"/>
+	<parameter name="currency" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["/home/baim/Documents/Customs/8.0/ib_immobi_reports/report/"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select
+sol.name as product_desc, sol.product_uom_qty, p.id as product_id, p.name_template as product_name, p.default_code as product_code, q.description_sale, sol.price_unit, (sol.product_uom_qty * sol.price_unit) as price_subtotal, pu.name as product_uom, q.id as product_tmpl_id, pc.name as product_category, q.categ_id, q.combo_ok
+
+from sale_order_line as sol left join product_product as p on p.id=sol.product_id
+left join product_template as q on q.id=p.product_tmpl_id left join product_uom as pu on pu.id=sol.product_uom left join product_category as pc on pc.id=q.categ_id
+
+where sol.order_id=$P{order_id}
+
+order by q.categ_id asc, sol.id asc]]>
+	</queryString>
+	<field name="product_desc" class="java.lang.String"/>
+	<field name="product_uom_qty" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[Quantity]]></fieldDescription>
+	</field>
+	<field name="product_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[Product]]></fieldDescription>
+	</field>
+	<field name="product_name" class="java.lang.String">
+		<fieldDescription><![CDATA[Product Name]]></fieldDescription>
+	</field>
+	<field name="product_code" class="java.lang.String">
+		<fieldDescription><![CDATA[Product Code]]></fieldDescription>
+	</field>
+	<field name="description_sale" class="java.lang.String">
+		<fieldDescription><![CDATA[Sale Description]]></fieldDescription>
+	</field>
+	<field name="price_unit" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[Unit Price]]></fieldDescription>
+	</field>
+	<field name="price_subtotal" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[Amount]]></fieldDescription>
+	</field>
+	<field name="product_uom" class="java.lang.String">
+		<fieldDescription><![CDATA[Product Unit of Measure]]></fieldDescription>
+	</field>
+	<field name="product_tmpl_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[Product]]></fieldDescription>
+	</field>
+	<field name="product_category" class="java.lang.String"/>
+	<field name="categ_id" class="java.lang.Integer"/>
+	<field name="combo_ok" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[Combo Product]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="45" splitType="Stretch">
+			<frame>
+				<reportElement uuid="ddbffbfa-1601-40b6-9b68-4aacb4e67f51" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="49" height="20"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="8b131e3d-24c5-49b5-aa4d-cf897776a597" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="1" width="49" height="19"/>
+					<box>
+						<leftPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement uuid="3d0fcdb9-7b39-41a4-933a-cc2ffffdc0f8" positionType="Float" stretchType="RelativeToTallestObject" x="289" y="0" width="52" height="20"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="981b52cc-9135-4825-8927-b1f873014330" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="1" width="52" height="19"/>
+					<box>
+						<leftPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[($F{product_uom_qty}.intValue() > 0 ?
+    new DecimalFormat("#,##0;(#,##0)").format($F{product_uom_qty}) : "0.00") +
+($F{product_uom}.isEmpty() ? "" : " "+$F{product_uom})]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="434118e4-8813-49d6-9962-d934898635fb" positionType="Float" stretchType="RelativeToTallestObject" x="49" y="0" width="240" height="20"/>
+				<box>
+					<leftPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<paragraph leftIndent="2" spacingBefore="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{product_desc}.isEmpty() ?
+    ($F{product_code}.isEmpty() ?
+        ($F{description_sale}.isEmpty() ?
+            $F{product_name} :
+            $F{product_name}+"\n"+$F{description_sale}) :
+        ($F{description_sale}.isEmpty() ?
+            "["+$F{product_code}+"] "+$F{product_name} :
+            "["+$F{product_code}+"] "+$F{product_name}+"\n"+$F{description_sale})) :
+    $F{product_desc})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="661fa549-8342-4cab-9dd8-32a320a142ca" positionType="Float" stretchType="RelativeToTallestObject" x="341" y="0" width="27" height="20"/>
+				<box>
+					<leftPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<paragraph leftIndent="1" spacingBefore="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($P{currency}.isEmpty() ? null : $P{currency})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="840ca4a7-2bab-450e-a253-ad02d6afe2f4" positionType="Float" stretchType="RelativeToTallestObject" x="451" y="0" width="27" height="20"/>
+				<box>
+					<leftPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<paragraph leftIndent="1" spacingBefore="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($P{currency}.isEmpty() ? null : $P{currency})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="28e73979-f531-4a39-be7d-b24be52469b4" positionType="Float" stretchType="RelativeToTallestObject" x="358" y="0" width="93" height="20"/>
+				<box>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right">
+					<paragraph rightIndent="3" spacingBefore="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00;(#,##0.00)").format($F{price_unit})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+				<reportElement uuid="749a54e3-195a-452c-bec5-2a9d1a593ff8" positionType="Float" stretchType="RelativeToTallestObject" x="478" y="0" width="93" height="20"/>
+				<box>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right">
+					<paragraph rightIndent="3" spacingBefore="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new DecimalFormat("#,##0.00;(#,##0.00)").format($F{price_subtotal})]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement uuid="ee775c2b-8706-40fc-94df-edf21867a9ca" x="0" y="20" width="573" height="25" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[$F{combo_ok}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="product_tmpl_id">
+					<subreportParameterExpression><![CDATA[$F{product_tmpl_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="currency">
+					<subreportParameterExpression><![CDATA[$P{currency}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "so_subreport1_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

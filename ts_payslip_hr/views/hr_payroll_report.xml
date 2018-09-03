@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <report
+            auto="False"
+            id="payslip_report"
+            model="hr.payslip"
+            name="payslip"
+            rml="ts_payslip_hr/report/report_payslip.rml"
+            string="Employee PaySlip" />
+
+        <report
+            auto="False"
+            id="payslip_details_report"
+            model="hr.payslip"
+            name="paylip.details"
+            rml="ts_payslip_hr/report/report_payslip_details.rml"
+            string="PaySlip Details" />
+
+        <report
+            auto="False"
+            menu="False"
+            id="contribution_register"
+            model="hr.contribution.register"
+            name="contribution.register.lines"
+            rml="ts_payslip_hr/report/report_contribution_register.rml"
+            string="PaySlip Lines By Conribution Register" />
+
+        <report 
+            id="hr_payroll.action_report_payslip" 
+            model="hr.payslip" 
+            string="Payslip"
+            report_type="qweb-pdf"
+            name="hr_payroll.report_payslip" 
+            file="hr_payroll.report_payslip"
+			menu="False"
+        />
+
+    </data>
+</openerp>

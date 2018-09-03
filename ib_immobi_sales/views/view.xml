@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<!--PRODUCT FORM-->
+    	<record model="ir.ui.view" id="inherit1_product_template_form_view">
+			<field name="name">inherit1.product.template.product.form</field>
+			<field name="model">product.template</field>
+			<field name="inherit_id" ref="product.product_template_form_view" />
+			<field name="arch" type="xml">
+				<div name="options" position="inside">
+                    <div>
+                        <field name="combo_ok"/>
+                        <label for="combo_ok"/>
+                    </div>
+                </div>
+                <xpath expr="//page[@string='Information']" position="after">
+					<page string="BoQ" attrs="{'invisible':[('combo_ok','=',False)]}" name="combo_product">
+						<div class="oe_left">
+							<h3><label for="cost_price_silent" string="Cost Price"/>
+								<field name="cost_price_silent" attrs="{'invisible': [('combo_ok','=',False)]}" /></h3>
+							<button name="button_calculate_boq" string="Update" type="object" class="oe_edit_only oe_highlight"/>
+						</div>
+						<separator string="Items of Combo Product" attrs="{'invisible': [('combo_ok','=',False)]}"/>
+						<field name="combo_product_line" nolabel="1"
+							   attrs="{'invisible': [('combo_ok','=',False)],'required': [('combo_ok','=',True)]}">
+							<tree editable="bottom">
+								<field name="product_id" on_change="onchange_product_id(product_id)"/>
+								<field name="quantity"/>
+								<field name="uom_id"/>
+								<field name="ratio_purchase" invisible="True"/>
+								<field name="subtotal_line" sum="Subtotal" string="Subtotal Item"/>
+								<field name="combo_subtotal" sum="Total" string="Total Price" invisible="True"/>
+							</tree>
+						</field>
+					</page>
+	            </xpath>
+				<xpath expr="//field[@name='standard_price']" position="attributes">
+					<!--<field name="standard_price" attrs="{'invisible': [('combo_ok','=',True)]}" /> invisible="True"-->
+					<attribute name="attrs">{'invisible': [('combo_ok','=',True)]}</attribute>
+				</xpath>
+			</field>
+		</record>
+
+        <record id="inherit1_product_template_search_view" model="ir.ui.view">
+            <field name="name">inherit1.product.template.search.view</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_search_view"/>
+            <field name="arch" type="xml">
+                <filter name="filter_to_sell" position="after">
+                   <filter name="filter_combo_product" string="Combo Product" icon="terp-accessories-archiver+" domain="[('combo_ok', '=', 1)]"/>
+                </filter>
+            </field>
+        </record>
+
+        <!--SALE ORDER FORM-->
+		<record id="inherit1_view_order_tree" model="ir.ui.view">
+            <field name="name">inherit1.sale.order.tree</field>
+            <field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_order_tree" />
+            <field name="arch" type="xml">
+				<xpath expr="//field[@name='name']" position="after">
+					<field name="client_order_ref" string="Description"/>
+					<field name="project_id" />
+				</xpath>
+            </field>
+        </record>
+    	<record model="ir.ui.view" id="inherit2_view_order_form">
+			<field name="name">inherit2.sale.order.form</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_order_form" />
+			<field name="arch" type="xml">
+				<xpath expr="/form/sheet/notebook/page[@string='Order Lines']/field[@name='order_line']/tree/field[@name='name']" position="after">
+					<button name="%(action_combo_product_info)d" string="Items of Combo Product (BoQ)" type="action" icon="gtk-justify-fill"/>
+				</xpath>
+				<xpath expr="//group[@name='sale_total']" position="replace">
+					<group class="oe_subtotal_footer oe_right" name="sale_total" groups="base.group_user">
+						<field name="amount_untaxed" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+						<field name="amount_tax" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+						<div class="oe_subtotal_footer_separator oe_inline">
+							<label for="amount_total" />
+							<button name="button_dummy"
+									states="draft,sent" string="(update)" type="object" class="oe_edit_only oe_link"/>
+						</div>
+						<field name="amount_total" nolabel="1" class="oe_subtotal_footer_separator" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+					</group>
+					<div style="width: 50%%" name="left_summary">
+						<label for="sale_tax_line" string="Other Component (Tax details)"/>
+						<field name="sale_tax_line" nolabel="1">
+							<tree string="Taxes" create="false"> <!--editable="bottom"-->
+								<field name="name"/>
+								<field name="base" on_change="base_change(base,parent.currency_id,parent.company_id,parent.date_order)" readonly="1"/>
+								<field name="amount" on_change="amount_change(amount,parent.currency_id,parent.company_id,parent.date_order)"/>
+								<field invisible="True" name="base_amount"/>
+								<field invisible="True" name="tax_amount"/>
+								<field name="factor_base" invisible="True"/>
+								<field name="factor_tax" invisible="True"/>
+							</tree>
+						</field>
+					</div>
+					<group>
+						<label for="gross_margin"/>
+						<div groups="base.group_no_one" name="gross_margin">
+							<field name="gross_margin" class="oe_inline" nolabel="True"
+										widget='monetary' options="{'currency_field': 'currency_id'}"/> |
+							<field name="gm_percent" class="oe_inline" nolabel="True"/>
+							<label string="%" class="oe_inline"
+										   attrs="{'invisible': [('gm_percent','=',0)]}"/>
+						</div>
+						<label for="gross_profit"/>
+						<div groups="base.group_no_one" name="gross_profit">
+							<field name="gross_profit" class="oe_inline" nolabel="True"
+										widget='monetary' options="{'currency_field': 'currency_id'}"/> |
+							<field name="gp_percent" class="oe_inline" nolabel="True"/>
+							<label string="%" class="oe_inline"
+										   attrs="{'invisible': [('gp_percent','=',0)]}"/>
+						</div>
+						<label for="net_profit"/>
+						<div groups="base.group_no_one" name="net_profit">
+							<field name="net_profit" class="oe_inline" nolabel="True"
+										widget='monetary' options="{'currency_field': 'currency_id'}"/> |
+							<field name="np_percent" class="oe_inline" nolabel="True"/>
+							<label string="%" class="oe_inline"
+										   attrs="{'invisible': [('np_percent','=',0)]}"/>
+						</div>
+						<field name="due_date_quo" attrs="{'invisible': [('state','not in',('draft','sent'))]}"/>
+					</group>
+				</xpath>
+				<xpath expr="//group[@name='sale_pay']/field[@name='payment_term']" position="before">
+					<field name="checked_by" />
+					<field name="approved_by" />
+				</xpath>
+				<button name="action_button_confirm" string="Confirm Sale" type="object" states="draft" position="attributes">
+					<attribute name="groups">base.group_sale_manager</attribute>
+				</button>
+				<button name="action_button_confirm" string="Confirm Sale" type="object" states="sent" class="oe_highlight" position="attributes">
+					<attribute name="groups">base.group_sale_manager</attribute>
+				</button>
+			</field>
+		</record>
+
+		<!--ACC INVOICE-->
+		<record model="ir.ui.view" id="inherit1_view_invoice_form">
+			<field name="name">inherit1.account.invoice.form</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="account.invoice_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='origin']" position="attributes">
+                	<attribute name="placeholder">Nomor PO</attribute>
+                </xpath>
+				<xpath expr="//group[@class='oe_subtotal_footer oe_right']" position="after">
+					<div style="width: 60%%">
+						<label for="amount_to_text" string="Amount to Text"/>
+						<field name="amount_to_text" class="oe_inline" placeholder="Says [Amount to Text]..."/>
+					</div>
+				</xpath>
+				<xpath expr="//button[@name='button_reset_taxes']" position="replace">
+					<button name="button_calculate" states="draft,proforma2"
+							string="(update)" class="oe_link oe_edit_only"
+							type="object" help="Recompute taxes, total and change the total amount to text"/>
+				</xpath>
+				<xpath expr="//field[@name='origin']" position="after">
+					<!--<field name="approved_by" groups="base.group_user"/>-->
+					<field name="bak_no" groups="base.group_user" placeholder="BAK No."/>
+					<field name="bak_date" groups="base.group_user"/>
+				</xpath>
+				<xpath expr="//field[@name='partner_id']" position="after">
+					<field name="partner_contact_id" groups="base.group_user"
+						   context="{'search_default_customer':1, 'show_email': 1}"
+						   options='{"always_reload": True}' placeholder="Attention or Contact Person"
+						   domain="[('customer', '=', True)]"/>
+				</xpath>
+			</field>
+		</record>
+
+	</data>
+</openerp>

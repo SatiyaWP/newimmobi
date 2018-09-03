@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_combo_product_info_wizard" model="ir.ui.view">
+            <field name="name">Bill of Quantity (BoQ)</field>
+            <field name="model">combo.product.info</field>
+            <field name="arch" type="xml">
+                <form string="Bill of Quantity (BoQ)" version="7.0">
+                    <field name="order_line_id"  invisible="1" class="oe_inline" on_change="onchange_order_line_id(order_line_id)"/>
+        			<field name="items_combo_line" readonly="True">
+                 		<tree>
+                            <field name="categ_id"/>
+                  			<field name="product_id"/>
+                  			<field name="quantity"/>
+                  			<field name="uom_id"/>
+                            <field name="percent" string="%"/>
+                 		</tree>
+                        <form>
+                            <group>
+                                <field name="categ_id"/>
+                                <field name="product_id"/>
+                                <field name="quantity"/>
+                                <field name="uom_id"/>
+                                <field name="percent"/>
+                            </group>
+                        </form>
+            		</field>
+                    <footer>
+                        <button string="Close" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_combo_product_info" model="ir.actions.act_window">
+            <field name="name">Bill of Quantity (BoQ)</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">combo.product.info</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</openerp>

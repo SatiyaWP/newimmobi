@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>    
+
+    	<record model="ir.ui.view" id="user_receipt_company">
+	            <field name="name">user.receipt.company</field>
+	            <field name="model">res.company</field>
+	            <field name="inherit_id" ref="base.view_company_form"/>
+	            <field name="arch" type="xml">
+		            <data>
+		                <xpath expr="//field[@name='website']" position="after">
+							<field name="email_recepient_id" widget="many2many_tags" />
+		              </xpath>
+                	</data>
+            	</field>
+        </record> 
+
+    	<record model="ir.ui.view" id="hr_recruitment_source_ext_view">
+	            <field name="name">hr.recruitment.source.ext.view</field>
+	            <field name="model">hr.recruitment.source</field>
+	            <field name="inherit_id" ref="hr_recruitment.hr_recruitment_source_form"/>
+	            <field name="arch" type="xml">
+		            <data>
+		                <xpath expr="//field[@name='name']" position="after">
+							<field name="send_notif"  />
+		              </xpath>
+                	</data>
+            	</field>
+        </record> 
+
+
+    </data>
+</openerp>
+
+
+

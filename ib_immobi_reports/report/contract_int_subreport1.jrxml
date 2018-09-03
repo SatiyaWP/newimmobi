@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="contract_int_subreport1" language="groovy" columnCount="2" pageWidth="595" pageHeight="802" columnWidth="292" columnSpacing="11" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="522f9b0d-8e6a-40a7-9def-15255b1a2825">
+	<property name="ireport.zoom" value="1.000000000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="xPath">
+		<![CDATA[]]>
+	</queryString>
+	<field name="Contract_Date-contract_date" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Contract_Date-contract_date]]></fieldDescription>
+	</field>
+	<field name="End_Date-date_end" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/End_Date-date_end]]></fieldDescription>
+	</field>
+	<field name="Start_Date-date_start" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Start_Date-date_start]]></fieldDescription>
+	</field>
+	<field name="Department_Name-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Department-department_id/Department_Name-name]]></fieldDescription>
+	</field>
+	<field name="Name-name_related" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Name-name_related]]></fieldDescription>
+	</field>
+	<field name="Work_Email-work_email" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Work_Email-work_email]]></fieldDescription>
+	</field>
+	<field name="Work_Phone-work_phone" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Work_Phone-work_phone]]></fieldDescription>
+	</field>
+	<field name="Place_of_Birth-place_of_birth" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Place_of_Birth-place_of_birth]]></fieldDescription>
+	</field>
+	<field name="Work_Mobile-mobile_phone" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Work_Mobile-mobile_phone]]></fieldDescription>
+	</field>
+	<field name="Gender-gender" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Gender-gender]]></fieldDescription>
+	</field>
+	<field name="City-city" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Home_Address-address_home_id/City-city]]></fieldDescription>
+	</field>
+	<field name="Street-street" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Home_Address-address_home_id/Street-street]]></fieldDescription>
+	</field>
+	<field name="Street2-street2" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Home_Address-address_home_id/Street2-street2]]></fieldDescription>
+	</field>
+	<field name="Province-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Home_Address-address_home_id/State-state_id/Province-name]]></fieldDescription>
+	</field>
+	<field name="RT-rt" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Home_Address-address_home_id/RT-rt]]></fieldDescription>
+	</field>
+	<field name="RW-rw" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Home_Address-address_home_id/RW-rw]]></fieldDescription>
+	</field>
+	<field name="Kelurahan-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Home_Address-address_home_id/Kelurahan-kelurahan_id/Kelurahan-name]]></fieldDescription>
+	</field>
+	<field name="Kecamatan-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Home_Address-address_home_id/Kecamatan-kecamatan_id/Kecamatan-name]]></fieldDescription>
+	</field>
+	<field name="Kabupaten-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Home_Address-address_home_id/Kabupaten-kabupaten_id/Kabupaten-name]]></fieldDescription>
+	</field>
+	<field name="Country_Name-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Home_Address-address_home_id/Country-country_id/Country_Name-name]]></fieldDescription>
+	</field>
+	<field name="Date_of_Birth-birthday" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Date_of_Birth-birthday]]></fieldDescription>
+	</field>
+	<field name="Gender-gender2" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Gender-gender]]></fieldDescription>
+	</field>
+	<field name="Account_Number-acc_number" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Bank_Account_Number-bank_account_id/Account_Number-acc_number]]></fieldDescription>
+	</field>
+	<field name="Bank_Name-bank_name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Bank_Account_Number-bank_account_id/Bank_Name-bank_name]]></fieldDescription>
+	</field>
+	<field name="Account_Owner_Name-owner_name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Bank_Account_Number-bank_account_id/Account_Owner_Name-owner_name]]></fieldDescription>
+	</field>
+	<field name="Identification_No-identification_id" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Identification_No-identification_id]]></fieldDescription>
+	</field>
+	<field name="Place_of_Birth-place_of_birth2" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Place_of_Birth-place_of_birth]]></fieldDescription>
+	</field>
+	<field name="Religion-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Religion-religion_id/Religion-name]]></fieldDescription>
+	</field>
+	<field name="Job_Name-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Job_Title-job_id/Job_Name-name]]></fieldDescription>
+	</field>
+	<field name="Contract_timeframe-timeframe_contract" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Contract_timeframe-timeframe_contract]]></fieldDescription>
+	</field>
+	<field name="Wage-wage" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Wage-wage]]></fieldDescription>
+	</field>
+	<field name="Contract_Reference-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Contract_Reference-name]]></fieldDescription>
+	</field>
+	<field name="Zip-zip" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Employee-employee_id/Home_Address-address_home_id/Zip-zip]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="25" splitType="Stretch"/>
+	</title>
+	<detail>
+		<band height="786" splitType="Stretch">
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement uuid="cde1e6b1-43e5-4fa7-a78e-74698f91d24e" positionType="Float" stretchType="RelativeToTallestObject" x="100" y="189" width="192" height="16"/>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{Date_of_Birth-birthday}.isEmpty() ? ": " : ": " + new SimpleDateFormat("dd MMMMM yyyy").format(new SimpleDateFormat("yyyy-MM-dd").parse($F{Date_of_Birth-birthday})))]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="69a2590d-9895-49fa-b5d3-a248f6e2866d" positionType="Float" stretchType="RelativeToTallestObject" x="100" y="173" width="192" height="16"/>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{Name-name_related}.isEmpty() ? ": " : ": "+$F{Name-name_related})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="993c3490-e61d-48c8-8ebe-40631713ca09" positionType="Float" stretchType="RelativeToTallestObject" x="100" y="221" width="192" height="16"/>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{Gender-gender}.isEmpty() ? ": " :
+    ": " + ($F{Gender-gender}.equalsIgnoreCase("female") ?
+                "Perempuan" : ($F{Gender-gender}.equalsIgnoreCase("male") ?
+                    "Laki-laki" : "-")))]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="f4bdbb16-09a2-4860-8e4a-c334c0fed7f0" positionType="Float" stretchType="RelativeToTallestObject" x="22" y="189" width="78" height="16"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<paragraph leftIndent="1"/>
+				</textElement>
+				<text><![CDATA[ Tanggal Lahir]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cd615d22-da29-4ded-b7a0-90a61d7630b2" positionType="Float" stretchType="RelativeToTallestObject" x="22" y="205" width="78" height="16"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<paragraph leftIndent="1"/>
+				</textElement>
+				<text><![CDATA[ No. KTP ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="ccd6e3e7-0d7f-48a0-bef1-a808b4b78656" positionType="Float" stretchType="RelativeToTallestObject" x="100" y="205" width="192" height="16"/>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{Identification_No-identification_id}.isEmpty() ? ": " : ": "+$F{Identification_No-identification_id})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement uuid="937318f2-1a5c-43af-8f80-45a29ea7c76d" positionType="Float" stretchType="RelativeToTallestObject" x="11" y="52" width="281" height="41" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" markup="none"/>
+				<textFieldExpression><![CDATA["Perjanjian Kerja Waktu Tertentu ini (untuk selanjutnya disebut ‘Perjanjian’), dibuat dan ditandatangani di Jakarta pada hari " +
+($F{Contract_Date-contract_date}.isEmpty() ? ".........." : new SimpleDateFormat("EEEEE, dd MMMMM yyyy").format(new SimpleDateFormat("yyyy-MM-dd").parse($F{Contract_Date-contract_date}))) +
+" oleh dan antara PIHAK-PIHAK berikut ini:" +
+"\n\nI.  PT IMMOBI SOLUSI PRIMA"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="c97c46b8-0403-46c1-a4be-50437050d372" positionType="Float" stretchType="RelativeToTallestObject" x="305" y="0" width="281" height="221" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified">
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[
+
+PASAL 3
+HAK DAN KEWAJIBAN
+(1) Selama perjanjian berlangsung, PIHAK KEDUA berhak untuk memperoleh:
+a. Gaji dan fasilitas dari PIHAK KESATU sebagaimana tercantum pada Lampiran 1 Perjanjian ini, merupakan kesatuan dan menjadi bagian yang tak terpisahkan dengan Perjanjian ini.
+b. Sarana pendukung dari PIHAK KESATU untuk menunjang Jenis Pekerjaan sebagaimana disebutkan dalam Pasal 2 ayat (1) Perjanjian ini, dan ditetapkan dalam Lampiran 1 Perjanjian ini yang merupakan kesatuan dan menjadi bagian yang tak terpisahkan dengan  Perjanjian ini.
+c. Akses kepada karyawan, data, informasi pada lingkungan perusahaan PIHAK KESATU terkait Jenis Pekerjaan sebagaimana disebutkan dalam Pasal 2 ayat (1) Perjanjian ini
+
+(2) Selama jangka waktu perjanjian sebagaimana tersebut dalam Pasal 1 Perjanjian ini , PIHAK KEDUA berkewajiban untuk:
+a. Melaksanakan tugas dan kewajiban umum sesuai dengan kebijakan perusahaan, yakni:
+    i. Melaksanakan tugas dengan sebaik-baiknya serta berusaha semaksimal mungkin ditujukan untuk kepentingan dan kemajuan perusahaan;
+    ii. Memberikan dan menyampaikan segala gagasan, masukan, informasi, dan atau laporan yang dianggap penting dan relevan untuk kemajuan perusahaan;
+b. Melaksanakan tugas dan kewajiban khusus sebagaimana ditetapkan dalam Lampiran 2, Perjanjian ini, yang merupakan kesatuan dan menjadi bagian tak terpisahkan dalam Perjanjian ini.
+c. Mencurahkan waktu, perhatian dan kemampuannya pada perusahaan dan hal-hal lain yang menyangkut kepentingan perusahaan.
+d. Terikat untuk tetap mandiri dari semua pihak dan bertindak untuk menjaga kepentingan perusahaan.
+e. Tidak terlibat baik secara langsung maupun tidak langsung dalam usaha maupun jabatan lain yang sejenis dengan Jenis Pekerjaan sebagaimana disebutkan dalam Pasal 2 ayat (1) Perjanjian ini.]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="9caa9817-bc5f-47a5-b95f-5c9cad53f9f7" positionType="Float" stretchType="RelativeToTallestObject" x="100" y="237" width="192" height="45"/>
+				<textElement verticalAlignment="Top">
+					<paragraph leftIndent="1" spacingBefore="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": " + ($F{Street2-street2}.isEmpty() ? $F{Street-street} : $F{Street-street}+" "+$F{Street2-street2}) +
+($F{RT-rt}.isEmpty() ? ($F{RW-rw}.isEmpty() ? "" : " RW "+$F{RW-rw}) :
+    ($F{RW-rw}.isEmpty() ? " RT "+$F{RT-rt} : " RT "+$F{RT-rt}+" / RW "+$F{RW-rw})) +
+($F{Kelurahan-name}.isEmpty() ? "" : " Kel."+$F{Kelurahan-name}) +
+($F{Kecamatan-name}.isEmpty() ? "" : " Kec."+$F{Kecamatan-name}) +
+($F{Kabupaten-name}.isEmpty() ? "" : " Kab."+$F{Kabupaten-name}) +
+($F{City-city}.isEmpty() ? "" : " Kota "+$F{City-city}) +
+($F{Province-name}.isEmpty() ? "" : " Prov."+$F{Province-name}) +
+($F{Country_Name-name}.isEmpty() ? "" : " "+$F{Country_Name-name}) +
+($F{Zip-zip}.isEmpty() ? "" : " "+$F{Zip-zip})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="11ffd614-08e7-49b2-a84b-6e79108f6199" positionType="Float" stretchType="RelativeToTallestObject" x="22" y="221" width="78" height="16"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<paragraph leftIndent="1"/>
+				</textElement>
+				<text><![CDATA[ Jenis Kelamin]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="cf3cdc89-b280-4f83-b0dd-d2da5f61cfe0" positionType="Float" stretchType="RelativeToTallestObject" x="11" y="282" width="281" height="129" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified" markup="none">
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Dalam hal ini bertindak untuk diri sendiri, selanjutnya disebut  “PIHAK KEDUA”." +
+
+"\n\nUntuk  secara bersama-sama disebut “PARA PIHAK”" +
+
+"\n\nPARA PIHAK telah sepakat untuk mengadakan hubungan kerja waktu tertentu dengan ketentuan sebagaimana tersebut dalam pasal-pasal berikut:" +
+
+"\n\nPASAL 1"+
+"\nJANGKA WAKTU PERJANJIAN" +
+"\nPIHAK KESATU mengadakan ikatan kerja dengan PIHAK KEDUA, untuk masa waktu tertentu selama "+
+($F{Contract_timeframe-timeframe_contract}.isEmpty() ? "....." : $F{Contract_timeframe-timeframe_contract}) +" berlaku terhitung mulai tanggal " +
+($F{Start_Date-date_start}.isEmpty() ? "....." : new SimpleDateFormat("dd MMMMM yyyy").format(new SimpleDateFormat("yyyy-MM-dd").parse($F{Start_Date-date_start}))) +
+" sampai dengan tanggal " +
+($F{End_Date-date_end}.isEmpty() ? "....." : new SimpleDateFormat("dd MMMMM yyyy").format(new SimpleDateFormat("yyyy-MM-dd").parse($F{End_Date-date_end}))) +"."+
+
+"\n\nPASAL 2" +
+"\nJENIS PEKERJAAN DAN LOKASI PENEMPATAN" +
+"\n(1) PIHAK KESATU akan menempatkan PIHAK KEDUA di lokasi kerja PIHAK PERTAMA, beralamat di Gedung Tifa Lt.8, Jl. Kuningan Barat kav.26 sebagai "+
+($F{Job_Name-name}.isEmpty() ? "....." : $F{Job_Name-name}) +
+
+"\n(2) PIHAK KESATU berdasarkan pertimbangan tertentu berhak memindahkan ke bagian lain dan atau mengubah nama jabatan PIHAK KEDUA, dan karenanya PIHAK KEDUA bersedia untuk dipindahkan ke bagian lain dan atau diubah nama jabatannya sesuai kebutuhan PIHAK KESATU, dengan pemberitahuan tertulis dari PIHAK KESATU kepada PIHAK KEDUA."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="66de2af6-a3e4-4d99-b578-07f0b8e012c6" positionType="Float" stretchType="RelativeToTallestObject" x="22" y="93" width="270" height="80" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Justified">
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[Suatu Perseroan Terbatas, didirikan pada tanggal 8-9-2014, berdasarkan Akta Pendirian No. 3 Notaris Dwi Yulianti, S.H., di Jakarta, telah disahkan dengan  Surat Keputusan  Menteri Hukum Dan HAM Republik Indonesia Hukum dan HAM RI No. AHU-0101404.40.80.2014 Tahun 2014, berkedudukan di Gedung Tifa, Lantai 8 Jalan Kuningan Barat No. 26, Jakarta 12710, dalam hal ini diwakili oleh Heksantono Hartadi  dengan jabatan Direktur Utama pada PT. Immobi Solusi Prima, dengan demikian sah dan berwenang bertindak untuk dan atas nama PT Immobi Solusi Prima, selanjutnya disebut  “PIHAK KESATU”; ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2c67bc5e-6f7f-4be8-9164-2b4e2c39545f" positionType="Float" stretchType="RelativeToTallestObject" x="22" y="237" width="78" height="16"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<paragraph leftIndent="1"/>
+				</textElement>
+				<text><![CDATA[ Alamat]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="d0c3d884-692e-4009-ab71-684a5a3feddf" x="11" y="0" width="281" height="40"/>
+				<textElement textAlignment="Center" markup="none">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["PERJANJIAN KERJA WAKTU TERTENTU\nNo." +
+($F{Contract_Reference-name}.isEmpty() ? "000/PKWT-HRD/00/00" : $F{Contract_Reference-name}) +
+"\nPRIBADI & RAHASIA"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="e5a8ef5c-48d8-428a-b1a9-452447075fad" positionType="Float" stretchType="RelativeToTallestObject" x="11" y="173" width="89" height="16"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<paragraph leftIndent="1"/>
+				</textElement>
+				<text><![CDATA[II.   Nama]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="16" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="45f8920d-64b6-408f-b309-9479d85d129f" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="1" width="281" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="9"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA["PKWT – No." + ($F{Contract_Reference-name}.isEmpty() ? "000/PKWT-HRD/00/00" : $F{Contract_Reference-name})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="b69f236d-5593-40db-aaba-018ad57b595c" positionType="Float" stretchType="RelativeToTallestObject" x="476" y="1" width="97" height="15"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="376de560-f08a-471f-9f83-de724da95cd8" x="0" y="0" width="573" height="1"/>
+				<graphicElement>
+					<pen lineWidth="2.5" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageFooter>
+</jasperReport>
